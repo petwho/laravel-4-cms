@@ -17,20 +17,36 @@ Route::get('/', function()
 });
 
 
-Route::get('/user', function()
-{
-  return View::make('create_user_form');
-});
+Route::get('/users/new', array('before' => 'auth',
+  function()
+  {
+    return View::make('backends.create_user_form');
+  }
+));
 
-Route::post('/user', function()
-{
-  $user = new User;
-  $user->username = Input::get('username');
-  $user->password = Hash::make(Input::get('password'));
-  $user->email = Input::get('email');
-  $user->save();
-  return Response::make('User created! Hurray!');
-});
+Route::post('/users', array('before' => 'auth',
+  function()
+  {
+    $data = Input::all();
+    $rules = array(
+      'username' => array('alpha_num', 'min:3', 'unique:users,username'),
+      'email' => array('email', 'unique:users,email')
+    );
+
+    // Create a new validator instance.
+    $validator = Validator::make($data, $rules);
+
+    if ($validator->passes()) {
+      $user = new User;
+      $user->username = Input::get('username');
+      $user->password = Hash::make(Input::get('password'));
+      $user->email = Input::get('email');
+      $user->save();
+      return Redirect::back()->with('message', 'User created successfully.');
+    }
+    return Redirect::back()->withErrors($validator);
+  }
+));
 
 Route::get('/dashboard', array(
   'before' => 'auth',
@@ -44,7 +60,7 @@ Route::get('/dashboard', array(
 Route::get('/logout', function()
 {
   Auth::logout();
-  return Response::make('You are now logged out. :(');
+  return Redirect::to('/login');
 });
 
 Route::get('/login', function()
