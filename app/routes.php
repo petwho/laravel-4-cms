@@ -32,11 +32,12 @@ Route::post('/user', function()
   return Response::make('User created! Hurray!');
 });
 
-Route::get('/crush', array(
+Route::get('/dashboard', array(
   'before' => 'auth',
   function()
   {
-    return View::make('crush');
+    $user = Auth::user();
+    return View::make('backends.dashboard', array('user' => $user));
   }
 ));
 
@@ -56,7 +57,7 @@ Route::post('/login', function()
   $credentials = Input::only('username', 'password');
   $remember = Input::has('remember');
   if (Auth::attempt($credentials, $remember)) {
-    return Redirect::intended('/');
+    return Redirect::intended('/dashboard');
   }
   return Redirect::to('login');
 });

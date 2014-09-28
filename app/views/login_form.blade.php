@@ -1,15 +1,24 @@
-<html>
-<head>
-<title>Login</title>
-</head>
-<body>
-<form action="{{ url('login') }}" method="post">
-<p><label for="username">Username:</label></p>
-<p><input type="text" name="username" placeholder="Username" /></p>
-<p><label for="password">Password:</label></p>
-<p><input type="password" name="password" placeholder="Password" /></p>
-<p><input type="submit" value="Login"></p>
-<p><input type="checkbox" name="remember" /> <label for="remember">Remember me.</label></p>
-</form>
-</body>
-</html>
+@extends('layouts.backend')
+@section('content')
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <h1>Login</h1>
+      <form action="{{ url('login') }}" method="post" role="form">
+        <div class='form-group'>
+          <label for="username">Username:</label>
+          <input class='form-control' type="text" name="username" placeholder="Username">
+        </div>
+        <div class='form-group'>
+          <label for="password">Password:</label>
+          <input class='form-control' type="password" name="password" placeholder="Password" />
+        </div>
+        <button class='btn btn-primary' type="submit">Login</button>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox">Remember me
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+@stop
