@@ -80,45 +80,11 @@ Route::post('/users', array('before' => 'auth',
 ));
 
 /* Menu section*/
-// list menus
-Route::get('/menus', array('before' => 'auth',
-  function()
-  {
-    return View::make('admin.menus.index', array('menus' => Menu::all()));
-  }
-));
-
-Route::get('/menus/new', array('before' => 'auth',
-  function()
-  {
-    return View::make('admin.menus.create');
-  }
-));
-
-Route::post('/menus', array('before' => 'auth',
-  function()
-  {
-    $data = Input::all();
-    $rules = array(
-      'title' => array('required', 'min:3'),
-      'alias' => array('required', 'alpha_dash', 'unique:menus,alias')
-    );
-
-    // Create a new validator instance.
-    $validator = Validator::make($data, $rules);
-
-    if ($validator->passes()) {
-      $menu = new Menu;
-      $menu->title = Input::get('title');
-      $menu->alias = Input::get('alias');
-      $menu->save();
-      return Redirect::back()->with('message', 'Menu created successfully.');
-    }
-    return Redirect::back()->withErrors($validator);
-  }
-));
+Route::resource('menus', 'MenusController');
+Route::put('menus/{id}/restore', 'MenusController@restore');
+Route::delete('menus/{id}/trash', 'MenusController@trash');
 
 App::error(function($exception)
 {
-  // return Response::view('errors.missing', array(), 404);
+  return Response::view('errors.missing', array(), 404);
 });

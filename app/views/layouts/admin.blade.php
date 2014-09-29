@@ -11,6 +11,8 @@
     <link href="/css/admin.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,9 +45,15 @@
     <div class="container-fluid">
       <div class="row">
         @if (Auth::check())
-          <div class="col-xs-2">
+          <div class="col-xs-2 sidebar">
+            <ul class="nav nav-sidebar">
+              <li><a href="/dachboard"<i class="fa fa-info-circle"></i>&nbsp;&nbsp;Overview</a></li>
+              <li><a href="/menus"><i class="fa fa-th-large"></i>&nbsp;&nbsp;Menus</a></li>
+              <li><a href="/posts"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Posts</a></li>
+              <li><a href="/modules"><i class="fa fa-plug"></i>&nbsp;&nbsp;Modules</a></li>
+            </ul>
           </div>
-          <div class="col-xs-10">
+          <div class="col-xs-10 col-xs-offset-2">
             @yield('content')
           </div>
         @else
@@ -55,8 +63,6 @@
         @endif
       </div>
     </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
   </body>

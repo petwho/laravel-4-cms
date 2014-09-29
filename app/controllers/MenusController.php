@@ -1,6 +1,11 @@
 <?php
-
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 class MenusController extends \BaseController {
+
+	public function __construct()
+	{
+		$this->beforeFilter('auth');
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -10,7 +15,10 @@ class MenusController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('admin.menus.index', array(
+				'menus' => Menu::withTrashed()->get(),
+				'published_menus' => Menu::all(),
+				'trashed_menus' => Menu::onlyTrashed()->get()));
 	}
 
 	/**
@@ -21,7 +29,7 @@ class MenusController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+    return View::make('admin.menus.create');
 	}
 
 	/**
@@ -32,7 +40,23 @@ class MenusController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$data = Input::all();
+    $rules = array(
+      'title' => array('required', 'min:3'),
+      'alias' => array('required', 'alpha_dash', 'unique:menus,alias')
+    );
+
+    // Create a new validator instance.
+    $validator = Validator::make($data, $rules);
+
+    if ($validator->passes()) {
+      $menu = new Menu;
+      $menu->title = Input::get('title');
+      $menu->alias = Input::get('alias');
+      $menu->save();
+      return Redirect::to('/menus')->with('message', 'Menu created successfully.');
+    }
+    return Redirect::back()->withErrors($validator);
 	}
 
 	/**
@@ -44,7 +68,8 @@ class MenusController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$menu = Menu::find($id);
+		return var_dump($menu);
 	}
 
 	/**
@@ -56,7 +81,8 @@ class MenusController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$menu = Menu::find($id);
+		return View::make('admin.menus.edit', array('menu' => $menu));
 	}
 
 	/**
@@ -68,7 +94,49 @@ class MenusController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$data = Input::all();
+    $rules = array(
+      'title' => array('required', 'min:3'),
+      'alias' => array('required', 'alpha_dash', 'unique:menus,alias')
+    );
+
+    // Create a new validator instance.
+    $validator = Validator::make($data, $rules);
+
+    if ($validator->passes()) {
+      $menu = Menu::find($id);
+      $menu->title = Input::get('title');
+      $menu->alias = Input::get('alias');
+      $menu->update();
+      return Redirect::back()->with('message', 'Menu updated successfully.');
+    }
+    return Redirect::back()->withErrors($validator);
+	}
+
+	/**
+	* Restore menu
+	*/
+	public function restore($id)
+	{
+		$menu = Menu::onlyTrashed()->where('id', $id);
+		if ($menu) {
+			$menu->restore();
+		}
+	}
+
+	/**
+	 * Trash the specified resource from storage.
+	 * DELETE /menus/{id}/trash
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function trash($id)
+	{
+		$menu = Menu::find($id);
+		if ($menu) {
+			$menu->delete();
+		}
 	}
 
 	/**
@@ -80,7 +148,10 @@ class MenusController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$menu = Menu::withTrashed()->where('id', $id);
+		if ($menu) {
+			$menu->forceDelete();
+		}
 	}
 
 }

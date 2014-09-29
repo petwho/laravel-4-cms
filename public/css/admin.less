@@ -2,16 +2,52 @@ body {
   padding-top: 50px;
   font-family: 'Open Sans', sans-serif;
 }
+
+a.link:hover {
+  text-decoration: none;
+}
+
+a.edit, a.trash, a.delete, a.restore {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+}
+
 .navbar-inverse .navbar-brand, .navbar-fixed-top .navbar-nav > li > a {
   color: #fff;
   &:hover {
     color: #777;
   }
 }
+
 p.navbar-right a {
   color: #fff;
   &:hover {
     text-decoration: none;
     color: #777;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+
+.nav-sidebar {
+  margin-right: -21px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+  .active > a, .active > a:hover, .active > a:focus {
+    color: #fff;
+    background-color: #428bca;
   }
 }
