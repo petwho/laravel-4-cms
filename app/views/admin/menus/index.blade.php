@@ -43,7 +43,7 @@
                       <a class='link text-warning trash' data-menu-id="{{ $menu->id }}" href="#" title='trash'><i class="fa fa-trash"></i> trash</a>
                     @endif
                     |
-                    <a class='link text-danger delete' data-menu-id="{{ $menu->id }}" href='#' title='delete'><i class="fa fa-times"></i> delete</a>
+                    <a class='link text-danger delete' data-menu-id="{{ $menu->id }}" href='#' title='delete'><i class="fa fa-times-circle"></i> delete</a>
                   </td>
               </tr>
             @endforeach
@@ -61,7 +61,6 @@
   $(function () {
     $('body').on('click', '.trash', function (e) {
       var id = $(this).data('menu-id');
-      var that = this;
       $.ajax({
         method: 'delete',
         url: '/menus/' + id + '/trash',
@@ -74,7 +73,6 @@
 
     $('body').on('click', '.delete', function (e) {
       var id = $(this).data('menu-id');
-      var that = this;
       var confirmed = confirm('Are you sure to delete this?');
       if (confirmed) {
         $.ajax({
@@ -90,7 +88,6 @@
 
     $('body').on('click', '.restore', function (e) {
       var id = $(this).data('menu-id');
-      var that = this;
       $.ajax({
         method: 'put',
         url: '/menus/' + id +'/restore',

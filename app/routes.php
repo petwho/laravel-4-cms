@@ -16,27 +16,6 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-/* Authentication */
-Route::get('/logout', function()
-{
-  Auth::logout();
-  return Redirect::to('/login');
-});
-
-Route::get('/login', function()
-{
-  return View::make('login_form');
-});
-
-Route::post('/login', function()
-{
-  $credentials = Input::only('username', 'password');
-  $remember = Input::has('remember');
-  if (Auth::attempt($credentials, $remember)) {
-    return Redirect::intended('/dashboard');
-  }
-  return Redirect::to('login');
-});
 
 Route::get('/dashboard', array(
   'before' => 'auth',
@@ -47,44 +26,20 @@ Route::get('/dashboard', array(
   }
 ));
 
-/* User section */
-Route::get('/users/new', array('before' => 'auth',
-  function()
-  {
-    return View::make('admin.users.create');
-  }
-));
+/* Users */
+Route::resource('users', 'UsersController');
 
-Route::post('/users', array('before' => 'auth',
-  function()
-  {
-    $data = Input::all();
-    $rules = array(
-      'username' => array('alpha_num', 'min:3', 'unique:users,username'),
-      'email' => array('email', 'unique:users,email')
-    );
+/* Sessions */
+Route::get('login', 'SessionsController@create');
+Route::post('login', 'SessionsController@store');
+Route::get('logout', 'SessionsController@destroy');
 
-    // Create a new validator instance.
-    $validator = Validator::make($data, $rules);
-
-    if ($validator->passes()) {
-      $user = new User;
-      $user->username = Input::get('username');
-      $user->password = Hash::make(Input::get('password'));
-      $user->email = Input::get('email');
-      $user->save();
-      return Redirect::back()->with('message', 'User created successfully.');
-    }
-    return Redirect::back()->withErrors($validator);
-  }
-));
-
-/* Menu section*/
+/* Menus */
 Route::resource('menus', 'MenusController');
 Route::put('menus/{id}/restore', 'MenusController@restore');
 Route::delete('menus/{id}/trash', 'MenusController@trash');
 
-App::error(function($exception)
-{
-  return Response::view('errors.missing', array(), 404);
-});
+// App::error(function($exception)
+// {
+//   return Response::view('errors.missing', array(), 404);
+// });

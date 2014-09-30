@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-4">
       <h1>Create User</h1>
       {{ Form::open(array('url' => '/users', 'method' => 'post', 'role' => 'form')) }}
         @if (count($errors))
@@ -37,6 +37,7 @@
           <input class='form-control' type="password" name="password" placeholder="Password" required>
         </div>
         <button class='btn btn-primary' type="submit">Create</button>
+        <a href='/users/' class='btn btn-warning' type="submit">Back</a>
       {{ Form::close() }}
     </div>
   </div>

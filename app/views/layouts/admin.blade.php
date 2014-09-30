@@ -34,7 +34,7 @@
             <li>
               <a href="/" target="_blank"><i class="fa fa-home"></i>&nbsp;Home</a>
             </li>
-            <li><a href="/users/new"><i class="fa fa-users"></i>&nbsp;Users</a></li>
+            <li><a href="/users"><i class="fa fa-users"></i>&nbsp;Users</a></li>
           </ul>
           @if (Auth::check())
             <p class='navbar-text navbar-right'><a href="/logout"><i class="fa fa-sign-out"></i>&nbsp;Logout</a></p>

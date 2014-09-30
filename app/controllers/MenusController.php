@@ -81,8 +81,11 @@ class MenusController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$menu = Menu::find($id);
-		return View::make('admin.menus.edit', array('menu' => $menu));
+		$menu = Menu::withTrashed()->where('id', $id)->first();
+    if ($menu) {
+		  return View::make('admin.menus.edit', array('menu' => $menu));
+    }
+    return Redirect::back()->with('message', 'No menus was found');
 	}
 
 	/**
@@ -97,7 +100,7 @@ class MenusController extends \BaseController {
 		$data = Input::all();
     $rules = array(
       'title' => array('required', 'min:3'),
-      'alias' => array('required', 'alpha_dash', 'unique:menus,alias')
+      'alias' => array('required', 'alpha_dash', 'unique:menus,alias,'.$id)
     );
 
     // Create a new validator instance.
@@ -108,7 +111,7 @@ class MenusController extends \BaseController {
       $menu->title = Input::get('title');
       $menu->alias = Input::get('alias');
       $menu->update();
-      return Redirect::back()->with('message', 'Menu updated successfully.');
+      return Redirect::back()->with('message', 'Menu updated successfully');
     }
     return Redirect::back()->withErrors($validator);
 	}
