@@ -1,0 +1,213 @@
+@charset "utf-8";
+/*
+///////////////////////////////////////////
+CSS FOR Index
+Made by Quoctk (クック)
+/////////////////////////////////////
+*/
+body {
+	font-size: 12px;
+	line-height: 1.4;
+	font-family: Tahoma, Arial, Sans-Serif;
+}
+#Top-content {
+	width: 100%;
+	height: 650px;
+	padding: 2px 0 0;
+	margin-bottom: 0px!important;
+	background: url(../images/common/bg_content04.png) no-repeat 50% 0;
+}
+.section {
+	width: 100%;
+}
+.h2-title {
+	color: #535353;
+	font-size: 184%;
+	font-weight: bold;
+}
+.h3-title {
+	color: #535353;
+	font-size: 134%;
+	font-weight: bold;
+}
+#Shop-box {
+	width: 1000px;
+	height: 650px;
+	background: url(../images/vatlieu/bg_01.jpg) no-repeat;
+}
+#Shop-box ul {
+	width: 970px;
+	margin: 0 auto;
+	background: url(../images/shopnoithat/img_line.png) repeat-y right top;
+}
+#Shop-box ul li {
+	width: 20%;
+	height: 650px;
+	float: left;
+	background: url(../images/shopnoithat/img_line.png) repeat-y left top;
+}
+#Shop-box ul li a {
+	height: 650px;
+	display: block;
+	padding: 0px 20px 0px 20px;
+	color: #9c9c9c;
+	text-decoration: none;
+}
+#Shop-box ul li a:hover, #Shop-box ul li a.select {
+	background: url(../images/shopnoithat/bg_linkhover.png) repeat;
+	color: #fff;
+}
+#Shop-box ul li .title {
+	font-size: 150%;
+	font-weight: bold;
+	padding: 435px 0 0;
+}
+#Shop-box ul li .detail {
+	line-height: 20px;
+	padding-top: 20px;
+}
+.gallery-product {
+	width: 770px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.slidebase {
+	border: #e2e2e2 1px solid;
+	position: relative;
+	text-align: center!important;
+}
+.slidebase img {
+	margin: 10px auto 0 auto!important;
+}
+.slidebase .pr-name {
+	width: 100%;
+	position: absolute;
+	top: 160px;
+	color: #9c9c9c;
+	line-height: 16px;
+}
+.slidebase .pr-price {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	color: #ff0000;
+	text-align: center;
+}
+#Tab-box {
+	width: 100%;
+	position: relative;
+	top: -20px;
+	z-index: 99999;
+	background: url(../images/common/bg_popup.png) repeat-x;
+}
+#Tab-box li {
+	display: inline-block;
+ *display: inline;
+	zoom: 1;
+	text-align: center;
+	color: #9c9c9c;
+	padding: 11px 30px 11px 30px;
+	margin-right: -5px;
+	background: url(../images/shopnoithat/bg_line.png) no-repeat right center;
+	cursor: pointer;
+	font-weight: bold;
+}
+#Tab-box li.last {
+	margin-right: 0px;
+}
+#Tab-box li.select {
+	background: url(../images/shopnoithat/bg_activetab.png) repeat-x;
+	color: #fff;
+}
+#Tab-sub {
+	width: 100%;
+	margin-bottom: 10px;
+	margin-left: 72px;
+	margin-top: 10px;
+}
+#Tab-sub li {
+	display: inline-block;
+ *display: inline;
+	zoom: 1;
+ *margin-right: 3px;
+	text-align: center;
+	color: #9c9c9c;
+	padding: 5px 5px;
+	background: #f1f1f1;
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #dedede;
+	cursor: pointer;
+	font-weight: bold;
+}
+#Tab-sub li.last {
+	margin-right: 0px;
+}
+#Tab-sub li.select {
+	background: #ff2d2d;
+	color: #fff;
+}
+#Sub-title {
+	width: 100%;
+	margin-bottom: 10px;
+	margin-left: 72px;
+	margin-top: 10px;
+}
+#Sub-title li {
+	display: inline-block;
+ *display: inline;
+	zoom: 1;
+ *margin-right: 3px;
+	text-align: center;
+	color: #9c9c9c;
+	padding: 5px 5px;
+	background: #f1f1f1;
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #dedede;
+	font-weight: bold;
+}
+.hidden {
+	display: none;
+}
+.txt-01 {
+	color: #9c9c9c;
+	line-height: 20px;
+}
+.popup {
+	padding: 20px 0 0;
+	color: #9c9c9c;
+}
+.popup .img-box {
+	margin-right: 25px;
+}
+.popup p {
+	line-height: 21px;
+}
+.popup .bold {
+	color: #000;
+}
+.popup .red {
+	color: #ff0000;
+}
+.top-article {
+	width: 760px;
+	margin: 0 auto;
+}
+.top-info {
+	width: 260px;
+	float: right;
+	text-align: center;
+}
+.top-info .name {
+	color: #535353;
+	font-size: 184%;
+	font-weight: bold;
+	padding: 50px 0 0;
+	line-height: 25px;
+}
+.top-info .detail {
+	color: #9c9c9c;
+	line-height: 20px;
+	padding-top: 20px;
+}

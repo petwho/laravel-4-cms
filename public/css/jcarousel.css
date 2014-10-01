@@ -1,0 +1,100 @@
+.jcarousel-clip {
+	overflow: hidden;
+}
+.jcarousel-item {
+	width: 245px;
+	height: 240px;
+	margin: 0 5px!important;
+}
+.jcarousel-skin-tango .jcarousel-item-horizontal {
+	margin: 0 0px 0 0px;
+}
+.jcarousel-skin-tango2 .jcarousel-item-horizontal {
+	margin-left: 0;
+}
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-next-horizontal {
+	position: absolute;
+	top: 75px;
+	right: -35px;
+	width: 10px;
+	height: 95px;
+	cursor: pointer;
+	background:url(../images/index/arrow_next.png) no-repeat;
+}
+.jcarousel-next-horizontal:hover, .jcarousel-next-horizontal:focus {
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+.jcarousel-prev-horizontal {
+	position: absolute;
+	top: 75px;
+	left: -35px;
+	width: 10px;
+	height: 95px;
+	cursor: pointer;
+	background:url(../images/index/arrow_prev.png) no-repeat;
+}
+.jcarousel-prev-horizontal:hover, .jcarousel-prev-horizontal:focus {
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+/*@media (min-width: 768px) and (max-width: 991px) {
+.jcarousel-item {
+	width: 111px!important;
+}
+.jcarousel-item img {
+	width: 105px;
+}
+.jcarousel-next-horizontal {
+	top: 50px;
+	right: -35px;
+}
+.jcarousel-next-horizontal:hover, .jcarousel-next-horizontal:focus {
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+.jcarousel-prev-horizontal {
+	top: 50px;
+	left: -35px;
+}
+}
+*/
+@media screen and (max-width:480px) {
+.jcarousel-skin-tango .jcarousel-item-horizontal {
+	margin: 0;
+}
+.jcarousel-skin-tango2 .jcarousel-item-horizontal {
+	margin: 0;
+}
+.jcarousel-clip {
+	overflow: hidden;
+	padding: 10px 0;
+}
+.jcarousel-item {
+	height: auto;
+	text-align: center;
+	display: table-cell;
+}
+.jcarousel-prev-horizontal {
+	position: absolute;
+	bottom: -40px;
+	left: 0;
+	width: 50%;
+	height: 40px;
+	cursor: pointer;
+	background: url(../image/index/carousel-nav-03.jpg) no-repeat left top;
+}
+.jcarousel-next-horizontal {
+	position: absolute;
+	bottom: -40px;
+	right: 0;
+	width: 50%;
+	height: 40px;
+	cursor: pointer;
+	background: url(../image/index/carousel-nav-03.jpg) no-repeat right top;
+}
+}

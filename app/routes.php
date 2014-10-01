@@ -39,7 +39,7 @@ Route::resource('menus', 'MenusController');
 Route::put('menus/{id}/restore', 'MenusController@restore');
 Route::delete('menus/{id}/trash', 'MenusController@trash');
 
-// App::error(function($exception)
-// {
-//   return Response::view('errors.missing', array(), 404);
-// });
+App::error(function($exception)
+{
+  return Response::view('errors.missing', array(), 404);
+});

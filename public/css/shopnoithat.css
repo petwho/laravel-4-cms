@@ -1,0 +1,144 @@
+@charset "utf-8";
+/*
+///////////////////////////////////////////
+CSS FOR Index
+Made by Quoctk (クック)
+/////////////////////////////////////
+*/
+body {
+	font-size: 12px;
+	line-height: 1.4;
+	font-family: Tahoma, Arial, Sans-Serif;
+}
+#Top-content {
+	width: 100%;
+	height: 650px;
+	padding: 2px 0 0;
+	margin-bottom: 0px!important;
+	background: url(../images/common/bg_content04.png) no-repeat 50% 0;
+}
+.section {
+	width: 100%;
+}
+.h2-title {
+	color: #535353;
+	font-size: 184%;
+	font-weight: bold;
+}
+.h3-title {
+	color: #535353;
+	font-size: 134%;
+	font-weight: bold;
+}
+#Shop-box {
+	width: 1000px;
+	height: 650px;
+	background: url(../images/shopnoithat/bg_01.jpg) no-repeat;
+}
+#Shop-box ul {
+	width: 970px;
+	margin: 0 auto;
+	background: url(../images/shopnoithat/img_line.png) repeat-y right top;
+}
+#Shop-box ul li {
+	width: 33.33%;
+	height: 650px;
+	float: left;
+	background: url(../images/shopnoithat/img_line.png) repeat-y left top;
+}
+#Shop-box ul li a {
+	height: 650px;
+	display: block;
+	padding: 0px 20px 0px 20px;
+	color: #9c9c9c;
+	text-decoration: none;
+}
+#Shop-box ul li a:hover, #Shop-box ul li a.select {
+	background: url(../images/shopnoithat/bg_linkhover.png) repeat;
+	color: #fff;
+}
+#Shop-box ul li .title {
+	font-size: 300%;
+	font-weight: bold;
+	padding: 405px 0 0;
+}
+#Shop-box ul li .detail {
+	line-height: 20px;
+	padding-top: 20px;
+}
+.gallery-product {
+	width: 770px;
+	margin: 25px auto 0 auto;
+}
+.slidebase {
+	border: #e2e2e2 1px solid;
+	position: relative;
+	text-align: center!important;
+}
+.slidebase img {
+	margin: 10px auto 0 auto;
+}
+.slidebase .pr-name {
+	width: 100%;
+	position: absolute;
+	top: 160px;
+	color: #9c9c9c;
+	text-align: center;
+	line-height: 16px;
+}
+.slidebase .pr-price {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	color: #ff0000;
+	text-align: center;
+}
+#Tab-box {
+	width: 100%;
+	position: relative;
+	top: -20px;
+	z-index: 99999;
+	background:url(../images/common/bg_popup.png) repeat-x;
+}
+#Tab-box li {
+	display: inline-block;
+ *display: inline;
+	zoom: 1;
+	text-align: center;
+	color: #9c9c9c;
+	padding: 11px 30px 11px 30px;
+	margin-right: -5px;
+	background: url(../images/shopnoithat/bg_line.png) no-repeat right center;
+	cursor: pointer;
+	font-weight: bold;
+}
+#Tab-box li.last {
+	margin-right: 0px;
+}
+#Tab-box li.select {
+	background: url(../images/shopnoithat/bg_activetab.png) repeat-x;
+	color: #fff;
+}
+.hidden {
+	display: none;
+}
+.txt-01 {
+	color: #9c9c9c;
+	line-height: 20px;
+}
+.popup {
+	padding: 20px 0 0;
+	color: #9c9c9c;
+}
+.popup .img-box {
+	margin-right: 25px;
+}
+.popup p {
+	line-height: 21px;
+}
+.popup .bold {
+	color: #000;
+}
+.popup .red {
+	color: #ff0000;
+}

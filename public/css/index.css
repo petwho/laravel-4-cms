@@ -1,0 +1,172 @@
+@charset "utf-8";
+/*
+///////////////////////////////////////////
+CSS FOR Index
+Made by Quoctk (クック)
+/////////////////////////////////////
+*/
+
+
+
+#Top-content {
+	padding: 0px 0 0!important;
+	height: 617px!important;
+}
+.h2-title {
+	color: #535353;
+	font-size: 184%;
+	font-weight: bold;
+}
+.h3-title {
+	color: #535353;
+	font-size: 134%;
+	font-weight: bold;
+}
+#Tab-box {
+	width: 250px;
+	height: 405px;
+	position: absolute;
+	top: 22px;
+	left: 20px;
+	border: 1px solid #171a17;
+	background: url(../images/index/bg_pnav.png) repeat;
+	z-index: 9999;
+}
+#Tab-box li {
+	width: 100%;
+	height: 67.5px;
+	text-align: center;
+	color: #868787;
+	font-size: 117%;
+	font-weight: bold;
+	background: url(../images/index/pnav_line.png) no-repeat center bottom;
+	cursor: pointer;
+}
+#Tab-box li a {
+	height: 67.5px;
+	color: #868787;
+	text-decoration: none;
+	display: block;
+	line-height: 68px;
+}
+#Tab-box li a:hover {
+	color: #fff;
+}
+#Tab-box li.last {
+	background: none;
+}
+#Tab-box li:hover, #Tab-box li a.select {
+	background: url(../images/index/pnav_hover.png) no-repeat center;
+	color: #fff;
+}
+.social {
+	position: absolute;
+	top: 435px;
+	left: 15px;
+}
+.social li {
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-left: 5px;
+}
+.gallery-box {
+	width: 100%;
+	height: 595px;
+}
+.txt-01 {
+	color: #9c9c9c;
+	line-height: 20px;
+}
+.step {
+	width: 100%;
+}
+.step li {
+	width: 178px;
+	padding: 10px 10px;
+	margin-right: 15px;
+	float: left;
+	position: relative;
+	border: 1px solid #dfdfdf;
+	background: #f1f1f1;
+}
+.step li + li + li +li {
+	margin-right: 0px;
+}
+.step li .step-icon {
+	width: 60px;
+	height: 34px;
+	color: #fff;
+	font-size: 134%;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px 0 0;
+	background: url(../images/index/bg_step.png) no-repeat;
+	position: absolute;
+	top: -14px;
+	left: -10px;
+}
+.step li .title {
+	color: #535353;
+	font-size: 134%;
+	border-bottom: 1px solid #9c9c9c;
+	padding: 20px 0 0px 0;
+}
+.step li .detail {
+	color: #9c9c9c;
+	line-height: 20px;
+	padding: 10px 0 0;
+	height: 165px;
+	overflow: hidden;
+}
+.step li .link-step {
+	color: #535353;
+	font-size: 109%;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 15px 0 0;
+	display: block;
+}
+.step li .link-step:hover {
+	color: #ff0000;
+	text-decoration: underline;
+}
+.list-project {
+	width: 100%;
+}
+.list-project li {
+	width: 200px;
+	float: left;
+	margin-top: 20px;
+	margin-right: 15px;
+}
+.list-project li.last {
+	margin-right: 0px;
+}
+.list-project li img {
+	border: 1px solid #9c9c9c;
+	padding: 3px;
+}
+.list-project li .project-name {
+	color: #535353;
+	font-size: 134%;
+	font-weight: bold;
+	padding: 5px 0 0;
+}
+.list-project li .detail {
+	color: #9c9c9c;
+	line-height: 20px;
+	padding: 5px 0 5px;
+}
+.list-project li .link-project {
+	color: #535353;
+	text-decoration: none;
+	display: block;
+}
+.list-project li .link-project:hover {
+	color: #ff0000;
+	text-decoration: underline;
+}
+.hidden {
+	display: none;
+}
