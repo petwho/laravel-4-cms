@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@welcome');
+Route::get('/kien-thuc', 'HomeController@kien_thuc');
 
 
 Route::get('/dashboard', array(
@@ -28,6 +26,7 @@ Route::get('/dashboard', array(
 
 /* Users */
 Route::resource('users', 'UsersController');
+Route::resource('projects', 'ProjectsController');
 
 /* Sessions */
 Route::get('login', 'SessionsController@create');
@@ -39,7 +38,7 @@ Route::resource('menus', 'MenusController');
 Route::put('menus/{id}/restore', 'MenusController@restore');
 Route::delete('menus/{id}/trash', 'MenusController@trash');
 
-App::error(function($exception)
+App::missing(function($exception)
 {
   return Response::view('errors.missing', array(), 404);
 });
