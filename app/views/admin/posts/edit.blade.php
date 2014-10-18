@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
   <div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-12">
       <h3>Edit post</h3>
       {{ Form::open(array(
             'url' => '/posts/'.$post->id,
@@ -28,33 +28,109 @@
           </div>
         @endif
 
-        <div class='form-group'>
-          {{ Form::label('title', 'Title:') }}
-          {{ Form::text('title', $post->title, array(
-                'class' => 'form-control',
-                'id' => 'title',
-                'required' => true,
-                'placeholder' => 'Sample post'))}}
-        </div>
-        <div class='form-group'>
-          {{ Form::label('summary', 'Summary:') }}
-          {{ Form::textarea('summary', $post->summary, array(
-                'class' => 'form-control',
-                'id' => 'summary',
-                'required' => true,
-                'placeholder' => 'sample-summary'))}}
-        </div>
-        <div class='form-group'>
-          {{ Form::label('content', 'Content:') }}
-          {{ Form::textarea('content', $post->content, array(
-                'class' => 'form-control',
-                'id' => 'content',
-                'required' => true,
-                'placeholder' => 'sample-content'))}}
+        <!-- Left side -->
+        <div class="row">
+          <div class="col-xs-6">
+            <div class='form-group'>
+              {{ Form::label('title', 'Title:') }}
+              {{ Form::text('title', $post->title, array(
+                    'class' => 'form-control',
+                    'id' => 'title',
+                    'required' => true,
+                    'placeholder' => 'Sample post'))}}
+            </div>
+            <div class='form-group'>
+              {{ Form::label('summary', 'Summary:') }}
+              {{ Form::textarea('summary', $post->summary, array(
+                    'class' => 'form-control',
+                    'id' => 'summary',
+                    'required' => true,
+                    'placeholder' => 'Sample summary'))}}
+            </div>
+            <div class='form-group'>
+              {{ Form::label('image', 'Image:') }}
+              <br>
+              <input class='hidden' name='image' value="{{ $post->image }}">
+              <img class='main-image img-thumbnail' src="{{ $post->image }}" style="width: 190px; height: 118px">
+              <a href='#' class='btn btn-primary btn-sm change-image' data-toggle="modal" data-target="#myModal">Change</a>&nbsp;
+            </div>
+          </div>
+          <!-- Content -->
+          <div class="col-xs-6">
+            <div class='form-group'>
+              {{ Form::label('content', 'Content:') }}
+              {{ Form::textarea('content', $post->content, array(
+                    'class' => 'form-control',
+                    'id' => 'content',
+                    'rows' => 20,
+                    'placeholder' => 'Sample content'))}}
+            </div>
+          </div>
+          <!-- End of Content -->
         </div>
         <button class='btn btn-primary' type="submit">Update</button>&nbsp;
         <a class='btn btn-warning' href='/posts'>Back</a>
       {{ Form::close() }}
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">Image Gallery</h4>
+            </div>
+            <div class="modal-body">
+              <ul>
+                @for($i = 0; $i < count($images = glob('../public/images/projects/*')); $i++)
+                  <li>
+                    <img src="/images/projects/{{ basename($images[$i]) }}" width=100 height=81>
+                  </li>
+                @endfor
+              </ul>
+              <p class='clear'></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary save">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Modal -->
     </div>
   </div>
+  <style type="text/css">
+    .change-image {
+      vertical-align: bottom;
+    }
+    #myModal ul li {
+      list-style: none;
+      float: left;
+      padding: 8px 8px;
+    }
+    #myModal li.active {
+      box-shadow: inset 0 0 2px 3px #f1f1f1,inset 0 0 0 7px #5b9dd9;
+      -webkit-box-shadow: inset 0 0 2px 3px #f1f1f1,inset 0 0 0 7px #5b9dd9;
+      -moz-box-shadow: inset 0 0 2px 3px #f1f1f1,inset 0 0 0 7px #5b9dd9;
+    }
+    .clear {
+      clear: both;
+    }
+  </style>
+  <script type="text/javascript">
+    $(function () {
+      $('#myModal li').click(function (e) {
+        $(this).parent().find('li').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+      });
+      $('#myModal .save').click(function (e) {
+        var src = $('#myModal li.active img').attr('src');
+        $('img.main-image').attr('src', src);
+        $('input[name="image"]').val(src);
+        $('#myModal').modal('hide');
+      });
+    })
+  </script>
 @stop

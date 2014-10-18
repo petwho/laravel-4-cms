@@ -30,4 +30,40 @@ class PostsController extends \BaseController {
     }
     return Redirect::back()->with('message', 'No posts was found');
   }
+
+  /**
+   * Show the form for creating a new resource.
+   * GET /posts/create
+   * @Return Respon 
+   */
+
+  public function create()
+  {
+    return View::make('admin.posts.create');
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   * POST /posts
+   * @Return Respon 
+   */
+
+  public function store()
+  {
+    $data = Input::all();
+    $rules = array(
+      'category_id' => array('required'),
+      'title' => array('required'),
+      'summary' => array('required'),
+      'image' => array('required'),
+    );
+    // Create a new validator instance.
+    $validator = Validator::make($data, $rules);
+
+    if ($validator->passes()) {
+      Post::create(Input::all());
+      return Redirect::back()->with('message', 'Post created successfully.');
+    }
+    return Redirect::back()->withErrors($validator);
+  }
 }
