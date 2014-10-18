@@ -14,14 +14,18 @@
 Route::get('/', 'HomeController@welcome');
 Route::get('/kien-thuc', 'HomeController@kien_thuc');
 Route::get('/gioi-thieu', 'HomeController@gioi_thieu');
-Route::get('/dashboard', 'HomeController@dashboard');
 
 Route::get('/dashboard', array(
   'before' => 'auth',
   function()
   {
     $user = Auth::user();
-    return View::make('admin.dashboard', array('user' => $user));
+    return View::make('admin.dashboard', array(
+      'user' => $user,
+      'users' => User::all(),
+      'posts' => Post::all(),
+      'projects' => Project::all()
+    ));
   }
 ));
 

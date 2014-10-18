@@ -29,9 +29,4 @@ class HomeController extends BaseController {
 	{
 		return View::make('gioi_thieu', array('categories' => Category::all()));
 	}
-
-	public function dashboard()
-	{
-		return View::make('admin.dashboard');
-	}
 }
