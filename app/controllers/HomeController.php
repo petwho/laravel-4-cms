@@ -22,7 +22,16 @@ class HomeController extends BaseController {
 
 	public function kien_thuc()
 	{
-		return View::make('kien_thuc');
+		return View::make('kien_thuc', array('categories' => Category::all()));
 	}
 
+	public function gioi_thieu()
+	{
+		return View::make('gioi_thieu', array('categories' => Category::all()));
+	}
+
+	public function dashboard()
+	{
+		return View::make('admin.dashboard');
+	}
 }

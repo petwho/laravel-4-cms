@@ -16,6 +16,7 @@ class CreateCategoriesTable extends Migration {
     {
 			$table->increments('id');
 	    $table->string('name');
+	    $table->enum('type', array('single article', 'blog articles'))->default('blog articles');
 	    $table->timestamps();
 	  });
 	}

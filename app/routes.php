@@ -13,7 +13,8 @@
 
 Route::get('/', 'HomeController@welcome');
 Route::get('/kien-thuc', 'HomeController@kien_thuc');
-
+Route::get('/gioi-thieu', 'HomeController@gioi_thieu');
+Route::get('/dashboard', 'HomeController@dashboard');
 
 Route::get('/dashboard', array(
   'before' => 'auth',
@@ -37,6 +38,9 @@ Route::get('logout', 'SessionsController@destroy');
 Route::resource('menus', 'MenusController');
 Route::put('menus/{id}/restore', 'MenusController@restore');
 Route::delete('menus/{id}/trash', 'MenusController@trash');
+
+/* Post */
+Route::resource('posts', 'PostsController');
 
 App::missing(function($exception)
 {
