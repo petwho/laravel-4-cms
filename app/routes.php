@@ -32,6 +32,7 @@ Route::get('/dashboard', array(
 /* Users */
 Route::resource('users', 'UsersController');
 Route::resource('projects', 'ProjectsController');
+Route::resource('categories', 'CategoriesController');
 
 /* Sessions */
 Route::get('login', 'SessionsController@create');

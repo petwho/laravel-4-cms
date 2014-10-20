@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 @section('content')
   <h3>Dashboard</h3>
-  <div class="row-gap-small"></div>
   <!-- User manual -->
   <div class="row">
     <div class="col-xs-12">
@@ -19,14 +18,14 @@
             <p>Quản lý các bài viết trong trang.</p>
           </div>
           <div class="col-xs-3 col-xs-offset-1">
-            <h5 class="text-info"><i class="fa fa-users"></i>&nbsp;&nbsp;Posts</h5>
+            <h5 class="text-info"><i class="fa fa-users"></i>&nbsp;&nbsp;Users</h5>
             <p>Quản lý người dùng trong trang.</p>
           </div>
         </div>
-        <div class="row-gap-medium"></div>
+        <div class="row-gap-small"></div>
         <div class="row">
           <div class="col-xs-12">
-            <a href="/users/create" class="btn btn-primary btn-lg">Thêm Bài Viết</a>
+            <a href="/posts/create" class="btn btn-primary btn-lg">Thêm Bài Viết</a>
           </div>
         </div>
         <div class="row-gap-small"></div>
@@ -40,7 +39,7 @@
       <!-- Thống kê nhanh -->
       <div class="row">
         <div class="col-xs-12">
-            <div class="panel panel-default panel-white">
+            <div class="panel panel-info panel-white">
               <div class="panel-heading">Thống kê nhanh</div>
               <div class="panel-body">
                 <div class="row">
@@ -64,7 +63,7 @@
         <div class="col-xs-12">
           <div class="row">
             <div class="col-xs-6">
-              <div class="panel panel-default panel-white">
+              <div class="panel panel-info panel-white">
                 <div class="panel-heading">Bài viết mới nhất</div>
                 <div class="panel-body">
                   {{str_limit($posts[0]->summary, 100, '...')}}
@@ -72,7 +71,7 @@
               </div>
             </div>
             <div class="col-xs-6">
-              <div class="panel panel-default panel-white">
+              <div class="panel panel-info panel-white">
                 <div class="panel-heading">Dự án mới nhất</div>
                 <div class="panel-body">
                   <div class="pull-left">
@@ -92,14 +91,14 @@
     </div>
     <!-- Left Footer -->
     <div class="col-xs-4">
-      <div class="panel panel-default panel-white">
+      <div class="panel panel-primary panel-white">
         <div class="panel-heading">
           Copyright
         </div>
         <div class="panel-body">
           <p class="text-muted">
-            <strong>NetCMS</strong> <em>&copy; 2014</em> phiên bản 1.0 viết bởi  Tran Khanh. Trong phiên bản này có sử dụng Laravel framework version 4.2, PHP phiên bản 5.3 và cơ sở dữ liệu Mysql  phiên bản 5.1.<br><br>
-             Mọi thắc mắc xin vui lòng liên hệ theo địa chỉ email trankhanh.tk.kt@gmail.com
+            <strong>NetCMS</strong> <em>&copy; 2014</em> phiên bản 1.0 viết bởi  Tran Khanh. Trong phiên bản này có sử dụng Laravel framework version 4.2, PHP phiên bản 5.3 và cơ sở dữ liệu MySQL  phiên bản 5.1.<br><br>
+             Mọi thắc mắc xin vui lòng liên hệ theo địa chỉ email: <em>trankhanh.tk.kt@gmail.com</em>
              <br>
           </p>
         </div>

@@ -84,7 +84,7 @@
               <ul>
                 @for($i = 0; $i < count($images = glob('../public/images/projects/*')); $i++)
                   <li>
-                    <img src="/images/projects/{{ basename($images[$i]) }}" width=100 height=81>
+                    <img class="img-thumbnail" src="/images/projects/{{ basename($images[$i]) }}" width=100 height=81 style="width: 100px; height: 81px">
                   </li>
                 @endfor
               </ul>

@@ -15,7 +15,7 @@ class CreateCategoriesTable extends Migration {
 		Schema::create('categories', function($table)
     {
 			$table->increments('id');
-	    $table->string('name');
+	    $table->string('name')->unique();
 	    $table->enum('type', array('single article', 'blog articles'))->default('blog articles');
 	    $table->timestamps();
 	  });

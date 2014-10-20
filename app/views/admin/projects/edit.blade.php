@@ -37,7 +37,7 @@
           {{ Form::label('image', 'Image:') }}
           <br>
           <input class='hidden' name='image' value="{{ $project->image }}">
-          <img class='main-image' src="{{ $project->image }}">
+          <img class='main-image img-thumbnail' src="{{ $project->image }}">
           <a href='#' class='btn btn-primary btn-sm change-image' data-toggle="modal" data-target="#myModal">Change</a>&nbsp;
         </div>
         <button class='btn btn-primary' type="submit">Update</button>&nbsp;
@@ -58,7 +58,7 @@
           <ul>
             @for($i = 0; $i < count($images = glob('../public/images/projects/*')); $i++)
               <li>
-                <img src="/images/projects/{{ basename($images[$i]) }}" width=100 height=81>
+                <img class="img-thumbnail" src="/images/projects/{{ basename($images[$i]) }}" width=100 height=81 style="width: 100px; height: 81px">
               </li>
             @endfor
           </ul>

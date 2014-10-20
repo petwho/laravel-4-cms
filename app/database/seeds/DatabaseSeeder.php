@@ -60,30 +60,44 @@ class CategoriesTableSeeder extends Seeder {
       array(
         'id' => 1,
         'name' => 'Lập kế hoạch xây nhà',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
       ),
       array(
         'id' => 2,
         'name' => 'Làm việc với chuyên gia',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
       ),
       array(
         'id' => 3,
         'name' => 'Chọn vật liệu xây dựng',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
       ),
       array(
         'id' => 4,
         'name' => 'Xây dựng phần thô',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
       ),
       array(
         'id' => 5,
         'name' => 'Xây dựng hoàn thiện',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
       ),
       array(
         'id' => 6,
         'name' => 'Kiểm tra nghiệm thu',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
       ),
       array(
         'id' => 7,
         'name' => 'Cẩm nang xây nhà',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
       ),
     ));
   }
