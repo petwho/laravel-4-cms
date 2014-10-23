@@ -44,6 +44,7 @@
               {{ Form::textarea('summary', $post->summary, array(
                     'class' => 'form-control',
                     'id' => 'summary',
+                    'rows' => 5,
                     'required' => true,
                     'placeholder' => 'Sample summary'))}}
             </div>
@@ -52,7 +53,15 @@
               <br>
               <input class='hidden' name='image' value="{{ $post->image }}">
               <img class='main-image img-thumbnail' src="{{ $post->image }}" style="width: 190px; height: 118px">
-              <a href='#' class='btn btn-primary btn-sm change-image' data-toggle="modal" data-target="#myModal">Change</a>&nbsp;
+              <a href='#' class='btn btn-default btn-xs change-image' data-toggle="modal" data-target="#myModal">Change</a>&nbsp;
+            </div>
+            <div class="form-group">
+              {{ Form::label('category_id', 'Category:') }}
+              {{ Form::select('category_id', $options, $post->category_id, array(
+              'class' => 'form-control',
+              'id' => 'type',
+              'required' => true,
+              'placeholder' => ''))}}
             </div>
           </div>
           <!-- Content -->

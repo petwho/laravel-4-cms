@@ -14,6 +14,9 @@
 Route::get('/', 'HomeController@welcome');
 Route::get('/kien-thuc', 'HomeController@kien_thuc');
 Route::get('/gioi-thieu', 'HomeController@gioi_thieu');
+Route::get('/vat-lieu', 'HomeController@vat_lieu');
+Route::get('/shop-noi-that', 'HomeController@shop_noi_that');
+Route::get('/phong-thuy', 'HomeController@phong_thuy');
 
 Route::get('/dashboard', array(
   'before' => 'auth',

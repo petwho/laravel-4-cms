@@ -9,9 +9,15 @@ class PostsController extends \BaseController {
 
   public function index()
   {
+    $categories = Category::all();
+    $cat_list = array();
+    foreach ($categories as $category) {
+      $cat_list[$category->id] = $category->name;
+    }
     return View::make('admin.posts.index', array(
         'posts' => Post::withTrashed()->get(),
         'published_posts' => Post::all(),
+        'cat_list' => $cat_list,
         'trashed_posts' => Post::onlyTrashed()->get()));
   }
 
@@ -25,10 +31,47 @@ class PostsController extends \BaseController {
   public function edit($id)
   {
     $post = Post::withTrashed()->where('id', $id)->first();
+    $options = array(null=> '--- Select ---');
+    $categories = Category::all();
+    foreach ($categories as $category) {
+      $options[$category['id']] = $category['name'];
+    }
     if ($post) {
-      return View::make('admin.posts.edit', array('post' => $post));
+      return View::make('admin.posts.edit', array('post' => $post, 'options' => $options));
     }
     return Redirect::back()->with('message', 'No posts was found');
+  }
+
+  /**
+   * Update resource in storage.
+   * PUT /posts/{id}
+   * @Return Respon 
+   */
+
+  public function update($id)
+  {
+    $data = Input::all();
+    // dd($data);
+    $rules = array(
+      'category_id' => array('required'),
+      'title' => array('required'),
+      'summary' => array('required'),
+      'image' => array('required'),
+    );
+    // Create a new validator instance.
+    $validator = Validator::make($data, $rules);
+
+    if ($validator->passes()) {
+      $post = Post::find($id);
+      $post->title = Input::get('title');
+      $post->category_id = Input::get('category_id');
+      $post->summary = Input::get('summary');
+      $post->content = Input::get('content');
+      $post->image = Input::get('image');
+      $post->save();
+      return Redirect::back()->with('message', 'Post updated successfully.');
+    }
+    return Redirect::back()->withErrors($validator);
   }
 
   /**
@@ -39,7 +82,12 @@ class PostsController extends \BaseController {
 
   public function create()
   {
-    return View::make('admin.posts.create');
+    $options = array(null=> '--- Select ---');
+    $categories = Category::all();
+    foreach ($categories as $category) {
+      $options[$category['id']] = $category['name'];
+    }
+    return View::make('admin.posts.create', array('options' => $options));
   }
 
   /**
@@ -51,6 +99,7 @@ class PostsController extends \BaseController {
   public function store()
   {
     $data = Input::all();
+    // dd($data);
     $rules = array(
       'category_id' => array('required'),
       'title' => array('required'),
@@ -61,7 +110,13 @@ class PostsController extends \BaseController {
     $validator = Validator::make($data, $rules);
 
     if ($validator->passes()) {
-      Post::create(Input::all());
+      $post = new Post();
+      $post->title = Input::get('title');
+      $post->category_id = Input::get('category_id');
+      $post->summary = Input::get('summary');
+      $post->content = Input::get('content');
+      $post->image = Input::get('image');
+      $post->save();
       return Redirect::back()->with('message', 'Post created successfully.');
     }
     return Redirect::back()->withErrors($validator);

@@ -14,6 +14,7 @@
           <tr>
             <th>#</th>
             <th>Title</th>
+            <th>Category</th>
             <th>Status</th>
             <th>Created At</th>
             <th>Updated At</th>
@@ -23,30 +24,31 @@
         <tbody>
           @if (count($posts))
             <?php $i = 0; ?>
-            @foreach ($posts as $menu)
+            @foreach ($posts as $post)
               <?php $i++; ?>
               <tr>
                 <td>{{ $i }}</td>
-                <td>{{ $menu->title }}</td>
+                <td>{{ $post->title }}</td>
+                <td>{{ $cat_list[$post->category_id] }}</td>
                 <td>
-                  @if ($menu->trashed())
+                  @if ($post->trashed())
                     <span class="text-danger">Trashed</span>
                   @else
                     <span class="text-primary">Published</span>
                   @endif
                 </td>
-                <td>{{ $menu->created_at }}</td>
-                <td>{{ $menu->updated_at }}</td>
+                <td>{{ date('d/m/Y', strtotime($post->created_at)) }}</td>
+                <td>{{ date('d/m/Y', strtotime($post->updated_at)) }}</td>
                 <td colspan="2">
-                  <a class='link text-primary edit' href="/posts/{{ $menu->id }}/edit" title='edit'><i class="fa fa-edit"></i> edit</a>
+                  <a class='link text-primary edit' href="/posts/{{ $post->id }}/edit" title='edit'><i class="fa fa-edit"></i> edit</a>
                   |
-                  @if ($menu->trashed())
-                    <a class='link text-info restore' data-menu-id="{{ $menu->id }}" href='#' title='restore'><i class="fa fa-recycle"></i> restore</a>
+                  @if ($post->trashed())
+                    <a class='link text-info restore' data-post-id="{{ $post->id }}" href='#' title='restore'><i class="fa fa-recycle"></i> restore</a>
                   @else
-                    <a class='link text-warning trash' data-menu-id="{{ $menu->id }}" href="#" title='trash'><i class="fa fa-trash"></i> trash</a>
+                    <a class='link text-warning trash' data-post-id="{{ $post->id }}" href="#" title='trash'><i class="fa fa-trash"></i> trash</a>
                   @endif
                   |
-                  <a class='link text-danger delete' data-menu-id="{{ $menu->id }}" href='#' title='delete'><i class="fa fa-times-circle"></i> delete</a>
+                  <a class='link text-danger delete' data-post-id="{{ $post->id }}" href='#' title='delete'><i class="fa fa-times-circle"></i> delete</a>
                 </td>
               </tr>
             @endforeach
@@ -62,7 +64,7 @@
   <script type="text/javascript">
   $(function () {
     $('body').on('click', '.trash', function (e) {
-      var id = $(this).data('menu-id');
+      var id = $(this).data('post-id');
       $.ajax({
         method: 'delete',
         url: '/posts/' + id + '/trash',
@@ -74,7 +76,7 @@
     });
 
     $('body').on('click', '.delete', function (e) {
-      var id = $(this).data('menu-id');
+      var id = $(this).data('post-id');
       var confirmed = confirm('Are you sure to delete this?');
       if (confirmed) {
         $.ajax({
@@ -89,7 +91,7 @@
     });
 
     $('body').on('click', '.restore', function (e) {
-      var id = $(this).data('menu-id');
+      var id = $(this).data('post-id');
       $.ajax({
         method: 'put',
         url: '/posts/' + id +'/restore',

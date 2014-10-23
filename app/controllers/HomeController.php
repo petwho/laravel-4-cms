@@ -29,4 +29,19 @@ class HomeController extends BaseController {
 	{
 		return View::make('gioi_thieu', array('categories' => Category::all()));
 	}
+
+	public function vat_lieu()
+	{
+		return View::make('vat_lieu');
+	}
+
+	public function shop_noi_that()
+	{
+		return View::make('shop_noi_that');
+	}
+
+	public function phong_thuy()
+	{
+		return View::make('phong_thuy');
+	}
 }
