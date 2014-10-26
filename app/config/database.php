@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'xuyena_cons',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'abcdabcd',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
