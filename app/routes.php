@@ -49,6 +49,8 @@ Route::delete('menus/{id}/trash', 'MenusController@trash');
 
 /* Post */
 Route::resource('posts', 'PostsController');
+/* Uploads */
+Route::resource('uploads', 'UploadsController');
 
 App::missing(function($exception)
 {

@@ -116,7 +116,7 @@ class PostsTableSeeder extends Seeder {
         'category_id' => 1,
         'title' => 'Lập kế hoạch xây nhà '.$i,
         'summary' => 'The key to driving this engagement is to ensure that we value design in the right way, not simply as a template, theme or color scheme but as a support system for key content. We can use design to make a website unique and more memorable. We do this by laying the foundation of a good impression, enabling smooth and meaningful consumption, and encouraging engagement with the content. All three of these areas are opportunities to drive a user experience that is in harmony with our content.',
-        'image' => "/images/gioithieu/img_0".$i.".jpg"
+        'image' => "/images/posts/img_0".$i.".jpg"
       ]);
     }
 
@@ -126,7 +126,7 @@ class PostsTableSeeder extends Seeder {
         'category_id' => 2,
         'title' => 'Làm việc với chuyên gia '.$i,
         'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
-        'image' => "/images/gioithieu/img_0".$i.".jpg"
+        'image' => "/images/posts/img_0".$i.".jpg"
       ]);
     }
 
@@ -136,7 +136,7 @@ class PostsTableSeeder extends Seeder {
         'category_id' => 3,
         'title' => 'Chọn vật liệu xây dựng '.$i,
         'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
-        'image' => "/images/gioithieu/img_0".$i.".jpg"
+        'image' => "/images/posts/img_0".$i.".jpg"
       ]);
     }
 
@@ -146,7 +146,7 @@ class PostsTableSeeder extends Seeder {
         'category_id' => 4,
         'title' => 'Xây dựng phần thô '.$i,
         'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
-        'image' => "/images/gioithieu/img_0".$i.".jpg"
+        'image' => "/images/posts/img_0".$i.".jpg"
       ]);
     }
 
@@ -156,7 +156,7 @@ class PostsTableSeeder extends Seeder {
         'category_id' => 5,
         'title' => 'Xây dựng hoàn thiện '.$i,
         'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
-        'image' => "/images/gioithieu/img_0".$i.".jpg"
+        'image' => "/images/posts/img_0".$i.".jpg"
       ]);
     }
 
@@ -166,7 +166,7 @@ class PostsTableSeeder extends Seeder {
         'category_id' => 6,
         'title' => 'Kiểm tra nghiệm thu '.$i,
         'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
-        'image' => "/images/gioithieu/img_0".$i.".jpg"
+        'image' => "/images/posts/img_0".$i.".jpg"
       ]);
     }
 
@@ -176,7 +176,7 @@ class PostsTableSeeder extends Seeder {
         'category_id' => 7,
         'title' => 'Cẩm nang xây nhà '.$i,
         'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
-        'image' => "/images/gioithieu/img_0".$i.".jpg"
+        'image' => "/images/posts/img_0".$i.".jpg"
       ]);
     }
   }
