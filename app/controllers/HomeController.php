@@ -15,7 +15,12 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function welcome()
+	public function intro()
+	{
+		return View::make('intro');
+	}
+
+	public function home()
 	{
 		return View::make('hello', array('projects' => Project::all()));
 	}

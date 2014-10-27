@@ -135,6 +135,12 @@
   @include('static_blocks.footer')
   <!-- / #Pagetop --> 
 </div>
+<style type="text/css">
+  a.gioi-thieu {
+    background: url(../images/common/nav_hover.png) repeat-x;
+    color: #fff !important;
+  }
+</style>
 <!--Container--> 
 <link rel="stylesheet" type="text/css" href="css/gioithieu.css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/slider.css" media="all" />

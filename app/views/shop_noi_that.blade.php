@@ -6,7 +6,12 @@
   @include('static_blocks.shop_noi_that.images')
   @include('static_blocks.footer')
 </div>
-
+<style type="text/css">
+  a.shop-noi-that {
+    background: url(../images/common/nav_hover.png) repeat-x;
+    color: #fff !important;
+  }
+</style>
 <link rel="stylesheet" type="text/css" href="css/shopnoithat.css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/colorbox.css" media="all" />
 

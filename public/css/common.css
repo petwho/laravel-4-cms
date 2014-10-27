@@ -80,10 +80,13 @@ body {
  *display: inline;
 	zoom: 1;
 }
-#Nav li a:hover, #Nav li a.active {
+#Nav li a:hover {
+	color: #fff;
+}
+/*#Nav li a:hover, #Nav li a.active {
 	color: #fff;
 	background: url(../images/common/nav_hover.png) repeat-x;
-}
+}*/
 /*/////CONTENT/////*/
 
 #Content {

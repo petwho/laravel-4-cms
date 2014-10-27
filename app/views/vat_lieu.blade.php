@@ -6,6 +6,12 @@
   @include('static_blocks.vat_lieu.images')
   @include('static_blocks.footer')
 </div>
+<style type="text/css">
+  a.vat-lieu {
+    background: url(../images/common/nav_hover.png) repeat-x;
+    color: #fff !important;
+  }
+</style>
 <!-- Additional css and js blocks -->
 <link rel="stylesheet" type="text/css" href="css/vatlieu.css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/colorbox.css" media="all" />

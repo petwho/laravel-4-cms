@@ -82,6 +82,12 @@
 	@include('static_blocks.footer')
 	<!-- / #Pagetop --> 
 </div>
+<style type="text/css">
+	a.home {
+		background: url(../images/common/nav_hover.png) repeat-x;
+		color: #fff !important;
+	}
+</style>
 <!--Container--> 
 <!--javascript-->
 <link rel="stylesheet" type="text/css" href="css/index.css" media="all" />

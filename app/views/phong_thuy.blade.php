@@ -188,7 +188,12 @@
 	@include('static_blocks.footer')
 </div>
 <!--Container-->
-
+<style type="text/css">
+	a.phong-thuy {
+		background: url(../images/common/nav_hover.png) repeat-x;
+		color: #fff !important;
+	}
+</style>
 <link rel="stylesheet" type="text/css" href="css/phongthuy.css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/colorbox.css" media="all" /> 
 <link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" media="all" />

@@ -1,0 +1,126 @@
+@charset "utf-8";
+/*
+///////////////////////////////////////////
+CSS FOR Index
+Made by Quoctk (クック)
+/////////////////////////////////////
+*/
+
+body {
+	background: url(../images/intro/bg_repeat.png) repeat;
+}
+#Intro-nav {
+	position: absolute;
+	top: 55px;
+	right: 90px;
+}
+#Intro-nav li {
+	float: right;
+	color: #868787;
+	padding: 0 0 0 5px;
+	font-weight: bold;
+}
+#Intro-nav li a {
+	color: #fff;
+	font-weight: bold;
+}
+#Intro-nav li a:hover {
+	text-decoration: none;
+}
+#Intro {
+	width: 100%;
+	height: 749px;
+	padding-top: 1px;
+	background: url(../images/intro/bg.png) no-repeat 50% 0;
+}
+#Copyright-intro {
+	text-align: center;
+	color: #d8d9d9;
+	font-size: 109%;
+	padding-top: 20px;
+	font-weight: normal;
+}
+.grid-1010 {
+	width: 1010px;
+	margin: 0 auto;
+}
+#Intro-content {
+	width: 100%;
+	height: 580px;
+	position: relative;
+	background: url(../images/intro/frame.gif) no-repeat;
+}
+.content {
+	width: 960px;
+	height: 600px;
+	margin: 0 auto;
+	position: relative;
+}
+.hidden {
+	height: 400px;
+	position: absolute;
+	top: -999px!important;
+	left: -999px!important;
+}
+.list-slider {
+	width: 850px;
+	height: 400px;
+	position: absolute;
+	top: 285px;
+	left: 80px;
+	z-index: 999;
+}
+.slide {
+	width: 420px;
+	height: 243px;
+	background: url(../images/intro/bg_tooltip.png) no-repeat;
+	position: relative;
+}
+.pr-title {
+	width: 100%;
+	text-align: center;
+	padding: 15px 0 10px 0;
+}
+.pr-title a {
+	color: #fff;
+	font-size: 150%;
+	text-decoration: none;
+}
+.pr-title a:hover {
+	color: #CCC;
+}
+.pr-box {
+	padding: 10px;
+}
+.pr-box .left {
+	width: 140px;
+}
+.pr-box .left img {
+	border: 2px solid #fff;
+}
+.pr-box .right {
+	width: 245px;
+}
+.pr-box .pr-info {
+	color: #868787;
+}
+.pr-box dl dt {
+	width: 130px;
+	float: left;
+	background: url(../images/intro/dot.png) no-repeat right center;
+	padding: 2px 0;
+}
+.pr-box dl dd {
+	padding: 2px 0 2px 140px;
+}
+.social {
+	position: absolute;
+	top: 50px;
+	right: 0px;
+}
+.social li {
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin-left: 5px;
+}

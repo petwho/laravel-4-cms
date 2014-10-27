@@ -56,7 +56,7 @@ Made by Quoctk (クック)
 	background: none;
 }
 #Tab-box li:hover, #Tab-box li a.select {
-	background: url(../images/index/pnav_hover.png) no-repeat center;
+	/*background: url(../images/index/pnav_hover.png) no-repeat center;*/
 	color: #fff;
 }
 .social {

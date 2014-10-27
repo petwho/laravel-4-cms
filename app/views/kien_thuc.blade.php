@@ -204,7 +204,13 @@
   @include('static_blocks.footer')
   <!-- / #Pagetop --> 
 </div>
-<!--Container--> 
+<!--Container-->
+<style type="text/css">
+  a.kien-thuc {
+    background: url(../images/common/nav_hover.png) repeat-x;
+    color: #fff !important;
+  }
+</style>
 <link rel="stylesheet" type="text/css" href="css/kienthuc.css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/slider.css" media="all" />
 <!--javascript--> 
