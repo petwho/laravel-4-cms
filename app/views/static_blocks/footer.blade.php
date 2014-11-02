@@ -51,12 +51,12 @@
           </div>
           <!-- / .right --> 
         </div>
-        <div class="footer-icon"> <a href="index.html" id="F-logo"><img src="images/common/logo_footer.png" alt="" class="over4"/></a>
+        <div class="footer-icon"> <a href="index.html" id="F-logo"><img src="/images/common/logo_footer.png" alt="" class="over4"/></a>
           <p id="Copyright">&copy; 2014 by <span>XUYEN A CONSTUCTION</span></p>
           <ul class="f-social cf">
-            <li><a href="#"><img src="images/common/icon_social01.png" alt="" class="over4"/></a></li>
-            <li><a href="#"><img src="images/common/icon_social02.png" alt="" class="over4"/></a></li>
-            <li><a href="#"><img src="images/common/icon_social03.png" alt="" class="over4"/></a></li>
+            <li><a href="#"><img src="/images/common/icon_social01.png" alt="" class="over4"/></a></li>
+            <li><a href="#"><img src="/images/common/icon_social02.png" alt="" class="over4"/></a></li>
+            <li><a href="#"><img src="/images/common/icon_social03.png" alt="" class="over4"/></a></li>
           </ul>
         </div>
         <!-- / .footer-icon --> 
@@ -69,3 +69,11 @@
   <div id="Pagetop">
     <p><a href="#Top" class="over4" style="opacity: 1;"></a></p>
   </div>
+  <style type="text/css">
+  .breadcrums {
+    color: #ccc;
+  }
+  .breadcrums a {
+    text-decoration: none;
+  }
+  </style>

@@ -27,7 +27,14 @@ class HomeController extends BaseController {
 
 	public function kien_thuc()
 	{
+		// $category = Category::find($cat_id);
 		return View::make('kien_thuc', array('categories' => Category::all()));
+	}
+
+	public function kien_thuc_post($id)
+	{
+		$post = Post::find($id);
+		return View::make('kien_thuc_post', array('post' => $post));
 	}
 
 	public function gioi_thieu()

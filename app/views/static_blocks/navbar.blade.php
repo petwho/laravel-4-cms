@@ -1,5 +1,5 @@
 <div id="Header" class="cf">
-  <div id="Header-wrap" class="cf"> <a href="index.html" id="Logo"><img src="images/common/logo.png"  alt="" class="over4"/></a> 
+  <div id="Header-wrap" class="cf"> <a href="index.html" id="Logo"><img src="/images/common/logo.png"  alt="" class="over4"/></a> 
     <!-- / #Logo -->
     <ul id="Nav">
       <li><a href="/home" class="home">TRANG CHỦ</a></li>

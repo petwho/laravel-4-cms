@@ -21,7 +21,7 @@
 <!--/favicon-->
 <link rel="shortcut icon" href="images/favicon.ico" />
 <!--css-->
-<link rel="stylesheet" type="text/css" href="css/reset.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/module.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/common.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/reset.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/module.css" media="all" />
+<link rel="stylesheet" type="text/css" href="/css/common.css" media="all" />
 </head>

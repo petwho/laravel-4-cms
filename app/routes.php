@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@intro');
 Route::get('/home', 'HomeController@home');
-Route::get('/kien-thuc', 'HomeController@kien_thuc');
+Route::get('/kien-thuc/', 'HomeController@kien_thuc');
 Route::get('/gioi-thieu', 'HomeController@gioi_thieu');
 Route::get('/vat-lieu', 'HomeController@vat_lieu');
 Route::get('/shop-noi-that', 'HomeController@shop_noi_that');
@@ -57,3 +57,5 @@ App::missing(function($exception)
 {
   return Response::view('errors.missing', array(), 404);
 });
+
+Route::get('/kien-thuc/{id}', 'HomeController@kien_thuc_post');

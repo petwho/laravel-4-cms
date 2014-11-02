@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration {
 	    $table->integer('category_id')->unsigned();
 	    $table->string('title');
 	    $table->string('summary');
-	    $table->string('content');
+	    $table->text('content');
 	    $table->string('image');
 	    $table->softDeletes();
 	    $table->timestamps();

@@ -56,6 +56,7 @@ class PostsController extends \BaseController {
       'category_id' => array('required'),
       'title' => array('required'),
       'summary' => array('required'),
+      'content' => array('required'),
       'image' => array('required'),
     );
     // Create a new validator instance.
