@@ -59,3 +59,4 @@ App::missing(function($exception)
 });
 
 Route::get('/kien-thuc/{id}', 'HomeController@kien_thuc_post');
+Route::get('/phong-thuy/{id}', 'HomeController@phong_thuy_post');

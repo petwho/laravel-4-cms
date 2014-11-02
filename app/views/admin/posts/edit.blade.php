@@ -91,9 +91,9 @@
             </div>
             <div class="modal-body">
               <ul>
-                @for($i = 0; $i < count($images = glob('../public/images/projects/*')); $i++)
+                @for($i = 0; $i < count($images = glob('../public/images/posts/*')); $i++)
                   <li>
-                    <img class="img-thumbnail" src="/images/projects/{{ basename($images[$i]) }}" width=100 height=81 style="width: 100px; height: 81px">
+                    <img class="img-thumbnail" src="/images/posts/{{ basename($images[$i]) }}" width=100 height=81 style="width: 100px; height: 81px">
                   </li>
                 @endfor
               </ul>

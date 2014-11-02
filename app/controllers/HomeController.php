@@ -54,6 +54,12 @@ class HomeController extends BaseController {
 
 	public function phong_thuy()
 	{
-		return View::make('phong_thuy');
+		return View::make('phong_thuy', array('categories' => Category::where('id', '>', 7)->get()));
+	}
+
+	public function phong_thuy_post($id)
+	{
+		$post = Post::find($id);
+		return View::make('phong_thuy_post', array('post' => $post));
 	}
 }

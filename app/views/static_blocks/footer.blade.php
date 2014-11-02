@@ -72,8 +72,10 @@
   <style type="text/css">
   .breadcrums {
     color: #ccc;
+    margin-top: 15px;
   }
   .breadcrums a {
+    color: #ccc;
     text-decoration: none;
   }
   </style>

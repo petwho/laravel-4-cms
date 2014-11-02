@@ -99,6 +99,30 @@ class CategoriesTableSeeder extends Seeder {
         'created_at' => date('Y-m-d H:i:s'),
         'updated_at' => date('Y-m-d H:i:s')
       ),
+      array(
+        'id' => 8,
+        'name' => 'Các lỗi phong thủy thường gặp',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
+      ),
+      array(
+        'id' => 9,
+        'name' => 'Hiểu phong thủy để xây nhà',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
+      ),
+      array(
+        'id' => 10,
+        'name' => 'Màu sắc và ngũ hành',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
+      ),
+      array(
+        'id' => 11,
+        'name' => 'Thước lỗ ban',
+        'created_at' => date('Y-m-d H:i:s'),
+        'updated_at' => date('Y-m-d H:i:s')
+      ),
     ));
   }
 }
@@ -175,6 +199,46 @@ class PostsTableSeeder extends Seeder {
         'id' => $i + 30,
         'category_id' => 7,
         'title' => 'Cẩm nang xây nhà '.$i,
+        'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
+        'image' => "/images/posts/img_0".$i.".jpg"
+      ]);
+    }
+
+    for($i = 1; $i < 6; $i++) {
+      Post::create([
+        'id' => $i + 35,
+        'category_id' => 8,
+        'title' => 'Các lỗi phong thủy thường gặp '.$i,
+        'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
+        'image' => "/images/posts/img_0".$i.".jpg"
+      ]);
+    }
+
+    for($i = 1; $i < 6; $i++) {
+      Post::create([
+        'id' => $i + 40,
+        'category_id' => 9,
+        'title' => 'Hiểu phong thủy để xây nhà '.$i,
+        'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
+        'image' => "/images/posts/img_0".$i.".jpg"
+      ]);
+    }
+
+    for($i = 1; $i < 6; $i++) {
+      Post::create([
+        'id' => $i + 45,
+        'category_id' => 10,
+        'title' => 'Màu sắc và ngũ hành '.$i,
+        'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
+        'image' => "/images/posts/img_0".$i.".jpg"
+      ]);
+    }
+
+    for($i = 1; $i < 6; $i++) {
+      Post::create([
+        'id' => $i + 50,
+        'category_id' => 11,
+        'title' => 'Thước lỗ ban '.$i,
         'summary' => 'Lorem ipsum Occaecat fugiat amet quis dolore id eu in labore velit eiusmod in exercitation laborum id ad ullamco Duis eu culpa irure aliquip ut sit reprehenderit reprehenderit anim exercitation non elit culpa occaecat eiusmod cupidatat occaecat dolore sint ut ullamco exercitation ad sunt Excepteur esse minim aliqua qui reprehenderit culpa ut esse ut sit eiusmod amet eiusmod aliquip in cillum et enim qui veniam in sed amet officia mollit in ea enim eu sit cupidatat Ut ut officia voluptate cupidatat fugiat veniam et quis sit in aliqua sed reprehenderit anim eu nostrud cillum ad magna sed id proident non incididunt dolor eu labore dolor dolore aute aliqua laboris officia pariatur cillum fugiat officia eiusmod anim laboris ad proident consectetur aliqua et sit mollit in cillum Excepteur in officia cupidatat tempor non ut ex veniam dolor irure dolore anim reprehenderit ea ut laboris voluptate nostrud quis non deserunt mollit aliquip reprehenderit enim aliquip id do non sint nulla in elit in eiusmod voluptate fugiat nostrud fugiat aliquip proident do ut cupidatat qui minim sunt non deserunt non sunt officia in exercitation incididunt esse elit culpa elit sunt eiusmod voluptate labore consectetur elit eiusmod Ut nulla et eiusmod aliquip ut est do amet proident commodo ex tempor incididunt id est nisi in enim Duis amet Excepteur irure aliquip culpa aute veniam dolore qui ea aliqua ea magna fugiat.',
         'image' => "/images/posts/img_0".$i.".jpg"
       ]);

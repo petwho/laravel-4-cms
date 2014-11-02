@@ -7,7 +7,7 @@
   <div id="Content" class="pb-30">
     <div id="Content-wrap">
       <div id="Top-content">
-        <div class="grid-1000 breadcrums" style="width: 850px; margin-top: 15px;">
+        <div class="grid-850 breadcrums">
           / <a href="/kien-thuc/" class="post-title">kiến thức xây dựng</a> / <a href="#" class="post-title">{{$post->title}}</a>
         </div>
       </div>
