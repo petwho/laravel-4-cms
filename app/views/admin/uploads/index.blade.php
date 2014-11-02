@@ -4,6 +4,12 @@
     <div class="col-xs-12">
       <div class="row-gap-small"></div>
       <h3>Manage Assets</h3>
+      {{ Form::open(array('url' => '/uploads/', 'method' => 'post', 'enctype' => 'multipart/form-data', 'role' => 'form', 'class' => 'hidden', 'id' => 'form-upload')) }}
+        <input class="hidden file" type="file" name="uploadFile">
+        <input class="hidden" type="text" value="" name="dirname">
+        <input class="submit-btn hidden" type="submit" value="Upload"></input>
+      {{ Form::close() }}
+      <button id="upload" class="btn btn-primary">Upload</button>
       <div>
         @if (count($errors))
           <div class='alert alert-warning alert-dismissible'>
@@ -28,7 +34,7 @@
             <li>
               <img class="img-thumbnail" src="/images/projects/{{ basename($images[$i]) }}" data-img-name="{{ basename($images[$i]) }}" data-dir="projects" data-src="/images/projects/{{ basename($images[$i]) }}" width=100 height=81 style="width: 100px; height: 81px">
               <div class='manage-asset'>
-                {{ Form::open(array('url' => '/uploads/'.basename($images[$i]), 'method' => 'put', 'enctype' => 'multipart/form-data', 'role' => 'form', 'class' => 'pull-left hiddens', 'data-img-name'=> basename($images[$i]))) }}
+                {{ Form::open(array('url' => '/uploads/'.basename($images[$i]), 'method' => 'put', 'enctype' => 'multipart/form-data', 'role' => 'form', 'class' => 'pull-left', 'data-img-name'=> basename($images[$i]))) }}
                   <input type="button" class="btn btn-xs btn-primary btn-change" value="change">
                   <input class="hidden file" type="file" name="uploadFile">
                   <input class="hidden" type="text" value="projects" name="dirname">
@@ -53,7 +59,7 @@
               <li>
                 <img class="img-thumbnail" src="/images/posts/{{ basename($images[$i]) }}" data-img-name="{{ basename($images[$i]) }}" data-dir="posts" data-src="/images/posts/{{ basename($images[$i]) }}" width=100 height=81 style="width: 100px; height: 81px">
                 <div class='manage-asset'>
-                  {{ Form::open(array('url' => '/uploads/'.basename($images[$i]), 'method' => 'put', 'enctype' => 'multipart/form-data', 'role' => 'form', 'class' => 'pull-left hiddens', 'data-img-name'=> basename($images[$i]))) }}
+                  {{ Form::open(array('url' => '/uploads/'.basename($images[$i]), 'method' => 'put', 'enctype' => 'multipart/form-data', 'role' => 'form', 'class' => 'pull-left', 'data-img-name'=> basename($images[$i]))) }}
                     <input type="button" class="btn btn-xs btn-primary btn-change" value="change">
                     <input class="hidden file" type="file" name="uploadFile">
                     <input class="hidden" type="text" value="posts" name="dirname">
@@ -79,7 +85,7 @@
               <li>
                 <img class="img-thumbnail" src="/images/general/{{ basename($images[$i]) }}" data-img-name="{{ basename($images[$i]) }}" data-dir="general" data-src="/images/general/{{ basename($images[$i]) }}" width=100 height=81 style="width: 100px; height: 81px">
                 <div class='manage-asset'>
-                  {{ Form::open(array('url' => '/uploads/'.basename($images[$i]), 'method' => 'put', 'enctype' => 'multipart/form-data', 'role' => 'form', 'class' => 'pull-left hiddens', 'data-img-name'=> basename($images[$i]))) }}
+                  {{ Form::open(array('url' => '/uploads/'.basename($images[$i]), 'method' => 'put', 'enctype' => 'multipart/form-data', 'role' => 'form', 'class' => 'pull-left', 'data-img-name'=> basename($images[$i]))) }}
                     <input type="button" class="btn btn-xs btn-primary btn-change" value="change">
                     <input class="hidden file" type="file" name="uploadFile">
                     <input class="hidden" type="text" value="general" name="dirname">
@@ -141,6 +147,10 @@
         $form = $(this).parent().parent().find('form');
         $form.trigger('submit');
       });
+
+      $('#upload').click(function (e) {
+        $('#form-upload input[name="file"]').trigger('click')
+      })
     });
   </script>
 @stop

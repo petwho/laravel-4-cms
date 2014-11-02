@@ -6,17 +6,19 @@
 	top: 40%;
 	left: 0px;
 	text-align: center;
-	opacity: 0;
-	-webkit-animation: slogan 7s linear 0s;
+	/*opacity: 0;*/
+	/*-webkit-animation: slogan 7s linear 0s;
 	-moz-animation: slogan 7s linear 0s;
 	-o-animation: slogan 7s linear 0s;
 	-ms-animation: slogan 7s linear 0s;
-	animation: slogan 7s linear 0s;
-	font-size: 250%;
+	animation: slogan 7s linear 0s;*/
+	font-size: 150%;
 	color:#fff;
 	font-weight: bold;
 	text-shadow: 2px 2px #000;
 	z-index:1;
+	background: transparent;
+	border: none;
 }
 
 #bx-pager a {

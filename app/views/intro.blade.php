@@ -51,7 +51,7 @@
   <div id="Intro">
     <div class="grid-1010">
       <div id="Intro-content">
-        <p id="Slogan">TẬP THỂ XUYÊN Á XIN TRI ÂN KHÁCH HÀNG ĐÃ ĐỒNG HÀNH CÙNG CHÚNG TÔI TRONG SUỐT 12 NĂM VỪA QUA</p>
+        <textarea id="Slogan"></textarea>
         <div id="bx-pager"> <a data-slide-index="0" href="" class="click achor-01"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="1" href="" class="click achor-02"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="2" href="" class="click achor-03"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="3" href="" class="click achor-04"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="4" href="" class="click achor-05"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="7" href="" class="click achor-06"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="12" href="" class="click achor-07"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="13" href="" class="click achor-08"><img src="images/intro/achor.png" class="over4" /></a> </div>
         <div class="list-slider hidden">
           <div class="slider4">
@@ -435,8 +435,8 @@
 </div>
 <!--Container--> 
 <!--javascript--> 
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" type="text/javascript"></script>
+<script src="http://iamdanfox.github.io/typetype/jquery.typetype.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/modernizr.custom.86080.js"></script> 
 <script type="text/javascript" src="js/opacity-rollover2.1.js"></script> 
 <script type="text/javascript" src="js/common.js"></script> 
@@ -445,9 +445,8 @@
 <script type="text/javascript">
 $(document).ready(function(){
   $(".click").click(function(){
-  $(".list-slider").removeClass('hidden');
-  
-});
+    $(".list-slider").removeClass('hidden');
+  });
   setTimeout(show,18000);
   $('.slider4').bxSlider({
     auto: true,
@@ -458,6 +457,11 @@ $(document).ready(function(){
     slideMargin: 10,
    pagerCustom: '#bx-pager'
   });
+  $('#Slogan').typetype(
+    'Cảm ơn khách hàng đã đồng hành cùng Xuyên Á trong suốt 12 năm vừa qua', {
+    t: 70,
+    e: 0
+  }).fadeOut('slow');
 });
 function show() {
       $(".list-slider").removeClass('hidden');

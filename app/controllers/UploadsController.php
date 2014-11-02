@@ -25,7 +25,7 @@ class UploadsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('admin.uploads.create');
 	}
 
 	/**
