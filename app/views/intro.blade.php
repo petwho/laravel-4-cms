@@ -32,7 +32,7 @@
 <body>
 <div id="Container">
   <div id="Header" class="cf">
-    <div id="Header-wrap" class="cf"> <a href="index.html" id="Logo"><img src="images/common/logo.png"  alt="" class="over4"/></a> 
+    <div id="Header-wrap" class="cf"> <a href="/" id="Logo"><img src="images/common/logo.png"  alt="" class="over4"/></a> 
       <!-- / #Logo -->
       <ul id="Intro-nav">
         <li>Chia sẽ</li>
@@ -462,7 +462,7 @@ $(document).ready(function(){
   //   t: 60,
   //   e: 0
   // })
-  $('#Slogan').fadeOut(6000);
+  $('#Slogan').fadeOut(7000);
 });
 function show() {
       $(".list-slider").removeClass('hidden');
