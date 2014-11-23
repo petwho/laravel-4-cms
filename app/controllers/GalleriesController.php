@@ -33,7 +33,12 @@ class GalleriesController extends \BaseController {
 	 */
 	public function create()
 	{
-    	return View::make('admin.galleries.create');
+		$options = array(null=> '--- Select ---');
+		$projects = Project::all();
+		foreach ($projects as $project) {
+		  $options[$project['id']] = $project['name'];
+		}
+    	return View::make('admin.galleries.create', array('options' => $options));
 	}
 
 	/**
@@ -46,7 +51,8 @@ class GalleriesController extends \BaseController {
 	{
 		$data = Input::all();
 		$rules = array(
-		  'title' => array('required', 'unique:galleries,title')
+		  'title' => array('required', 'unique:galleries,title'),
+		  'project_id' => array('required', 'unique:galleries,project_id'),
 		);
 
 		// Create a new validator instance.
@@ -83,13 +89,18 @@ class GalleriesController extends \BaseController {
 	public function edit($id)
 	{
 		$options = array(null=> '--- Select ---');
+
 		$projects = Project::all();
+		$gallery = Gallery::find($id);
+		$images = Image::where('gallery_id', '=', $gallery->id)->get();
+
 		foreach ($projects as $project) {
 		  $options[$project['id']] = $project['name'];
 		}
     	return View::make('admin.galleries.edit', array(
-    		'gallery' => Gallery::find($id),
-    		'options' => $options
+    		'gallery' => $gallery,
+    		'options' => $options,
+    		'images' => $images
 		));   
 	}
 
@@ -106,6 +117,30 @@ class GalleriesController extends \BaseController {
 		$rules = array(
 		  'title' => array('required', 'unique:galleries,title,'.$id),
 		);
+		$images = Input::get('image');
+
+		foreach ($images as $image) {
+			// store image
+			if (!array_key_exists('id', $image)) {
+				if (Input::get('new_image') == true) {
+					$new_image = new Image;
+					$new_image->gallery_id = $id;
+					$new_image->name = $image['name'];
+					$new_image->title = $image['title'];
+					$new_image->url = $image['url'];
+					$new_image->thumb_url = $image['thumb_url'];
+					$new_image->save();
+				}
+				continue;
+			}
+			// update images
+			$found_image = Image::find($image['id']);
+			$found_image->url = $image['url'];
+			$found_image->thumb_url = $image['thumb_url'];
+			$found_image->name = $image['name'];
+			$found_image->title = $image['title'];
+			$found_image->save();
+		}
 		$validator = Validator::make(Input::all(), $rules);
 		if ($validator->passes()) {
 		  $gallery->title = Input::get('title');

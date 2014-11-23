@@ -55,6 +55,8 @@ Route::resource('posts', 'PostsController');
 Route::resource('uploads', 'UploadsController');
 // Galleries
 Route::resource('galleries', 'GalleriesController');
+// Photos
+Route::resource('photos', 'PhotosController');
 
 App::missing(function($exception)
 {

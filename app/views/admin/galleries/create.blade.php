@@ -30,6 +30,16 @@
                 'required' => true,
                 'placeholder' => 'Enter title'))}}
         </div>
+
+        <div class="form-group">
+          {{ Form::label('project_id', 'Project:') }}
+          {{ Form::select('project_id', $options, null, array(
+          'class' => 'form-control',
+          'id' => 'type',
+          'required' => true,
+          'placeholder' => ''))}}
+        </div>
+
         <button class='btn btn-primary' type="submit">Create</button>&nbsp;
         <a class='btn btn-warning' href='/galleries'>Back</a>
       {{Form::close()}}
