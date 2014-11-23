@@ -14,8 +14,14 @@ class GalleriesController extends \BaseController {
 	 */
 	public function index()
 	{
+		$projects = Project::all();
+		$project_list = array();
+		foreach ($projects as $project) {
+		  $project_list[$project->id] = $project->name;
+		}
 		return View::make('admin.galleries.index', array(
 		    'galleries' => Gallery::all(),
+		    'project_list' => $project_list
 		));
 	}
 
@@ -76,8 +82,15 @@ class GalleriesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
-    	return View::make('admin.galleries.edit', array('gallery' => Gallery::find($id)));   
+		$options = array(null=> '--- Select ---');
+		$projects = Project::all();
+		foreach ($projects as $project) {
+		  $options[$project['id']] = $project['name'];
+		}
+    	return View::make('admin.galleries.edit', array(
+    		'gallery' => Gallery::find($id),
+    		'options' => $options
+		));   
 	}
 
 	/**
@@ -91,7 +104,7 @@ class GalleriesController extends \BaseController {
 	{
 		$gallery = Gallery::find($id);
 		$rules = array(
-		  'title' => array('required', 'unique:galleries,title'),
+		  'title' => array('required', 'unique:galleries,title,'.$id),
 		);
 		$validator = Validator::make(Input::all(), $rules);
 		if ($validator->passes()) {

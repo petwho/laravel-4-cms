@@ -9,6 +9,7 @@
           <tr>
             <th>#</th>
             <th>Title</th>
+            <th>Project</th>
             <th>Created At</th>
             <th>Updated At</th>
             <th>Manage</th>
@@ -22,6 +23,7 @@
               <tr>
                 <td>{{ $i }}</td>
                 <td>{{ $gallery->title }}</td>
+                <td>{{ $project_list[$gallery->project_id] }}</td>
                 <td>{{ date('d/m/Y', strtotime($gallery->created_at)) }}</td>
                 <td>{{ date('d/m/Y', strtotime($gallery->updated_at)) }}</td>
                 <td colspan="2">

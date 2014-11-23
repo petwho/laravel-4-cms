@@ -36,6 +36,16 @@
               'required' => true,
               'value' => $gallery->title))}}
       </div>
+
+      <div class="form-group">
+        {{ Form::label('project_id', 'Project:') }}
+        {{ Form::select('project_id', $options, $gallery->project_id, array(
+        'class' => 'form-control',
+        'id' => 'type',
+        'required' => true,
+        'placeholder' => ''))}}
+      </div>
+
       <button class='btn btn-primary' type="submit">Update</button>&nbsp;
       <a class='btn btn-warning' href='/galleries'>Back</a>
       {{ Form::close() }}
