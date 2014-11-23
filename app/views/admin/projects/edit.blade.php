@@ -35,10 +35,11 @@
         </div>
         <div class='form-group'>
           {{ Form::label('image', 'Image:') }}
-          <br>
-          <input class='hidden' name='image' value="{{ $project->image }}">
-          <img class='main-image img-thumbnail' src="{{ $project->image }}">
-          <a href='#' class='btn btn-primary btn-sm change-image' data-toggle="modal" data-target="#myModal">Change</a>&nbsp;
+          {{ Form::text('image', $project->image, array(
+                'class' => 'form-control',
+                'id' => 'image',
+                'required' => true,
+                'value' => $project->image))}}
         </div>
         <button class='btn btn-primary' type="submit">Update</button>&nbsp;
         <a class='btn btn-warning' href='/projects'>Back</a>

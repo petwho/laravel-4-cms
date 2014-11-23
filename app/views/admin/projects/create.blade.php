@@ -23,7 +23,7 @@
                 'class' => 'form-control',
                 'id' => 'name',
                 'required' => true,
-                'placeholder' => 'example'))}}
+                'placeholder' => 'Enter name'))}}
         </div>
 
         <div class='form-group'>
@@ -32,7 +32,7 @@
                 'class' => 'form-control',
                 'id' => 'image',
                 'required' => true,
-                'placeholder' => 'example'))}}
+                'placeholder' => 'Enter image url'))}}
         </div>
         <button class='btn btn-primary' type="submit">Create</button>
         <a href='/projects/' class='btn btn-warning' type="submit">Back</a>

@@ -1,7 +1,7 @@
 <?php
 
 class Post extends \Eloquent {
-  use SoftDeletingTrait;
+  // use SoftDeletingTrait;
 
   protected $dates = ['deleted_at'];
 	protected $fillable = [];

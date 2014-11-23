@@ -15,10 +15,9 @@ class PostsController extends \BaseController {
       $cat_list[$category->id] = $category->name;
     }
     return View::make('admin.posts.index', array(
-        'posts' => Post::withTrashed()->get(),
-        'published_posts' => Post::all(),
-        'cat_list' => $cat_list,
-        'trashed_posts' => Post::onlyTrashed()->get()));
+        'posts' => Post::all(),
+        'cat_list' => $cat_list
+    ));
   }
 
   /**
@@ -30,7 +29,7 @@ class PostsController extends \BaseController {
    */
   public function edit($id)
   {
-    $post = Post::withTrashed()->where('id', $id)->first();
+    $post = Post::where('id', $id)->first();
     $options = array(null=> '--- Select ---');
     $categories = Category::all();
     foreach ($categories as $category) {
@@ -121,5 +120,18 @@ class PostsController extends \BaseController {
       return Redirect::back()->with('message', 'Post created successfully.');
     }
     return Redirect::back()->withErrors($validator);
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   * DELETE /latestproject/{id}
+   *
+   * @param  int  $id
+   * @return Response
+   */
+  public function destroy($id)
+  {
+    Post::destroy($id);
+    return Response::json(['message' => 'delete successfully']);
   }
 }
