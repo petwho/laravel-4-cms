@@ -1,5 +1,5 @@
 <div id='partners'>
-    <h2 class='h2-title'>Đối Tác Của Chúng Tôi</h2>
+    <h2 class='h2-title'>ĐỐI TÁC CỦA CHÚNG TÔI</h2>
     <?php
         $partners = [
             'http://www.starwoodhotels.com/sheraton/index.html?language=en_US',

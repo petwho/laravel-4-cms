@@ -12,12 +12,12 @@ Made by Quoctk (クック)
 .h2-title {
 	color: #535353;
 	font-size: 184%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 .h3-title {
 	color: #535353;
 	font-size: 134%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 #Tab-box {
 	width: 100%;
@@ -79,7 +79,7 @@ Made by Quoctk (クック)
 	width: 530px;
 	float: left;
 	font-size: 134%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 .schedule .title-post a {
 	color: #000;

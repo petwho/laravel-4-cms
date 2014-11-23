@@ -12,7 +12,7 @@
 			@include('static_blocks.home.design_process')
 			<!-- / .section -->
 			<div class="section project mt-30">
-				<h2 class="h2-title">LATEST PROJECTS</h2>
+				<h2 class="h2-title">DỰ ÁN MỚI NHẤT</h2>
 				<ul class="cf list-project">
 					@for ($i = 0; $i < count($projects); $i++)
 						@if ($i < 8)

@@ -133,7 +133,7 @@
 	cursor: pointer;
 }
 .nivo-controlNav a.active {
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 .nivo-controlNav a {
     text-indent: 0;

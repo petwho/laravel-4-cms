@@ -23,12 +23,12 @@ body {
 .h2-title {
 	color: #535353;
 	font-size: 184%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 .h3-title {
 	color: #535353;
 	font-size: 134%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 #Shop-box {
 	width: 1000px;
@@ -59,7 +59,7 @@ body {
 }
 #Shop-box ul li .title {
 	font-size: 150%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 	padding: 435px 0 0;
 }
 #Shop-box ul li .detail {
@@ -110,7 +110,7 @@ body {
 	margin-right: -5px;
 	background: url(../images/shopnoithat/bg_line.png) no-repeat right center;
 	cursor: pointer;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 #Tab-box li.last {
 	margin-right: 0px;
@@ -138,7 +138,7 @@ body {
 	border-style: solid;
 	border-color: #dedede;
 	cursor: pointer;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 #Tab-sub li.last {
 	margin-right: 0px;
@@ -165,7 +165,7 @@ body {
 	border-width: 1px 1px 1px 1px;
 	border-style: solid;
 	border-color: #dedede;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 .hidden {
 	display: none;
@@ -202,7 +202,7 @@ body {
 .top-info .name {
 	color: #535353;
 	font-size: 184%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 	padding: 50px 0 0;
 	line-height: 25px;
 }

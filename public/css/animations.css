@@ -1,10 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=latin,vietnamese);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,vietnamese);
 #Slogan {
-	/*font-family: 'Roboto', sans-serif;*/
-	font-family: 'Open Sans', sans-serif;
-	/*font-weight: bold;*/
-	font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+	/*font-family: 'Open Sans', sans-serif;*/
+	/* font-weight: bold */ font-weight: 400;
+	font-weight: 300;
 	width: 100%;
 	z-index: 100;
 	position: absolute;
@@ -17,7 +17,7 @@
 	-o-animation: slogan 7s linear 0s;
 	-ms-animation: slogan 7s linear 0s;
 	animation: slogan 7s linear 0s;*/
-	font-size: 200%;
+	font-size: 2em;
 	color:#fff;
 	text-shadow: 2px 2px #000;
 	z-index:1;

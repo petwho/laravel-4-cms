@@ -23,29 +23,29 @@
             <dl class="cf form">
               <dt>Họ &amp; Tên <span>(*)</span>:</dt>
               <dd>
-                <input type="text" name="" size="30" class="input-txt" value="NGUYEN BAO LINH CHAU" onFocus="if
+                <input type="text" name="" size="30" class="input-txt" value="" onFocus="if
 (this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;"/>
               </dd>
               <dt>Địa chỉ Email <span>(*)</span>:</dt>
               <dd>
-                <input type="text" name="" size="30" class="input-txt" value="nblchau@yahoo.com" onFocus="if
+                <input type="text" name="" size="30" class="input-txt" value="" onFocus="if
 (this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;"/>
               </dd>
               <dt>Số điện thoại <span>(*)</span>:</dt>
               <dd>
-                <input type="text" name="" size="30" class="input-txt" value="08 822649" onFocus="if
+                <input type="text" name="" size="30" class="input-txt" value="" onFocus="if
 (this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;"/>
               </dd>
-              <dt>Description <span>(*)</span>:</dt>
+              <dt>Nội dung <span>(*)</span>:</dt>
               <dd>
                 <textarea class="area" name="" rows="7" cols="50" onFocus="if
-(this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </textarea>
+(this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;"></textarea>
               </dd>
               <dt>&nbsp;</dt>
               <dd>
                 <input type="submit" value="Gửi" id="Submit" class="alpha"  />
                 <input type="reset" value="Xóa" id="Cancel" class="alpha"/>
-                <input type="button" value="Choose file" id="Choose" class="alpha"  />
+                <input type="button" value="Chọn file" id="Choose" class="alpha"  />
               </dd>
             </dl>
           </div>
@@ -69,6 +69,7 @@
   <div id="Pagetop">
     <p><a href="#Top" class="over4" style="opacity: 1;"></a></p>
   </div>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
   <style type="text/css">
   .breadcrums {
     color: #ccc;
@@ -77,5 +78,9 @@
   .breadcrums a {
     color: #ccc;
     text-decoration: none;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300 !important;
   }
   </style>

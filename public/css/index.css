@@ -15,12 +15,12 @@ Made by Quoctk (クック)
 .h2-title {
 	color: #535353;
 	font-size: 184%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 .h3-title {
 	color: #535353;
 	font-size: 134%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 #Tab-box {
 	width: 250px;
@@ -38,7 +38,7 @@ Made by Quoctk (クック)
 	text-align: center;
 	color: #868787;
 	font-size: 117%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 	background: url(../images/index/pnav_line.png) no-repeat center bottom;
 	cursor: pointer;
 }
@@ -98,7 +98,7 @@ Made by Quoctk (クック)
 	height: 34px;
 	color: #fff;
 	font-size: 134%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 	text-align: center;
 	padding: 2px 0 0;
 	background: url(../images/index/bg_step.png) no-repeat;
@@ -122,7 +122,7 @@ Made by Quoctk (クック)
 .step li .link-step {
 	color: #535353;
 	font-size: 109%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 	text-decoration: none;
 	padding: 15px 0 0;
 	display: block;
@@ -150,7 +150,7 @@ Made by Quoctk (クック)
 .list-project li .project-name {
 	color: #535353;
 	font-size: 134%;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 	padding: 5px 0 0;
 }
 .list-project li .detail {

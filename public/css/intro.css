@@ -18,11 +18,11 @@ body {
 	float: right;
 	color: #868787;
 	padding: 0 0 0 5px;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 #Intro-nav li a {
 	color: #fff;
-	font-weight: bold;
+	/* font-weight: bold */ font-weight: 400;
 }
 #Intro-nav li a:hover {
 	text-decoration: none;
