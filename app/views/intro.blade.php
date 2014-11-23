@@ -8,14 +8,14 @@
         <div class="list-slider hidden">
           <div class="slider4">
 
-            @for ($i = 1; $i < count($projects); $i++)
+            @foreach ($projects as $project)
               <div class="slide">
-                <p class="pr-title"><a href="/iframe/{{$projects[$i]->id}}" class="iframe">{{$projects[$i]->name}}</a></p>
+                <p class="pr-title"><a href="/iframe/{{$project->id}}" class="iframe">{{$project->name}}</a></p>
                 <div class="pr-box cf">
-                  <div class="left fl-left"> <a href="/iframe/{{$projects[$i]->id}}" class="iframe"><img src="images/intro/img_pr01.jpg" alt="" class="over4"/></a> </div>
+                  <div class="left fl-left"> <a href="/iframe/{{$project->id}}" class="iframe"><img src="images/intro/img_pr01.jpg" alt="" class="over4"/></a> </div>
                   <!-- / .left -->
                   <div class="right fl-right">
-                    {{$projects[$i]->info}}
+                    {{$project->info}}
                     <!-- <dl class="pr-info cf">
                       <dt>Diện tích đất</dt>
                       <dd>7,5 x 30 m2</dd>
@@ -35,7 +35,7 @@
                 <!-- / .pr-box --> 
               </div>
               <!-- / .slide -->
-            @endfor
+            @endforeach
             
           </div>
         </div>
