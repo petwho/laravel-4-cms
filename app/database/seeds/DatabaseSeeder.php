@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder {
     $this->call('ProjectsTableSeeder');
     $this->call('CategoriesTableSeeder');
     $this->call('PostsTableSeeder');
+    $this->call('GalleriesTableSeeder');
+    $this->call('ImagesTableSeeder');
     $this->command->info('User table seeded!');
   }
 
@@ -42,10 +44,52 @@ class ProjectsTableSeeder extends Seeder {
 
     for($i = 0; $i < 20; $i++) {
       Project::create([
+        'id' => $i + 1,
         'name' => 'TÊN DỰ ÁN '.$i,
+        'info' => 'Diện tích đất     900 m2',
+        'is_featured' => true,
         'image' => '/images/index/img_pj0'.($i % 4 + 1).'.jpg'
       ]);
     }
+  }
+
+}
+
+
+class GalleriesTableSeeder extends Seeder {
+
+  public function run()
+  {
+    DB::table('galleries')->delete();
+
+    for($i = 0; $i < 20; $i++) {
+      Gallery::create([
+        'id' => $i + 1,
+        'title' => 'Gallery '.$i,
+        'project_id' => $i + 1,
+      ]);
+    }
+  }
+
+}
+
+class ImagesTableSeeder extends Seeder {
+
+  public function run()
+  {
+    DB::table('images')->delete();
+    for($i = 0; $i < 20; $i++) {
+      for ($j = 0; $j < 4; $j++) {
+        Image::create([
+          'name' => 'Name '.$i,
+          'title' => 'title '.$i,
+          'url' => '/images/intro/project0' + $i + '/img_0' + $j + '.jpg',
+          'thumb_url' => '/images/intro/project0' + $i + '/thumb_0' + $j + '.jpg',
+          'gallery_id' => $i + 1,
+        ]);
+      }
+    }
+
   }
 
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateProjectsTable extends Migration {
+class CreateImagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,15 @@ class CreateProjectsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('projects', function(Blueprint $table)
+		Schema::create('images', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
-			$table->text('info');
-			$table->boolean('is_featured');
-			$table->string('image');
+			$table->string('title');
+			$table->text('url');
+			$table->text('thumb_url');
+			$table->integer('gallery_id')->unsigned();
+			$table->foreign('gallery_id')->on('galleries')->references('id')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +33,7 @@ class CreateProjectsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('projects');
+		Schema::drop('images');
 	}
 
 }

@@ -1,5 +1,5 @@
 <?php
 
 class Project extends \Eloquent {
-	protected $fillable = ['title', 'image'];
+	// protected $fillable = ['name', 'image'];
 }
