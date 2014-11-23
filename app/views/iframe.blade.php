@@ -36,12 +36,11 @@
 						<!-- MAIN CONTENT -->
 						<div class="main-slider-content" style="width:584px; height:334px;">
 							<ul class="sliders-wrap-inner">
-								<li> <img src="../images/intro/project01/img_01.jpg" title="" alt="" /> </li>
-								<li> <img src="../images/intro/project01/img_01.jpg" title="" alt="" /> </li>
-								<li> <img src="../images/intro/project01/img_01.jpg" title="" alt="" /> </li>
-								<li> <img src="../images/intro/project01/img_01.jpg" title="" alt="" /> </li>
-								<li> <img src="../images/intro/project01/img_01.jpg" title="" alt="" /> </li>
-								<li> <img src="../images/intro/project01/img_01.jpg" title="" alt="" /> </li>
+								@for ($i = 0; $i < count($images); $i++)
+									<li>
+										<img src="{{$images[$i]->url}}">
+									</li>
+								@endfor
 							</ul>
 						</div>
 						<!-- END MAIN CONTENT --> 
@@ -50,12 +49,11 @@
 							<div  class="button-previous alpha">Previous</div>
 							<div class="navigator-wrapper">
 								<ul class="navigator-wrap-inner">
-									<li><img src="../images/intro/project01/thumb_01.jpg" alt="" /></li>
-									<li><img src="../images/intro/project01/thumb_01.jpg" alt="" /></li>
-									<li><img src="../images/intro/project01/thumb_01.jpg" alt="" /></li>
-									<li><img src="../images/intro/project01/thumb_01.jpg" alt="" /></li>
-									<li><img src="../images/intro/project01/thumb_01.jpg" alt="" /></li>
-									<li><img src="../images/intro/project01/thumb_01.jpg" alt="" /></li>
+									@for ($i = 0; $i < count($images); $i++)
+										<li>
+											<img src="{{$images[$i]->thumb_url}}">
+										</li>
+									@endfor
 								</ul>
 							</div>
 							<div class="button-next alpha">Next</div>

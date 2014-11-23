@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@intro');
+Route::get('/iframe/{id}', 'HomeController@iframe');
 Route::get('/home', 'HomeController@home');
 Route::get('/kien-thuc/', 'HomeController@kien_thuc');
 Route::get('/gioi-thieu', 'HomeController@gioi_thieu');

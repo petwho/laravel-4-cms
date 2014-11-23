@@ -79,12 +79,12 @@ class ImagesTableSeeder extends Seeder {
   {
     DB::table('images')->delete();
     for($i = 0; $i < 20; $i++) {
-      for ($j = 0; $j < 4; $j++) {
+      for ($j = 0; $j < 5; $j++) {
         Image::create([
           'name' => 'Name '.$i,
           'title' => 'title '.$i,
-          'url' => '/images/intro/project0' + $i + '/img_0' + $j + '.jpg',
-          'thumb_url' => '/images/intro/project0' + $i + '/thumb_0' + $j + '.jpg',
+          'url' => '/images/intro/project0' . $i . '/img_0' . $j . '.jpg',
+          'thumb_url' => '/images/intro/project0' . $i . '/thumb_0' . $j . '.jpg',
           'gallery_id' => $i + 1,
         ]);
       }
