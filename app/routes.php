@@ -49,10 +49,12 @@ Route::resource('menus', 'MenusController');
 Route::put('menus/{id}/restore', 'MenusController@restore');
 Route::delete('menus/{id}/trash', 'MenusController@trash');
 
-/* Post */
+/* Posts */
 Route::resource('posts', 'PostsController');
 /* Uploads */
 Route::resource('uploads', 'UploadsController');
+// Galleries
+Route::resource('galleries', 'GalleriesController');
 
 App::missing(function($exception)
 {
