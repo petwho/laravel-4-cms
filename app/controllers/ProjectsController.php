@@ -39,9 +39,11 @@ class ProjectsController extends \BaseController {
 	public function store()
 	{
 		$data = Input::all();
+		print_r($data);exit();
 		$rules = array(
 		  'name' => array('required'),
-		  'image' => array('required')
+		  'image' => array('required'),
+		  'is_featured' => array('required'),
 		);
 		// Create a new validator instance.
 		$validator = Validator::make($data, $rules);
@@ -75,10 +77,10 @@ class ProjectsController extends \BaseController {
 	public function edit($id)
 	{
 		$project = Project::find($id);
-    if ($project) {
-		  return View::make('admin.projects.edit', array('project' => $project));
-    }
-    return Redirect::back()->with('message', 'No projects was found');
+	    if ($project) {
+			  return View::make('admin.projects.edit', array('project' => $project));
+	    }
+	    return Redirect::back()->with('message', 'No projects was found');
 	}
 
 	/**
@@ -97,10 +99,12 @@ class ProjectsController extends \BaseController {
 		$data = Input::all();
 		$rules = array(
 		  'name' => array('required'),
-		  'image' => array('required')
+		  'image' => array('required'),
+		  // 'is_featured' => array('required'),
 		);
 		// Create a new validator instance.
 		$validator = Validator::make($data, $rules);
+		Input::merge(array('is_featured' =>  Input::get('is_featured') ? true : false));
 
 		if ($validator->passes()) {
 		  $project->update(Input::all());

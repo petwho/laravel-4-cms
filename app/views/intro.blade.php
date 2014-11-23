@@ -3,7 +3,7 @@
   <div id="Intro">
     <div class="grid-1010">
       <div id="Intro-content">
-        <div id="Slogan">Cảm ơn khách hàng đã đồng hành cùng Xuyên Á trong suốt 12 năm vừa qua</div>
+        <div id="Slogan" style="display: none;">Cảm ơn khách hàng đã đồng hành cùng Xuyên Á trong suốt 12 năm vừa qua</div>
         <div id="bx-pager"> <a data-slide-index="0" href="" class="click achor-01"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="1" href="" class="click achor-02"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="2" href="" class="click achor-03"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="3" href="" class="click achor-04"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="4" href="" class="click achor-05"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="7" href="" class="click achor-06"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="12" href="" class="click achor-07"><img src="images/intro/achor.png" class="over4" /></a> <a data-slide-index="13" href="" class="click achor-08"><img src="images/intro/achor.png" class="over4" /></a> </div>
         <div class="list-slider hidden">
           <div class="slider4">
@@ -65,7 +65,7 @@ $(document).ready(function(){
   $(".click").click(function(){
     $(".list-slider").removeClass('hidden');
   });
-  setTimeout(show,1000);
+  setTimeout(show,18000);
   $('.slider4').bxSlider({
     auto: true,
     slideWidth: 420,
@@ -80,7 +80,7 @@ $(document).ready(function(){
   //   t: 60,
   //   e: 0
   // })
-  $('#Slogan').fadeOut(7000);
+  $('#Slogan').fadeIn(3000).fadeOut(4000);
 });
 function show() {
       $(".list-slider").removeClass('hidden');

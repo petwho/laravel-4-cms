@@ -34,6 +34,20 @@
                 'required' => true,
                 'placeholder' => 'Enter image url'))}}
         </div>
+
+        <div class='form-group'>
+          {{ Form::label('info', 'Project Info:') }}
+          {{ Form::textarea('info', null, array(
+                'class' => 'form-control',
+                'id' => 'info',
+                'required' => true,
+                'placeholder' => 'Enter info'))}}
+        </div>
+
+        <div class='form-group'>
+          {{ Form::label('is_featured', 'Show this project in Intro page:') }}
+          {{ Form::checkbox('is_featured') }}
+        </div>
         <button class='btn btn-primary' type="submit">Create</button>
         <a href='/projects/' class='btn btn-warning' type="submit">Back</a>
       {{ Form::close() }}
