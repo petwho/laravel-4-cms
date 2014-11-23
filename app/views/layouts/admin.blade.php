@@ -50,7 +50,7 @@
               <li><a href="/dashboard"<i class="fa fa-info-circle"></i>&nbsp;&nbsp;Overview</a></li>
               <li><a href="/categories"><i class="fa fa-plug"></i>&nbsp;&nbsp;Categories</a></li>
               <li><a href="/galleries"><i class="fa fa-upload"></i>&nbsp;&nbsp;Galleries</a></li>
-              <li><a href="/images"><i class="fa fa-upload"></i>&nbsp;&nbsp;Images</a></li>
+              <li><a href="/photos"><i class="fa fa-upload"></i>&nbsp;&nbsp;Photos</a></li>
               <li><a href="/posts"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Posts</a></li>
               <li><a href="/projects"><i class="fa fa-th-large"></i>&nbsp;&nbsp;Projects</a></li>
             </ul>

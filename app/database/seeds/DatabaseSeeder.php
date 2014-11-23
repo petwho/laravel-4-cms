@@ -65,23 +65,8 @@ class GalleriesTableSeeder extends Seeder {
     for($i = 0; $i < 20; $i++) {
       Gallery::create([
         'id' => $i + 1,
-        'title' => 'Gallery '.$i
-      ]);
-    }
-  }
-
-}
-
-class GalleryProjectTableSeeder extends Seeder {
-
-  public function run()
-  {
-    DB::table('gallery_project')->delete();
-
-    for($i = 0; $i < 20; $i++) {
-      GalleryProject::create([
-        'project_id' => $i + 1,
-        'gallery_id' => $i + 1
+        'title' => 'Gallery '.$i,
+        'project_id' => $i + 1
       ]);
     }
   }
