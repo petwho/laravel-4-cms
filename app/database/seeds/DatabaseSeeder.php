@@ -12,11 +12,12 @@ class DatabaseSeeder extends Seeder {
     Eloquent::unguard();
 
     $this->call('UserTableSeeder');
-    $this->call('MenusTableSeeder');
     $this->call('ProjectsTableSeeder');
     $this->call('CategoriesTableSeeder');
     $this->call('PostsTableSeeder');
+    $this->call('MenusTableSeeder');
     $this->call('GalleriesTableSeeder');
+    $this->call('GalleryMenuTableSeeder');
     $this->call('ImagesTableSeeder');
     $this->command->info('User table seeded!');
   }
@@ -34,6 +35,25 @@ class UserTableSeeder extends Seeder {
           'email' => 'trankhanh.tk.tk@gmail.com',
           'password' => Hash::make('abcdabcd')));
     }
+
+}
+
+class ProjectsTableSeeder extends Seeder {
+
+  public function run()
+  {
+    DB::table('projects')->delete();
+
+    for($i = 0; $i < 20; $i++) {
+      Project::create([
+        'id' => $i + 1,
+        'name' => 'TÊN DỰ ÁN '.$i,
+        'info' => 'Diện tích đất     900 m2',
+        'is_featured' => true,
+        'image' => '/images/index/img_pj0'.($i % 4 + 1).'.jpg'
+      ]);
+    }
+  }
 
 }
 
@@ -70,26 +90,6 @@ class MenusTableSeeder extends Seeder {
 
 }
 
-class ProjectsTableSeeder extends Seeder {
-
-  public function run()
-  {
-    DB::table('projects')->delete();
-
-    for($i = 0; $i < 20; $i++) {
-      Project::create([
-        'id' => $i + 1,
-        'name' => 'TÊN DỰ ÁN '.$i,
-        'info' => 'Diện tích đất     900 m2',
-        'is_featured' => true,
-        'image' => '/images/index/img_pj0'.($i % 4 + 1).'.jpg'
-      ]);
-    }
-  }
-
-}
-
-
 class GalleriesTableSeeder extends Seeder {
 
   public function run()
@@ -102,6 +102,31 @@ class GalleriesTableSeeder extends Seeder {
         'title' => 'Gallery '.$i,
         'project_id' => $i + 1
       ]);
+    }
+  }
+
+}
+
+class GalleryMenuTableSeeder extends Seeder {
+
+  public function run()
+  {
+    DB::table('gallery_menu')->delete();
+
+    for($i = 1; $i <= 6; $i++) {
+      if ($i == 1) {
+        for ($j = 0; $j <= 5; $j ++) {
+          GalleryMenu::create([
+            'menu_id' => $i,
+            'gallery_id' => $i + $j,
+          ]);
+        }
+      } else {
+        GalleryMenu::create([
+          'menu_id' => $i,
+          'gallery_id' => $i + 5,
+        ]);
+      }
     }
   }
 
