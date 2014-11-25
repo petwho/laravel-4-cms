@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder {
     Eloquent::unguard();
 
     $this->call('UserTableSeeder');
+    $this->call('MenusTableSeeder');
     $this->call('ProjectsTableSeeder');
     $this->call('CategoriesTableSeeder');
     $this->call('PostsTableSeeder');
@@ -32,6 +33,39 @@ class UserTableSeeder extends Seeder {
           'username' => 'trankhanh',
           'email' => 'trankhanh.tk.tk@gmail.com',
           'password' => Hash::make('abcdabcd')));
+    }
+
+}
+
+class MenusTableSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('menus')->delete();
+
+        Menu::create(array(
+          'id' => '1',
+          'title' => 'TRANG CHỦ'));
+
+        Menu::create(array(
+          'id' => '2',
+          'title' => 'KIẾN THỨC XÂY DỰNG'));
+
+        Menu::create(array(
+          'id' => '3',
+          'title' => 'VẬT LIỆU HOÀN THIỆN'));
+
+        Menu::create(array(
+          'id' => '4',
+          'title' => 'SHOP NỘI THẤT'));
+
+        Menu::create(array(
+          'id' => '5',
+          'title' => 'PHONG THỦY'));
+
+        Menu::create(array(
+          'id' => '6',
+          'title' => 'GIỚI THIỆU'));
     }
 
 }

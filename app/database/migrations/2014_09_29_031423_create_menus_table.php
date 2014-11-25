@@ -16,7 +16,6 @@ class CreateMenusTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('title');
-			$table->string('alias');
 			$table->timestamps();
 		});
 	}
