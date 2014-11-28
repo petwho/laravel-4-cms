@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-6">
       <h3>Manage Projects</h3>
       {{ Form::open(array(
             'url' => '/projects/'.$project->id,
