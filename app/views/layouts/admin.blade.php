@@ -48,10 +48,11 @@
           <div class="col-xs-2 sidebar">
             <ul class="nav nav-sidebar">
               <li><a href="/dashboard"<i class="fa fa-info-circle"></i>&nbsp;&nbsp;Overview</a></li>
+              <li><a href="/menus"><i class="fa fa-plug"></i>&nbsp;&nbsp;Menus</a></li>
               <li><a href="/categories"><i class="fa fa-plug"></i>&nbsp;&nbsp;Categories</a></li>
               <li><a href="/galleries"><i class="fa fa-upload"></i>&nbsp;&nbsp;Galleries</a></li>
-              <li><a href="/posts"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Posts</a></li>
               <li><a href="/projects"><i class="fa fa-th-large"></i>&nbsp;&nbsp;Projects</a></li>
+              <li><a href="/posts"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Posts</a></li>
             </ul>
           </div>
           <div class="col-xs-10 col-xs-offset-2">

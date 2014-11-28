@@ -97,7 +97,7 @@
         </div>
         <div class="panel-body">
           <p class="text-muted">
-            <strong>NetCMS</strong> <em>&copy; 2014</em> phiên bản 1.0 viết bởi  Tran Khanh. Trong phiên bản này có sử dụng Laravel framework version 4.2, PHP phiên bản 5.3 và cơ sở dữ liệu MySQL  phiên bản 5.1.<br><br>
+            <strong>NetCMS</strong> <em>&copy; 2014</em> phiên bản 2.0 viết bởi  Tran Khanh. Trong phiên bản này có sử dụng Laravel framework version 4.2, PHP phiên bản 5.5 và cơ sở dữ liệu MySQL  phiên bản 5.1.<br><br>
              Mọi thắc mắc xin vui lòng liên hệ theo địa chỉ email: <em>trankhanh.tk.kt@gmail.com</em>
              <br>
           </p>

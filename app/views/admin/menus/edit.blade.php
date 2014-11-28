@@ -36,14 +36,14 @@
                 'required' => true,
                 'placeholder' => 'Sample Menu'))}}
         </div>
-        <div class='form-group'>
+        <!-- <div class='form-group'>
           {{ Form::label('alias', 'Alias:') }}
           {{ Form::text('alias', $menu->alias, array(
                 'class' => 'form-control',
                 'id' => 'alias',
                 'required' => true,
                 'placeholder' => 'sample-alias'))}}
-        </div>
+        </div> -->
         <button class='btn btn-primary' type="submit">Update</button>&nbsp;
         <a class='btn btn-warning' href='/menus'>Back</a>
       {{ Form::close() }}

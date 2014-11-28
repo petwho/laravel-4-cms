@@ -12,7 +12,6 @@
         <thead>
           <tr>
             <th>Title</th>
-            <th>Alias</th>
             <th>Status</th>
             <th>Created At</th>
             <th>Updated At</th>
@@ -24,7 +23,6 @@
             @foreach ($menus as $menu)
               <tr>
                   <td>{{ $menu->title }}</td>
-                  <td>{{ $menu->alias }}</td>
                   <td>
                     @if ($menu->trashed())
                       <span class="text-danger">Trashed</span>
@@ -36,14 +34,14 @@
                   <td>{{ $menu->updated_at }}</td>
                   <td colspan="2">
                     <a class='link text-primary edit' href="/menus/{{ $menu->id }}/edit" title='edit'><i class="fa fa-edit"></i> edit</a>
-                    |
+                    <!-- |
                     @if ($menu->trashed())
                       <a class='link text-info restore' data-menu-id="{{ $menu->id }}" href='#' title='restore'><i class="fa fa-recycle"></i> restore</a>
                     @else
                       <a class='link text-warning trash' data-menu-id="{{ $menu->id }}" href="#" title='trash'><i class="fa fa-trash"></i> trash</a>
                     @endif
                     |
-                    <a class='link text-danger delete' data-menu-id="{{ $menu->id }}" href='#' title='delete'><i class="fa fa-times-circle"></i> delete</a>
+                    <a class='link text-danger delete' data-menu-id="{{ $menu->id }}" href='#' title='delete'><i class="fa fa-times-circle"></i> delete</a> -->
                   </td>
               </tr>
             @endforeach
@@ -54,7 +52,7 @@
           @endif
         </tbody>
       </table>
-      <a href='/menus/create' class="btn btn-primary">Add Menu</a>
+      <!-- <a href='/menus/create' class="btn btn-primary">Add Menu</a> -->
     </div>
   </div>
   <script type="text/javascript">

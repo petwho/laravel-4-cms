@@ -93,15 +93,22 @@ class GalleriesController extends \BaseController {
 		$projects = Project::all();
 		$gallery = Gallery::find($id);
 		$images = Image::where('gallery_id', '=', $gallery->id)->get();
+		$menus = Menu::all();
 
 		foreach ($projects as $project) {
 		  $options[$project['id']] = $project['name'];
 		}
+
+		$gallery_menus = GalleryMenu::all();
+
+
     	return View::make('admin.galleries.edit', array(
     		'gallery' => $gallery,
     		'options' => $options,
-    		'images' => $images
-		));   
+    		'images' => $images,
+    		'menus' => $menus,
+    		'gallery_menus' => $gallery_menus
+		));
 	}
 
 	/**
@@ -114,6 +121,17 @@ class GalleriesController extends \BaseController {
 	public function update($id)
 	{
 		$gallery = Gallery::find($id);
+		// TODO: check $gallery existance
+		$menus = ['menu-1', 'menu-2', 'menu-3', 'menu-4', 'menu-6'];
+		foreach ($menus as $menu) {
+			if ($menu == 'on') {
+				// create new record on gally_menu table
+				$gallery_menu = new GalleryMenu;
+				$gallery_menu->gallery_id = $gallery->$id;
+				$gallery_menu->menu_id = substr($menu, 5, 1);
+				$gallery_menu->save();
+			}
+		}
 		$rules = array(
 		  'title' => array('required', 'unique:galleries,title,'.$id),
 		);

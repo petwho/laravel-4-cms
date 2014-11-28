@@ -29,21 +29,30 @@
       @endif
 
       <div class='form-group'>
-        {{ Form::label('title', 'Title:') }}
-        {{ Form::text('title', $gallery->title, array(
-              'class' => 'form-control',
-              'id' => 'title',
-              'required' => true,
-              'value' => $gallery->title))}}
+        <div class="row">
+          <div class="col-xs-6">
+            {{ Form::label('title', 'Title:') }}
+            {{ Form::text('title', $gallery->title, array(
+                  'class' => 'form-control',
+                  'id' => 'title',
+                  'required' => true,
+                  'value' => $gallery->title))}}
+
+          </div>
+        </div>
       </div>
 
       <div class="form-group">
-        {{ Form::label('project_id', 'Project:') }}
-        {{ Form::select('project_id', $options, $gallery->project_id, array(
-        'class' => 'form-control',
-        'id' => 'type',
-        'required' => true,
-        'placeholder' => ''))}}
+        <div class="row">
+          <div class="col-xs-6">
+            {{ Form::label('project_id', 'Project:') }}
+            {{ Form::select('project_id', $options, $gallery->project_id, array(
+            'class' => 'form-control',
+            'id' => 'type',
+            'required' => true,
+            'placeholder' => ''))}}
+          </div>
+        </div>
       </div>
       <div class="row-gap-medium"></div>
 
@@ -88,8 +97,97 @@
       </div>
 
       <div class="row-gap-medium"></div>
-      <div class="row-gap-medium"></div>
+      <label>Include this gallery into the following page(s):</label>
+      <div class="row">
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_menus as $gallery_menu)
+                @if (($gallery->id == $gallery_menu->gallery_id) && ($gallery_menu->menu_id == 1))
+                  <input name="menu-1" type="checkbox" checked> trang chủ
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="menu-1" type="checkbox"> trang chủ
+              @endif
+            </label>
+          </div>
+        </div>
 
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_menus as $gallery_menu)
+                @if (($gallery->id == $gallery_menu->gallery_id) && ($gallery_menu->menu_id == 2))
+                  <input name="menu-2" type="checkbox" checked> kiến thức xây dựng
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="menu-2" type="checkbox"> kiến thức xây dựng
+              @endif
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-2">
+            <div class='checkbox'>
+              <?php $is_checked = false; ?>
+              <label>
+                @foreach ($gallery_menus as $gallery_menu)
+                  @if (($gallery->id == $gallery_menu->gallery_id) && ($gallery_menu->menu_id == 3))
+                    <input name="menu-3" type="checkbox" checked> vật liệu hoàn thiện
+                    <?php $is_checked = true; ?>
+                  @endif
+                @endforeach
+                @if (!$is_checked)
+                  <input name="menu-3" type="checkbox"> vật liệu hoàn thiện
+                @endif
+              </label>
+            </div>
+        </div>
+
+        <div class="col-xs-2">
+            <div class='checkbox'>
+              <?php $is_checked = false; ?>
+              <label>
+                @foreach ($gallery_menus as $gallery_menu)
+                  @if (($gallery->id == $gallery_menu->gallery_id) && ($gallery_menu->menu_id == 4))
+                    <input name="menu-4" type="checkbox" checked> shop nội thất
+                    <?php $is_checked = true; ?>
+                  @endif
+                @endforeach
+                @if (!$is_checked)
+                  <input name="menu-4" type="checkbox"> shop nội thất
+                @endif
+              </label>
+            </div>
+        </div>
+
+        <div class="col-xs-2">
+            <div class='checkbox'>
+              <?php $is_checked = false; ?>
+              <label>
+                @foreach ($gallery_menus as $gallery_menu)
+                  @if (($gallery->id == $gallery_menu->gallery_id) && ($gallery_menu->menu_id == 6))
+                    <input name="menu-6" type="checkbox" checked> giới thiệu
+                    <?php $is_checked = true; ?>
+                  @endif
+                @endforeach
+                @if (!$is_checked)
+                  <input name="menu-6" type="checkbox"> giới thiệu
+                @endif
+              </label>
+            </div>
+        </div>
+      </div>
+
+      <div class="row-gap-small"></div>
+
+      <!-- Add more images to gallery -->
       <div class='form-group'>
         <div class="row">
           <div class="col-xs-3">
@@ -123,10 +221,13 @@
           </div>
         </div>
       </div>
+      <!-- End of adding images to gallery form -->
+      <div class="row-gap-small"></div>
 
       <button class='btn btn-primary' type="submit">Update</button>&nbsp;
       <a class='btn btn-warning' href='/galleries'>Back</a>
       {{ Form::close() }}
+      <div class="row-gap-medium"></div>
     </div>
   </div>
   <script type="text/javascript">
