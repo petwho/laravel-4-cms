@@ -49,7 +49,7 @@
             {{ Form::select('project_id', $options, $gallery->project_id, array(
             'class' => 'form-control',
             'id' => 'type',
-            'required' => true,
+            // 'required' => true,
             'placeholder' => ''))}}
           </div>
         </div>

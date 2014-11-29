@@ -114,6 +114,9 @@ class GalleryMenuTableSeeder extends Seeder {
     DB::table('gallery_menu')->delete();
 
     for($i = 1; $i <= 6; $i++) {
+      if ($i == 5) {
+        continue;
+      }
       if ($i == 1) {
         for ($j = 0; $j <= 5; $j ++) {
           GalleryMenu::create([

@@ -5,7 +5,8 @@
   <!-- / #Header -->
   
   <div id="Content" class="pb-30">
-    @include('static_blocks.kien_thuc.slider')
+    @include('static_blocks.kien_thuc.slider', array('menu' => $menu))
+
     <!-- / #Container-wrap -->
     
     <div class="grid-850">

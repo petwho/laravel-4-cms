@@ -41,8 +41,13 @@ class HomeController extends BaseController {
 
 	public function kien_thuc()
 	{
+		// find gallery for menu id = 2
+		$menu = Menu::find(2);
 		// $category = Category::find($cat_id);
-		return View::make('kien_thuc', array('categories' => Category::all()));
+		return View::make('kien_thuc', array(
+			'categories' => Category::all(),
+			'menu' => $menu
+		));
 	}
 
 	public function kien_thuc_post($id)
@@ -53,7 +58,12 @@ class HomeController extends BaseController {
 
 	public function gioi_thieu()
 	{
-		return View::make('gioi_thieu', array('categories' => Category::all()));
+		// find gallery for menu id = 6
+		$menu = Menu::find(6);
+		return View::make('gioi_thieu', array(
+			'categories' => Category::all(),
+			'menu' => $menu,
+		));
 	}
 
 	public function vat_lieu()

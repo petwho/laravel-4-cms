@@ -124,16 +124,23 @@ class GalleriesController extends \BaseController {
 		// TODO: check $gallery existance
 		$menus = ['menu-1', 'menu-2', 'menu-3', 'menu-4', 'menu-6'];
 		foreach ($menus as $menu) {
-			if ($menu == 'on') {
+			$gallery_menu = GalleryMenu::whereRaw('gallery_id ='.$id
+				.' AND menu_id = '.substr($menu, 5, 1))->first();
+			// if gallery doesn't exist and the input was checked
+			if (!$gallery_menu && Input::get($menu) == 'on') {
 				// create new record on gally_menu table
 				$gallery_menu = new GalleryMenu;
-				$gallery_menu->gallery_id = $gallery->$id;
+				$gallery_menu->gallery_id = $gallery->id;
 				$gallery_menu->menu_id = substr($menu, 5, 1);
 				$gallery_menu->save();
+			}
+			elseif ($gallery_menu && Input::get($menu) !== 'on') {
+				$gallery_menu->delete();
 			}
 		}
 		$rules = array(
 		  'title' => array('required', 'unique:galleries,title,'.$id),
+		  'project_id' => array('unique:galleries,project_id,'.$id),
 		);
 		$images = Input::get('image');
 
@@ -162,6 +169,11 @@ class GalleriesController extends \BaseController {
 		$validator = Validator::make(Input::all(), $rules);
 		if ($validator->passes()) {
 		  $gallery->title = Input::get('title');
+		  if (Input::get('project_id') == '') {
+		  	$gallery->project_id = null;
+		  } else {
+		  	$gallery->project_id = Input::get('project_id');
+		  }
 		  $gallery->update();
 		  return Redirect::back()->with('message', 'Gallery updated successfully');
 		}
