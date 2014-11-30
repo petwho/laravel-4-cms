@@ -96,4 +96,10 @@ class HomeController extends BaseController {
 		$post = Post::find($id);
 		return View::make('phong_thuy_post', array('post' => $post));
 	}
+
+	public function contact()
+	{
+		Message::create(Input::all());
+		return Redirect::back();
+	}
 }

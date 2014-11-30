@@ -20,6 +20,7 @@ Route::get('/gioi-thieu', 'HomeController@gioi_thieu');
 Route::get('/vat-lieu', 'HomeController@vat_lieu');
 Route::get('/shop-noi-that', 'HomeController@shop_noi_that');
 Route::get('/phong-thuy', 'HomeController@phong_thuy');
+Route::post('/contact', 'HomeController@contact');
 
 Route::get('/dashboard', array(
   'before' => 'auth',
@@ -58,11 +59,13 @@ Route::resource('uploads', 'UploadsController');
 Route::resource('galleries', 'GalleriesController');
 // Photos
 Route::resource('photos', 'PhotosController');
+// Messages
+Route::get('messages/index', 'MessagesController@index');
+
+Route::get('/kien-thuc/{id}', 'HomeController@kien_thuc_post');
+Route::get('/phong-thuy/{id}', 'HomeController@phong_thuy_post');
 
 App::missing(function($exception)
 {
   return Response::view('errors.missing', array(), 404);
 });
-
-Route::get('/kien-thuc/{id}', 'HomeController@kien_thuc_post');
-Route::get('/phong-thuy/{id}', 'HomeController@phong_thuy_post');

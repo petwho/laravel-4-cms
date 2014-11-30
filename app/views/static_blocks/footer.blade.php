@@ -17,38 +17,35 @@
               ĐT: (84.8) 35895732 </p>
           </div>
           <!-- / .left -->
-          <div class="right fl-right">
+          <form class="right fl-right" action="/contact" method="post">
             <p class="hotline">Hot line: 090 887 70 79</p>
             <p class="comment mt-10">Hãy gửi thắc mắc của bạn để chúng tôi tư vấn trực tiếp qua Email:</p>
             <dl class="cf form">
               <dt>Họ &amp; Tên <span>(*)</span>:</dt>
               <dd>
-                <input type="text" name="" size="30" class="input-txt" value="" onFocus="if
-(this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;"/>
+                <input required type="text" name="fullname" size="30" class="input-txt" value=""/>
               </dd>
               <dt>Địa chỉ Email <span>(*)</span>:</dt>
               <dd>
-                <input type="text" name="" size="30" class="input-txt" value="" onFocus="if
-(this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;"/>
+                <input required type="text" name="email" size="30" class="input-txt" value=""/>
               </dd>
               <dt>Số điện thoại <span>(*)</span>:</dt>
               <dd>
-                <input type="text" name="" size="30" class="input-txt" value="" onFocus="if
-(this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;"/>
+                <input required type="text" name="phone" size="30" class="input-txt" value=""/>
               </dd>
               <dt>Nội dung <span>(*)</span>:</dt>
               <dd>
-                <textarea class="area" name="" rows="7" cols="50" onFocus="if
-(this.value==this.defaultValue) this.value=''; " onBlur="if(this.value=='') this.value=this.defaultValue;"></textarea>
+                <textarea required class="area" name="content" rows="7" cols="50"></textarea>
               </dd>
               <dt>&nbsp;</dt>
               <dd>
                 <input type="submit" value="Gửi" id="Submit" class="alpha"  />
-                <input type="reset" value="Xóa" id="Cancel" class="alpha"/>
-                <input type="button" value="Chọn file" id="Choose" class="alpha"  />
+                <!-- <input type="reset" value="Xóa" id="Cancel" class="alpha"/> -->
+                <!-- <input type="button" value="Chọn file" id="Choose" class="alpha"  /> -->
+                <input type="file" class="hidden real-file-input">
               </dd>
             </dl>
-          </div>
+          </form>
           <!-- / .right --> 
         </div>
         <div class="footer-icon"> <a href="index.html" id="F-logo"><img src="/images/common/logo_footer.png" alt="" class="over4"/></a>
@@ -84,3 +81,12 @@
     font-weight: 300 !important;
   }
   </style>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#Choose').click(function (e) {
+        e.preventDefault();
+        $('.real-file-input').trigger('click');
+      })
+    })
+  </script>

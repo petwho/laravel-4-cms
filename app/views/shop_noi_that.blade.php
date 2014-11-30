@@ -21,9 +21,12 @@
 <script  type="text/javascript"src="js/jquery.colorbox.js"></script> 
 <script type="text/javascript">
 			$(document).ready(function(){
-				$(".iframe").colorbox({iframe:true, width:"950px", height:"700px"});
+				// $(".iframe").colorbox({iframe:true, width:"950px", height:"700px"});
+        $('.iframe').click(function (e) {
+          e.preventDefault();
+        })
 			});
-		</script> 
+	</script> 
 <script> 
 $('#Link-01').hover(function() 
 { 
