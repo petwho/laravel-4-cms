@@ -36,7 +36,17 @@ class HomeController extends BaseController {
 
 	public function home()
 	{
-		return View::make('hello', array('projects' => Project::all()));
+		$menu = Menu::find(1);
+		return View::make('hello', array(
+			'projects' => Project::all(),
+			'menu' => $menu
+		));
+	}
+
+	public function home_gallery($id)
+	{
+		$menu = Menu::find(1);
+		return View::make('home_gallery', array('id' => $id, 'menu' => $menu));
 	}
 
 	public function kien_thuc()

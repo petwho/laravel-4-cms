@@ -8,7 +8,7 @@
           <ul class="sliders-wrap-inner">
             @foreach ($menu->galleries as $gallery)
               @foreach ($gallery->images as $image)
-                <li><img src="{{$image->url}}" title="" alt="" /></li>
+                <li><img width="1000" height="466" src="{{$image->url}}" title="" alt="" /></li>
               @endforeach
             @endforeach
           </ul>

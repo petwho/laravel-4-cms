@@ -96,12 +96,30 @@ class GalleriesTableSeeder extends Seeder {
   {
     DB::table('galleries')->delete();
 
+    // Intro page: 14 galleries
+    // Inside pages (menus): 4 (home page) + 5 = 9 galleries
     for($i = 0; $i < 20; $i++) {
-      Gallery::create([
-        'id' => $i + 1,
-        'title' => 'Gallery '.$i,
-        'project_id' => $i + 1
-      ]);
+      if ($i < 14) {
+        Gallery::create([
+          'id' => $i + 1,
+          'title' => 'Gallery '.$i,
+          'project_id' => $i + 1
+        ]);
+      } else if ($i == 14) {
+        for ($j = 0; $j < 4; $j++) { // 4 galleries in home page
+          Gallery::create([
+            'id' => $i + $j + 1,
+            'title' => 'Gallery '.$i,
+            // 'project_id' => $i + 1 // We don't need project id
+          ]);
+        }
+      } else {
+        Gallery::create([
+          'id' => $i + 3 + 1,
+          'title' => 'Gallery '.$i,
+          // 'project_id' => $i + 1 // We don't need project id
+        ]);
+      }
     }
   }
 
@@ -113,21 +131,21 @@ class GalleryMenuTableSeeder extends Seeder {
   {
     DB::table('gallery_menu')->delete();
 
-    for($i = 1; $i <= 6; $i++) {
-      if ($i == 5) {
+    for($i = 0; $i < 6; $i++) {
+      if ($i == 4) { // Ignore Feng shui page
         continue;
       }
-      if ($i == 1) {
-        for ($j = 0; $j <= 5; $j ++) {
+      if ($i == 0) { // 4 galleries for Home page
+        for ($j = 0; $j < 4; $j ++) {
           GalleryMenu::create([
-            'menu_id' => $i,
-            'gallery_id' => $i + $j,
+            'menu_id' => $i + 1,
+            'gallery_id' => $i + 15 + $j, // Add 15 to ignore galleries for Intro page
           ]);
         }
       } else {
         GalleryMenu::create([
-          'menu_id' => $i,
-          'gallery_id' => $i + 5,
+          'menu_id' => $i + 1,
+          'gallery_id' => $i + 15 + 3, // Add 13 to ignore intro galleries
         ]);
       }
     }
@@ -140,7 +158,8 @@ class ImagesTableSeeder extends Seeder {
   public function run()
   {
     DB::table('images')->delete();
-    for($i = 0; $i < 20; $i++) {
+
+    for($i = 0; $i < 14; $i++) {
       for ($j = 0; $j < 5; $j++) {
         Image::create([
           'name' => 'Name '.$i,
@@ -149,6 +168,37 @@ class ImagesTableSeeder extends Seeder {
           'thumb_url' => '/images/intro/project0' . $i . '/thumb_0' . $j . '.jpg',
           'gallery_id' => $i + 1,
         ]);
+      }
+    }
+
+    $menus = ['index', 'kienthuc', 'gioithieu', 'shopnoithat', 'phongthuy', 'gioithieu'];
+
+    for ($i = 14; $i < 20; $i++) {
+      if ($i == 18) {
+        continue;
+      }
+      if ($i == 14) { // Images from 4 galleries for Home page
+        for ($k = 0; $k < 4; $k++) {
+          for ($j = 0; $j < 5; $j++) {
+            Image::create([
+              'name' => 'Name '.$j,
+              'title' => 'title '.$j,
+              'url' => '/images/' . $menus[$i - 14] . '/' . 'mv0' . $j . '.jpg',
+              'thumb_url' => '/images/' . $menus[$i - 14] . '/thumb_0' . $j . '.jpg',
+              'gallery_id' => $i + 1 + $k,
+            ]);
+          }
+        }
+      } else {
+        for ($j = 0; $j < 5; $j++) {
+          Image::create([
+            'name' => 'Name '.$j,
+            'title' => 'title '.$j,
+            'url' => '/images/' . $menus[$i - 14] . '/' . 'mv0' . $j . '.jpg',
+            'thumb_url' => '/images/' . $menus[$i - 14] . '/thumb_0' . $j . '.jpg',
+            'gallery_id' => $i + 1 + 3,
+          ]);
+        }
       }
     }
 
@@ -350,5 +400,4 @@ class PostsTableSeeder extends Seeder {
       ]);
     }
   }
-
 }
