@@ -326,3 +326,6 @@ body {
 	background: url(../images/common/pagetop.png) top center no-repeat;
 	display: block;
 }
+.invisible {
+	visibility: hidden;
+}

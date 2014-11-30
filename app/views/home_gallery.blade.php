@@ -35,9 +35,8 @@
                 <!-- MAIN CONTENT -->
                 <div class="main-slider-content" style="width:695px; height:405px;">
                     <ul class="sliders-wrap-inner">
-                        <?php $i = 0; ?>
                         @foreach ($menu->galleries as $gallery)
-                            @if ($i < 4)
+                            @if ($gallery->id == $id)
                                 @foreach ($gallery->images as $image)
                                     <li>
                                         <img src="{{$image->url}}">
@@ -62,7 +61,7 @@
                     <div class="navigator-wrapper">
                         <ul class="navigator-wrap-inner">
                             @foreach ($menu->galleries as $gallery)
-                                @if ($i < 4)
+                                @if ($gallery->id == $id)
                                     @foreach ($gallery->images as $image)
                                         <li>
                                             <img width=700 height=405 src="{{$image->thumb_url}}">

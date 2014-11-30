@@ -69,7 +69,7 @@
   <div id="Pagetop">
     <p><a href="#Top" class="over4" style="opacity: 1;"></a></p>
   </div>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
   <style type="text/css">
   .breadcrums {
     color: #ccc;

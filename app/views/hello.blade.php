@@ -4,7 +4,7 @@
 	@include('static_blocks.navbar')
 	
 	<div id="Content" class="pb-30">
-		@include('static_blocks.home.pill')
+		@include('static_blocks.home.pill', array('menu' => $menu))
 		
 		<div class="grid-850">
 			@include('static_blocks.home.architect')
@@ -43,13 +43,16 @@
 					@endfor
 				</ul>
 				<ul class="navigation cf">
-					<li><a href="#"><img src="images/common/first_nav.png" alt="" class="alpha"/></a></li>
-					<li><a href="#"><img src="images/common/prev_nav.png" alt="" class="alpha"/></a></li>
+					<li class="invisible"><a href="#"><img src="images/common/prev_nav.png" alt="" class="alpha"/></a></li>
+					<li><a href="#"><img src="images/common/first_nav.png" alt="" class="alpha nav-btn nav-first"/></a></li>
 					@for ($i = 0; $i < count($projects); $i++)
 						@if ($i < 3)
 							<div>
 								@if ($i % 3 == 2)
 									<li data-page="{{ $i + 1 }}" class="no proj-page last"><a href="#">{{ $i + 1 }}</a></li>
+								@elseif ($i % 3 == 0)
+									<li data-page="{{ $i + 1 }}" class="no proj-page first active"><a href="#">{{ $i + 1 }}</a></li>
+
 								@else
 									<li data-page="{{ $i + 1 }}" class="no proj-page"><a href="#">{{ $i + 1 }}</a></li>
 								@endif
@@ -57,15 +60,15 @@
 						@else
 							<div class='hidden'>
 								@if ($i % 3 == 2)
-									<li data-page="{{ $i + 1 }}" class="no proj-page last"><a href="#">{{ $i + 1 }}</a></li>
+									<li data-page="{{ $i + 1 }}" class="no proj-page"><a href="#">{{ $i + 1 }}</a></li>
 								@else
 									<li data-page="{{ $i + 1 }}" class="no proj-page"><a href="#">{{ $i + 1 }}</a></li>
 								@endif
 							</div>
 						@endif
 					@endfor
-					<li><a href="#"><img src="images/common/next_nav.png" alt="" class="alpha"/></a></li>
-					<li><a href="#"><img src="images/common/last_nav.png"alt="" class="alpha"/></a></li>
+					<li><a href="#"><img src="images/common/last_nav.png"alt="" class="alpha nav-btn nav-last"/></a></li>
+					<li class="invisible"><a href="#"><img src="images/common/next_nav.png" alt="" class="alpha"/></a></li>
 				</ul>
 			</div>
 			<!-- / .section -->
@@ -87,6 +90,9 @@
 		background: url(../images/common/nav_hover.png) repeat-x;
 		color: #fff !important;
 	}
+	.navigation li.proj-page.active a{
+		font-weight: 700;
+	}
 </style>
 <!--Container--> 
 <!--javascript-->
@@ -97,10 +103,21 @@
 <script type="text/javascript" src="js/common.js"></script> 
 <script type="text/javascript" src="js/tab.js"></script> 
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script> 
-<script language="javascript" type="text/javascript" src="js/script.js"></script> 
+<script language="javascript" type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript">
  $(document).ready( function(){
+ 		$('.navigation .nav-btn').click(function (e) {
+ 			e.preventDefault();
+ 			if ($(this).hasClass('nav-last')) {
+ 				$('.navigation li.last').trigger('click');
+ 			}
+ 			if ($(this).hasClass('nav-first')) {
+ 				$('.navigation li.first').trigger('click');
+ 			}
+ 		});
+
  		$('.proj-page').click(function (e) {
+ 			$('.proj-page').removeClass('active');
  			var pageNum = $(this).addClass('active').data('page');
  			$('.page-div').addClass('hidden');
  			$('.page-div.page-' + pageNum).removeClass('hidden');

@@ -97,7 +97,7 @@ class GalleriesTableSeeder extends Seeder {
     DB::table('galleries')->delete();
 
     // Intro page: 14 galleries
-    // Inside pages (menus): 4 (home page) + 5 = 9 galleries
+    // Inside pages (menus): 6 (home page) + 5 = 11 galleries
     for($i = 0; $i < 20; $i++) {
       if ($i < 14) {
         Gallery::create([
@@ -106,7 +106,7 @@ class GalleriesTableSeeder extends Seeder {
           'project_id' => $i + 1
         ]);
       } else if ($i == 14) {
-        for ($j = 0; $j < 4; $j++) { // 4 galleries in home page
+        for ($j = 0; $j < 6; $j++) { // 6 galleries in home page
           Gallery::create([
             'id' => $i + $j + 1,
             'title' => 'Gallery '.$i,
@@ -115,7 +115,7 @@ class GalleriesTableSeeder extends Seeder {
         }
       } else {
         Gallery::create([
-          'id' => $i + 3 + 1,
+          'id' => $i + 5 + 1,
           'title' => 'Gallery '.$i,
           // 'project_id' => $i + 1 // We don't need project id
         ]);
@@ -135,8 +135,8 @@ class GalleryMenuTableSeeder extends Seeder {
       if ($i == 4) { // Ignore Feng shui page
         continue;
       }
-      if ($i == 0) { // 4 galleries for Home page
-        for ($j = 0; $j < 4; $j ++) {
+      if ($i == 0) { // 6 galleries for Home page
+        for ($j = 0; $j < 6; $j ++) {
           GalleryMenu::create([
             'menu_id' => $i + 1,
             'gallery_id' => $i + 15 + $j, // Add 15 to ignore galleries for Intro page
@@ -145,7 +145,7 @@ class GalleryMenuTableSeeder extends Seeder {
       } else {
         GalleryMenu::create([
           'menu_id' => $i + 1,
-          'gallery_id' => $i + 15 + 3, // Add 13 to ignore intro galleries
+          'gallery_id' => $i + 15 + 5, // Add 15 to ignore intro galleries
         ]);
       }
     }
@@ -177,8 +177,8 @@ class ImagesTableSeeder extends Seeder {
       if ($i == 18) {
         continue;
       }
-      if ($i == 14) { // Images from 4 galleries for Home page
-        for ($k = 0; $k < 4; $k++) {
+      if ($i == 14) { // Images from 6 galleries for Home page
+        for ($k = 0; $k < 6; $k++) {
           for ($j = 0; $j < 5; $j++) {
             Image::create([
               'name' => 'Name '.$j,
@@ -196,7 +196,7 @@ class ImagesTableSeeder extends Seeder {
             'title' => 'title '.$j,
             'url' => '/images/' . $menus[$i - 14] . '/' . 'mv0' . $j . '.jpg',
             'thumb_url' => '/images/' . $menus[$i - 14] . '/thumb_0' . $j . '.jpg',
-            'gallery_id' => $i + 1 + 3,
+            'gallery_id' => $i + 1 + 5,
           ]);
         }
       }
