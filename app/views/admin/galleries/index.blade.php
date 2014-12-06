@@ -10,9 +10,10 @@
             <th>#</th>
             <th>Title</th>
             <th>Pages</th>
+            <th>Panels</th>
             <th>Project</th>
-            <th>Created At</th>
-            <th>Updated At</th>
+            <!-- <th>Created At</th>
+            <th>Updated At</th> -->
             <th>Manage</th>
           <tr>
         </thead>
@@ -32,13 +33,23 @@
                   <?php $temp = substr($temp, 0, strlen($temp) - 2); ?>
                   {{ $temp }}
                 </td>
+
+                <td>
+                  <?php $temp = ''; ?>
+                  @foreach ($gallery->panels as $panel)
+                    <?php $temp .= $panel->title.', '; ?>
+                  @endforeach
+                  <?php $temp = substr($temp, 0, strlen($temp) - 2); ?>
+                  {{ $temp }}
+                </td>
+
                 @if ($gallery->project_id)
                   <td>{{ $project_list[$gallery->project_id] }}</td>
                 @else
                   <td class='text-danger'>No project</td>
                 @endif
-                <td>{{ date('d/m/Y', strtotime($gallery->created_at)) }}</td>
-                <td>{{ date('d/m/Y', strtotime($gallery->updated_at)) }}</td>
+                <!-- <td>{{ date('d/m/Y', strtotime($gallery->created_at)) }}</td>
+                <td>{{ date('d/m/Y', strtotime($gallery->updated_at)) }}</td> -->
                 <td colspan="2">
                   <a class='link text-primary edit' href="/galleries/{{ $gallery->id }}/edit" title='edit'><i class="fa fa-edit"></i> edit</a>
                   |
