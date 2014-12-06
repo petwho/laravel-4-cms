@@ -214,6 +214,22 @@ class GalleryMenuTableSeeder extends Seeder {
 
 }
 
+class GalleryPanelTableSeeder extends Seeder {
+
+  public function run()
+  {
+    DB::table('gallery_panel')->delete();
+
+    for($i = 0; $i < 8; $i++) {
+        GalleryPanel::create([
+          'panel_id' => $i + 1,
+          'gallery_id' => $i + 1,
+        ]);
+    }
+  }
+
+}
+
 class ImagesTableSeeder extends Seeder {
 
   public function run()

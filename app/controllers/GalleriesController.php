@@ -140,6 +140,22 @@ class GalleriesController extends \BaseController {
 				$gallery_menu->delete();
 			}
 		}
+		$panels = ['panel-1', 'panel-2', 'panel-3', 'panel-4', 'panel-6', 'panel-7', 'panel-8'];
+		foreach ($panels as $panel) {
+			$gallery_panel = GalleryPanel::whereRaw('gallery_id ='.$id
+				.' AND panel_id = '.substr($panel, 6, 1))->first();
+			// if gallery doesn't exist and the input was checked
+			if (!$gallery_panel && Input::get($panel) == 'on') {
+				// create new record on gally_panel table
+				$gallery_panel = new GalleryPanel;
+				$gallery_panel->gallery_id = $gallery->id;
+				$gallery_panel->panel_id = substr($panel, 6, 1);
+				$gallery_panel->save();
+			}
+			elseif ($gallery_panel && Input::get($panel) !== 'on') {
+				$gallery_panel->delete();
+			}
+		}
 		$rules = array(
 		  'title' => array('required', 'unique:galleries,title,'.$id),
 		  'project_id' => array('unique:galleries,project_id,'.$id),

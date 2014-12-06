@@ -189,21 +189,143 @@
 
       <label>Include this gallery into the following panel(s):</label>
       <div class="row">
+
         <div class="col-xs-2">
           <div class='checkbox'>
+            <?php $is_checked = false; ?>
             <label>
               @foreach ($gallery_panels as $gallery_panel)
                 @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 1))
-                  <input name="menu-1" type="checkbox" checked> trang chủ
+                  <input name="panel-1" type="checkbox" checked> Vật liệu ốp lát
                   <?php $is_checked = true; ?>
                 @endif
               @endforeach
               @if (!$is_checked)
-                <input name="menu-1" type="checkbox"> trang chủ
+                <input name="panel-1" type="checkbox"> Vật liệu ốp lát
               @endif
             </label>
           </div>
         </div>
+
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_panels as $gallery_panel)
+                @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 2))
+                  <input name="panel-2" type="checkbox" checked> Thiết bị vệ sinh
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="panel-2" type="checkbox"> Thiết bị vệ sinh
+              @endif
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_panels as $gallery_panel)
+                @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 3))
+                  <input name="panel-3" type="checkbox" checked> Cửa
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="panel-3" type="checkbox"> Cửa
+              @endif
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_panels as $gallery_panel)
+                @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 4))
+                  <input name="panel-4" type="checkbox" checked> Đèn chiếu sáng
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="panel-4" type="checkbox"> Đèn chiếu sáng
+              @endif
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_panels as $gallery_panel)
+                @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 5))
+                  <input name="panel-5" type="checkbox" checked> Vật tư điện
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="panel-5" type="checkbox"> Vật tư điện
+              @endif
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_panels as $gallery_panel)
+                @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 6))
+                  <input name="panel-6" type="checkbox" checked> trang chủ
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="panel-6" type="checkbox"> SOFA
+              @endif
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_panels as $gallery_panel)
+                @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 7))
+                  <input name="panel-7" type="checkbox" checked> BẾP
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="panel-7" type="checkbox"> BẾP
+              @endif
+            </label>
+          </div>
+        </div>
+
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <?php $is_checked = false; ?>
+            <label>
+              @foreach ($gallery_panels as $gallery_panel)
+                @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 8))
+                  <input name="panel-8" type="checkbox" checked> NỘI THẤT
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="panel-8" type="checkbox"> NỘI THẤT
+              @endif
+            </label>
+          </div>
+        </div>
+      </div>
 
       <!-- Add more images to gallery -->
       <div class='form-group'>
