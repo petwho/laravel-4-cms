@@ -81,13 +81,13 @@
               {{ Form::text('image['.$images[$i]->id.'][name]', $images[$i]->name, array(
                             'class' => 'form-control',
                             'required' => true,
-                            'value' => $images[$i]->name))}}
+                            'value' => $images[$i]->name)) }}
                             <br>
               <label>Image title:</label>
               {{ Form::text('image['.$images[$i]->id.'][title]', $images[$i]->title, array(
                             'class' => 'form-control',
                             'required' => true,
-                            'value' => $images[$i]->title))}}
+                            'value' => $images[$i]->title)) }}
               <br>
               <img class="img-responsive" src="{{$images[$i]->url}}">
               <br>
@@ -186,6 +186,24 @@
       </div>
 
       <div class="row-gap-small"></div>
+
+      <label>Include this gallery into the following panel(s):</label>
+      <div class="row">
+        <div class="col-xs-2">
+          <div class='checkbox'>
+            <label>
+              @foreach ($gallery_panels as $gallery_panel)
+                @if (($gallery->id == $gallery_panel->gallery_id) && ($gallery_panel->panel_id == 1))
+                  <input name="menu-1" type="checkbox" checked> trang chủ
+                  <?php $is_checked = true; ?>
+                @endif
+              @endforeach
+              @if (!$is_checked)
+                <input name="menu-1" type="checkbox"> trang chủ
+              @endif
+            </label>
+          </div>
+        </div>
 
       <!-- Add more images to gallery -->
       <div class='form-group'>

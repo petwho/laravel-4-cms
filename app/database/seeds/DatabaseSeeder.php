@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder {
     $this->call('GalleriesTableSeeder');
     $this->call('GalleryMenuTableSeeder');
     $this->call('ImagesTableSeeder');
-    $this->command->info('User table seeded!');
+    $this->call('PanelsTableSeeder');
+    $this->command->info('All tables seeded!');
   }
 
 }
@@ -86,6 +87,66 @@ class MenusTableSeeder extends Seeder {
         Menu::create(array(
           'id' => '6',
           'title' => 'GIỚI THIỆU'));
+    }
+
+}
+
+class PanelsTableSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('panels')->delete();
+
+        Panel::create(array(
+          'id' => '1',
+          'title' => 'Vật liệu ốp lát',
+          'description' => 'Lorem ipsum Consequat veniam in quis aliquip nisi cillum nostrud consequat quis consectetur eu reprehenderit dolore aliqua proident commodo incididunt mollit in elit magna fugiat.'
+        ));
+
+        Panel::create(array(
+          'id' => '2',
+          'title' => 'Thiết bị vệ sinh',
+          'description' => 'Lorem ipsum Et ut velit aute velit nisi in sed voluptate tempor consectetur enim amet fugiat amet voluptate pariatur adipisicing veniam do in.'
+        ));
+
+        Panel::create(array(
+          'id' => '3',
+          'title' => 'Cửa',
+          'description' => 'Lorem ipsum Aliqua ut dolore in irure veniam ut deserunt irure culpa ut pariatur quis non eu Ut aliquip veniam commodo irure ea Duis deserunt officia fugiat nulla ea sit id incididunt dolor laborum labore fugiat.'
+        ));
+
+        Panel::create(array(
+          'id' => '4',
+          'title' => 'Đèn chiếu sáng',
+          'description' => 'Lorem ipsum Pariatur dolore consequat non elit reprehenderit nulla consequat Excepteur elit et cupidatat ullamco irure laborum dolore exercitation nulla in velit ut.'
+        ));
+
+        Panel::create(array(
+          'id' => '5',
+          'title' => 'Vật tư điện',
+          'description' => 'Lorem ipsum Dolor nulla ullamco reprehenderit dolore dolor sint dolore culpa dolor qui culpa est commodo cillum enim dolor enim officia est culpa.'
+        ));
+
+        Panel::create(array(
+          'id' => '6',
+          'title' => 'SOFA',
+          'description' => 'Lorem ipsum Ad laboris in fugiat id labore proident magna sunt dolor in enim cillum sed tempor labore nisi nisi amet dolor ut cupidatat enim enim esse nulla elit est eu et exercitation non labore commodo eiusmod elit.',
+          'is_on_first_page' => false,
+        ));
+
+        Panel::create(array(
+          'id' => '7',
+          'title' => 'BẾP',
+          'description' => 'Lorem ipsum Aliquip in in voluptate veniam officia nisi dolore Ut irure dolore sint et eiusmod fugiat sit id mollit est eu dolor pariatur eiusmod consectetur sit commodo sunt in consequat culpa irure dolore in nostrud.',
+          'is_on_first_page' => false,
+        ));
+
+        Panel::create(array(
+          'id' => '8',
+          'title' => 'NỘI THẤT',
+          'description' => 'Lorem ipsum Nisi et dolore et dolore ullamco sed ut aute qui aliqua sit tempor exercitation id est qui sit sint Duis sed in est nulla quis tempor nisi.',
+          'is_on_first_page' => false,
+        ));
     }
 
 }

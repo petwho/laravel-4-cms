@@ -22,10 +22,10 @@
 <script  type="text/javascript"src="js/jquery.colorbox.js"></script> 
 <script type="text/javascript">
 			$(document).ready(function(){
-		    // 	$(".iframe").colorbox({iframe:true, width:"950px", height:"700px"});
-        $('.iframe').click(function (e) {
-          e.preventDefault();
-        })
+	    	$(".iframe").colorbox({iframe:true, width:"950px", height:"700px"});
+        // $('.iframe').click(function (e) {
+        //   e.preventDefault();
+        // })
 			});
 </script> 
 <script> 

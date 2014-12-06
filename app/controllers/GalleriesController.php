@@ -100,6 +100,7 @@ class GalleriesController extends \BaseController {
 		}
 
 		$gallery_menus = GalleryMenu::all();
+		$gallery_panels = GalleryPanel::all();
 
 
     	return View::make('admin.galleries.edit', array(
@@ -107,7 +108,8 @@ class GalleriesController extends \BaseController {
     		'options' => $options,
     		'images' => $images,
     		'menus' => $menus,
-    		'gallery_menus' => $gallery_menus
+    		'gallery_menus' => $gallery_menus,
+    		'gallery_panels' => $gallery_panels
 		));
 	}
 

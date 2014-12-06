@@ -61,6 +61,8 @@ Route::resource('galleries', 'GalleriesController');
 Route::resource('photos', 'PhotosController');
 // Messages
 Route::get('messages/index', 'MessagesController@index');
+// Panels
+Route::resource('panels', 'PanelsController');
 
 Route::get('/kien-thuc/{id}', 'HomeController@kien_thuc_post');
 Route::get('/phong-thuy/{id}', 'HomeController@phong_thuy_post');
