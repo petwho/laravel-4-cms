@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateGalleryPanelTable extends Migration {
+class CreateTabsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,13 @@ class CreateGalleryPanelTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('gallery_panel', function(Blueprint $table)
+		Schema::create('tabs', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('gallery_id')->unsigned()->index();
-			$table->foreign('gallery_id')->references('id')->on('galleries')->onDelete('cascade');
-			$table->integer('panel_id')->unsigned()->index();
+			$table->integer('panel_id')->unsigned();
+			$table->string('title');
+			$table->integer('position');
+			$table->boolean('has_big_slider')->default(true);
 			$table->foreign('panel_id')->references('id')->on('panels')->onDelete('cascade');
 			$table->timestamps();
 		});
@@ -31,7 +32,7 @@ class CreateGalleryPanelTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('gallery_panel');
+		Schema::drop('tabs');
 	}
 
 }

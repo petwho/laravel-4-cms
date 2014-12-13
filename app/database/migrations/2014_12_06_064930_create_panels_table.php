@@ -17,8 +17,8 @@ class CreatePanelsTable extends Migration {
 			$table->increments('id');
 			$table->string('title');
 			$table->string('description');
+			$table->integer('position');
 			$table->boolean('is_on_first_page')->default(true);
-			$table->boolean('hide_big_image')->default(false);
 			$table->timestamps();
 		});
 	}

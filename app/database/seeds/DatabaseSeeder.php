@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder {
     $this->call('GalleryMenuTableSeeder');
     $this->call('ImagesTableSeeder');
     $this->call('PanelsTableSeeder');
+    $this->call('TabsTableSeeder');
+    $this->call('GalleryTabTableSeeder');
     $this->command->info('All tables seeded!');
   }
 
@@ -151,6 +153,37 @@ class PanelsTableSeeder extends Seeder {
 
 }
 
+class TabsTableSeeder extends Seeder {
+  public function run()
+  {
+    Db::table('tabs')->delete();
+    for ($i = 0; $i < 8; $i++) {
+      for ($j = 0; $j < 3; $j++) {
+        Tab::create([
+          'id' => $i * 3 + $j + 1,
+          'title' => 'Tab '.($i + 1) .'.'. ($j +1),
+          'panel_id' => $i + 1,
+          'position' => $j + 1,
+        ]);
+      }
+    }
+  }
+}
+
+class GalleryTabTableSeeder extends Seeder {
+
+  public function run()
+  {
+    DB::table('gallery_tab')->delete();
+    for ($i = 0; $i < 24; $i++) {
+      GalleryTab::create([
+        'gallery_id' => $i + 1,
+        'tab_id' => $i + 1
+      ]);
+    }
+  }
+}  
+
 class GalleriesTableSeeder extends Seeder {
 
   public function run()
@@ -221,10 +254,10 @@ class GalleryPanelTableSeeder extends Seeder {
     DB::table('gallery_panel')->delete();
 
     for($i = 0; $i < 8; $i++) {
-        GalleryPanel::create([
-          'panel_id' => $i + 1,
-          'gallery_id' => $i + 1,
-        ]);
+      GalleryPanel::create([
+        'panel_id' => $i + 1,
+        'gallery_id' => $i + 1,
+      ]);
     }
   }
 
