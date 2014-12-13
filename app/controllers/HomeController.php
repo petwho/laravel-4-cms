@@ -20,7 +20,7 @@ class HomeController extends BaseController {
 		$projects = Project::where('is_featured', '=', true)->get();
 		return View::make('intro', array('projects' => $projects));
 	}
-
+	// Iframe for intro page
 	public function iframe($id)
 	{
 		$project = Project::find($id);
@@ -32,6 +32,12 @@ class HomeController extends BaseController {
 			'gallery' => $gallery,
 			'images' => $images
 		));
+	}
+	// Iframe for panels
+	public function panels($id)
+	{
+		$panels = Panel::find($id);
+		return View::make('panels', array('panels' => $panels));
 	}
 
 	public function home()

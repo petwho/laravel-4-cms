@@ -6,9 +6,9 @@ class Gallery extends \Eloquent {
     {
         return $this->belongsToMany('Menu');
     }
-    public function panels()
+    public function tabs()
     {
-        return $this->belongsToMany('Panel');
+        return $this->belongsToMany('Tab');
     }
     public function images()
     {

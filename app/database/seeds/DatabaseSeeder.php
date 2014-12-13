@@ -171,7 +171,6 @@ class TabsTableSeeder extends Seeder {
 }
 
 class GalleryTabTableSeeder extends Seeder {
-
   public function run()
   {
     DB::table('gallery_tab')->delete();
@@ -182,7 +181,7 @@ class GalleryTabTableSeeder extends Seeder {
       ]);
     }
   }
-}  
+}
 
 class GalleriesTableSeeder extends Seeder {
 

@@ -18,7 +18,6 @@ class CreateTabsTable extends Migration {
 			$table->integer('panel_id')->unsigned();
 			$table->string('title');
 			$table->integer('position');
-			$table->boolean('has_big_slider')->default(true);
 			$table->foreign('panel_id')->references('id')->on('panels')->onDelete('cascade');
 			$table->timestamps();
 		});

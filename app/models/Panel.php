@@ -2,8 +2,8 @@
 
 class Panel extends \Eloquent {
 	// protected $fillable = ['title', 'description', 'gallery_ids', 'is_on_first_page', 'hide_big_image'];
-    public function galleries()
+    public function tabs()
     {
-        return $this->belongsToMany('Gallery');
+        return $this->hasMany('Tab');
     }
 }

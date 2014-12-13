@@ -21,6 +21,7 @@ Route::get('/vat-lieu', 'HomeController@vat_lieu');
 Route::get('/shop-noi-that', 'HomeController@shop_noi_that');
 Route::get('/phong-thuy', 'HomeController@phong_thuy');
 Route::post('/contact', 'HomeController@contact');
+Route::get('/panels/{id}', 'HomeController@panels');
 
 Route::get('/dashboard', array(
   'before' => 'auth',
