@@ -152,6 +152,7 @@ class GalleriesController extends \BaseController {
 				$gallery_menu->delete();
 			}
 		}
+
 		$tabs = Input::get('tab');
 		// delete all previous saved gallery_tabs
 		$gallery_tabs = GalleryTab::where('gallery_id', '=', $gallery->id)->delete();
@@ -193,13 +194,18 @@ class GalleriesController extends \BaseController {
 			$found_image->title = $image['title'];
 			$found_image->save();
 		}
+
 		$validator = Validator::make(Input::all(), $rules);
+
 		if ($validator->passes()) {
 		  $gallery->title = Input::get('title');
 		  if (Input::get('project_id') == '') {
 		  	$gallery->project_id = null;
 		  } else {
 		  	$gallery->project_id = Input::get('project_id');
+		  }
+		  if (Input::get('is_top_panel_gallery')) {
+		  	$gallery->is_top_panel_gallery = true;
 		  }
 		  $gallery->update();
 		  return Redirect::back()->with('message', 'Gallery updated successfully');

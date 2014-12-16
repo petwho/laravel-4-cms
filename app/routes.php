@@ -21,7 +21,6 @@ Route::get('/vat-lieu', 'HomeController@vat_lieu');
 Route::get('/shop-noi-that', 'HomeController@shop_noi_that');
 Route::get('/phong-thuy', 'HomeController@phong_thuy');
 Route::post('/contact', 'HomeController@contact');
-Route::get('/panels/{id}', 'HomeController@panels');
 
 Route::get('/dashboard', array(
   'before' => 'auth',
@@ -64,6 +63,7 @@ Route::resource('photos', 'PhotosController');
 Route::get('messages/index', 'MessagesController@index');
 // Panels
 Route::resource('panels', 'PanelsController');
+Route::resource('tabs', 'TabsController');
 
 Route::get('/kien-thuc/{id}', 'HomeController@kien_thuc_post');
 Route::get('/phong-thuy/{id}', 'HomeController@phong_thuy_post');

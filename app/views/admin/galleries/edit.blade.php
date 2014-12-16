@@ -97,6 +97,42 @@
       </div>
 
       <div class="row-gap-medium"></div>
+      <!-- Add more images to gallery -->
+      <div class='form-group'>
+        <div class="row">
+          <div class="col-xs-3">
+            <a href="#" class="btn btn-primary add-image">Add more image to gallery</a>
+          </div>
+          <div class="col-xs-6 hidden add-image-form">
+            <label>Image URL:</label>
+            {{ Form::hidden('new_image', false, array('id' => 'new_image_watcher'))}}
+            {{ Form::text('image[0][url]', null, array(
+                  'class' => 'form-control',
+                  'id' => 'image[0][url]',
+                  'placeholder' => 'Enter image url'))}}
+
+            <label>Image thumb:</label>
+            {{ Form::text('image[0][thumb_url]', null, array(
+                  'class' => 'form-control',
+                  'id' => 'image[0][thumb_url]',
+                  'placeholder' => 'Enter image thumb_url'))}}
+
+            <label>Image name:</label>
+            {{ Form::text('image[0][name]', null, array(
+                  'class' => 'form-control',
+                  'id' => 'image[0][name]',
+                  'placeholder' => 'Enter image name'))}}
+
+            <label>Image title:</label>
+            {{ Form::text('image[0][title]', null, array(
+                  'class' => 'form-control',
+                  'id' => 'image[0][title]',
+                  'placeholder' => 'Enter image title'))}}
+          </div>
+        </div>
+      </div>
+      <!-- End of adding images to gallery form -->
+      <div class="row-gap-small"></div>
       <label>Include this gallery into the following page(s):</label>
       <div class="row">
         <div class="col-xs-2">
@@ -170,6 +206,7 @@
         <div class="col-xs-2">
             <div class='checkbox'>
               <?php $is_checked = false; ?>
+      <div class="row-gap-small"></div>
               <label>
                 @foreach ($galleryMenus as $galleryMenu)
                   @if (($gallery->id == $galleryMenu->gallery_id) && ($galleryMenu->menu_id == 6))
@@ -188,48 +225,26 @@
       <div class="row-gap-small"></div>
 
       <label>Include this gallery into the following tabs(s):</label>
-      {{ Form::select('tab[]', $tabList, $selectedTabList, array('multiple' => true, 'size' => 10)) }}
-      <button class="btn btn-default deselect-btn">Deselect all tabs</button>
 
-      <!-- Add more images to gallery -->
-      <div class='form-group'>
-        <div class="row">
-          <div class="col-xs-3">
-            <a href="#" class="btn btn-primary add-image">Add more image to gallery</a>
-          </div>
-          <div class="col-xs-6 hidden add-image-form">
-            <label>Image URL:</label>
-            {{ Form::hidden('new_image', false, array('id' => 'new_image_watcher'))}}
-            {{ Form::text('image[0][url]', null, array(
-                  'class' => 'form-control',
-                  'id' => 'image[0][url]',
-                  'placeholder' => 'Enter image url'))}}
-
-            <label>Image thumb:</label>
-            {{ Form::text('image[0][thumb_url]', null, array(
-                  'class' => 'form-control',
-                  'id' => 'image[0][thumb_url]',
-                  'placeholder' => 'Enter image thumb_url'))}}
-
-            <label>Image name:</label>
-            {{ Form::text('image[0][name]', null, array(
-                  'class' => 'form-control',
-                  'id' => 'image[0][name]',
-                  'placeholder' => 'Enter image name'))}}
-
-            <label>Image title:</label>
-            {{ Form::text('image[0][title]', null, array(
-                  'class' => 'form-control',
-                  'id' => 'image[0][title]',
-                  'placeholder' => 'Enter image title'))}}
-          </div>
-        </div>
-      </div>
-      <!-- End of adding images to gallery form -->
+        {{ Form::select('tab[]', $tabList, $selectedTabList, array('multiple' => true, 'size' => 10, 'class' => 'form-control')) }}
       <div class="row-gap-small"></div>
+      <button class="btn btn-warning deselect-btn">Unselect all tabs</button>
+
+      <div class="checkbox">
+        <label>
+          @if ($gallery->is_top_panel_gallery)
+            <input name="is_top_panel_gallery" type="checkbox" checked>
+          @else
+            <input name="is_top_panel_gallery" type="checkbox">
+          @endif
+          Display this gallery on the top in the tab
+        </label>
+      </div>
+
+      <div class="row-gap-medium"></div>
 
       <button class='btn btn-primary' type="submit">Update</button>&nbsp;
-      <a class='btn btn-warning' href='/galleries'>Back</a>
+      <a class='btn btn-warning' href='/galleries'>Cancel</a>
       {{ Form::close() }}
       <div class="row-gap-medium"></div>
     </div>

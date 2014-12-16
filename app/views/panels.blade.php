@@ -44,4 +44,10 @@
             @endforeach
         </div>
     </div>
+
+<style type="text/css">
+    .nivoSlider img {
+        height: 290px !important;
+    }
+</style>
 @include('static_blocks.vat_lieu.panel_footer')

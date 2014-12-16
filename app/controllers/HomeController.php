@@ -33,12 +33,6 @@ class HomeController extends BaseController {
 			'images' => $images
 		));
 	}
-	// Iframe for panels
-	public function panels($id)
-	{
-		$panels = Panel::find($id);
-		return View::make('panels', array('panels' => $panels));
-	}
 
 	public function home()
 	{

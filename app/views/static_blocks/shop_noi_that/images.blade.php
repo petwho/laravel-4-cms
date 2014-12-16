@@ -4,15 +4,15 @@
 			<div class="grid-1000">
 				<div id="Shop-box">
 					<ul class="cf">
-						<li><a href="shopnoithat/sofa.html" id="Link-01" class="iframe">
+						<li><a href="/panels/5" id="Link-01" class="iframe">
 							<p class="title">SOFA</p>
 							<p class="detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
 							</a></li>
-						<li><a href="shopnoithat/bep.html" id="Link-02" class="iframe">
+						<li><a href="/panels/6" id="Link-02" class="iframe">
 							<p class="title">BẾP</p>
 							<p class="detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
 							</a></li>
-						<li><a href="shopnoithat/noithat.html" id="Link-03" class="iframe">
+						<li><a href="/panels/7" id="Link-03" class="iframe">
 							<p class="title">NỘI THẤT</p>
 							<p class="detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco </p>
 							</a></li>

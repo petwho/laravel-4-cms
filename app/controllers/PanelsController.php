@@ -2,6 +2,12 @@
 
 class PanelsController extends \BaseController {
 
+	/* Apply filter */
+	public function __construct()
+	{
+		$this->beforeFilter('auth');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 * GET /panels
@@ -45,7 +51,8 @@ class PanelsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$panels = Panel::find($id);
+		return View::make('panels', array('panels' => $panels));
 	}
 
 	/**
