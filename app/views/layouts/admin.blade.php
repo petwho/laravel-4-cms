@@ -54,6 +54,7 @@
               <li><a href="/projects"><i class="fa fa-th-large"></i>&nbsp;&nbsp;Projects</a></li>
               <li><a href="/posts"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Posts</a></li>
               <li><a href="/messages"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Messages</a></li>
+              <li><a href="/panels"><i class="fa fa-newspaper-o"></i>&nbsp;&nbsp;Panels</a></li>
             </ul>
           </div>
           <div class="col-xs-10 col-xs-offset-2">

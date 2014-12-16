@@ -99,17 +99,29 @@ class GalleriesController extends \BaseController {
 		  $options[$project['id']] = $project['name'];
 		}
 
-		$gallery_menus = GalleryMenu::all();
-		$gallery_panels = GalleryPanel::all();
+		$galleryMenus = GalleryMenu::all();
+		// $galleryTabs = GalleryTab::all();
+		$tabs = Tab::all();
+		$tabList = [];
+		foreach ($tabs as $tab) {
+			$tabList[$tab->id] = $tab->title;
+		}
+		$selectedTabs = GalleryTab::where('gallery_id', '=', $gallery->id)->get();
 
+		$selectedTabList = [];
+		foreach ($selectedTabs as $selectedTab) {
+			$selectedTabList[] = $selectedTab->tab_id;
+		}
 
     	return View::make('admin.galleries.edit', array(
     		'gallery' => $gallery,
     		'options' => $options,
     		'images' => $images,
     		'menus' => $menus,
-    		'gallery_menus' => $gallery_menus,
-    		'gallery_panels' => $gallery_panels
+    		'galleryMenus' => $galleryMenus,
+    		// 'galleryTabs' => $galleryTabs,
+    		'tabList' => $tabList,
+    		'selectedTabList' => $selectedTabList
 		));
 	}
 
@@ -140,22 +152,19 @@ class GalleriesController extends \BaseController {
 				$gallery_menu->delete();
 			}
 		}
-		$panels = ['panel-1', 'panel-2', 'panel-3', 'panel-4', 'panel-6', 'panel-7', 'panel-8'];
-		foreach ($panels as $panel) {
-			$gallery_panel = GalleryPanel::whereRaw('gallery_id ='.$id
-				.' AND panel_id = '.substr($panel, 6, 1))->first();
-			// if gallery doesn't exist and the input was checked
-			if (!$gallery_panel && Input::get($panel) == 'on') {
-				// create new record on gally_panel table
-				$gallery_panel = new GalleryPanel;
-				$gallery_panel->gallery_id = $gallery->id;
-				$gallery_panel->panel_id = substr($panel, 6, 1);
-				$gallery_panel->save();
-			}
-			elseif ($gallery_panel && Input::get($panel) !== 'on') {
-				$gallery_panel->delete();
+		$tabs = Input::get('tab');
+		// delete all previous saved gallery_tabs
+		$gallery_tabs = GalleryTab::where('gallery_id', '=', $gallery->id)->delete();
+		// create new gallery_tabs
+		if ($tabs) {
+			foreach ($tabs as $tab_id) {
+				GalleryTab::create([
+					'gallery_id' => $gallery->id,
+					'tab_id' => $tab_id
+				]);
 			}
 		}
+
 		$rules = array(
 		  'title' => array('required', 'unique:galleries,title,'.$id),
 		  'project_id' => array('unique:galleries,project_id,'.$id),

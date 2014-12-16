@@ -36,8 +36,8 @@
 
                 <td>
                   <?php $temp = ''; ?>
-                  @foreach ($gallery->panels as $panel)
-                    <?php $temp .= $panel->title.', '; ?>
+                  @foreach ($gallery->tabs as $tab)
+                    <?php $temp .= $tab->title.', '; ?>
                   @endforeach
                   <?php $temp = substr($temp, 0, strlen($temp) - 2); ?>
                   {{ $temp }}
