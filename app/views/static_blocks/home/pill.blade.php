@@ -16,7 +16,7 @@
             @elseif ($i == 4)
               <li><a class="{{{($gallery->id == $q_gallery) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Khách sạn - Resort</a></li>
             @elseif ($i == 5)
-              <li><a  class="last" class="{{{($gallery->id == $q_gallery) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Spa - Beauty Salon</a></li>
+              <li><a  class="last {{{($gallery->id == $q_gallery) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Spa - Beauty Salon</a></li>
             @endif
             <?php $i++; ?>
         @endforeach
@@ -27,7 +27,8 @@
         <li><a href="#"><img src="images/common/icon_social03.png" alt="" class="over4"/></a></li>
       </ul>
       <div class="gallery-box">
-        <iframe scrolling="no" src="{{{ ($q_gallery) ? '/home/gallery/'.$q_gallery : '/home/gallery/'.$first_gallery_id }}}" width="1000" height="596" frameborder="0" name="gallery"></iframe>
+        @include('home_gallery', array('id' => $q_gallery ? $q_gallery : $first_gallery_id, 'menu' => $menu, 'subcat' => $q_subcat))
+        <!-- <iframe scrolling="no" src="{{{ ($q_gallery) ? '/home/gallery/'.$q_gallery : '/home/gallery/'.$first_gallery_id }}}" width="1000" height="596" frameborder="0" name="gallery"></iframe> -->
       </div>
       <!-- / .gallery-box --> 
       

@@ -297,7 +297,7 @@ class ImagesTableSeeder extends Seeder {
               'url' => '/images/' . $menus[$i - 14] . '/' . 'mv0' . $j . '.jpg',
               'thumb_url' => '/images/' . $menus[$i - 14] . '/thumb_0' . $j . '.jpg',
               'gallery_id' => $i + 1 + $k,
-              'subcat' => ($j % 5) + 1,
+              'subcat' => ($j % 6) + 1,
             ]);
           }
         }

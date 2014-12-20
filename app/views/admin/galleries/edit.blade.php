@@ -89,9 +89,24 @@
                             'required' => true,
                             'value' => $images[$i]->title)) }}
               <br>
-              <img class="img-responsive" src="{{$images[$i]->url}}">
+              <label>Subcat:</label>
+              {{ Form::select('image['.$images[$i]->id.'][subcat]', array(
+                0 => '--Select--',
+                1 => 'Phòng khách',
+                2 => 'Phòng ngủ',
+                3 => 'Phòng trẻ em',
+                4 => 'Phòng vệ sinh',
+                5 => 'Bếp',
+                6 => 'Góc nhà đẹp'
+              ), $images[$i]->subcat, array('class' => 'form-control')) }}
+              <br>
+              <img class="" src="{{$images[$i]->url}}" width="157" height="92">
+              <br>
               <br>
               <a href="#" class="btn btn-danger delete" data-image-id="{{$images[$i]->id}}">delete</a>
+              <br>
+              <br>
+              <br>
           </div>
         @endfor
       </div>

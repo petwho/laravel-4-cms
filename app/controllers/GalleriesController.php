@@ -136,6 +136,9 @@ class GalleriesController extends \BaseController {
 	{
 		$gallery = Gallery::find($id);
 		// TODO: check $gallery existance
+		if (!$gallery) {
+			return Redirect::back()->with('message', 'Gallery not found');
+		}
 		$menus = ['menu-1', 'menu-2', 'menu-3', 'menu-4', 'menu-6'];
 		foreach ($menus as $menu) {
 			$gallery_menu = GalleryMenu::whereRaw('gallery_id ='.$id
@@ -182,6 +185,7 @@ class GalleriesController extends \BaseController {
 					$new_image->title = $image['title'];
 					$new_image->url = $image['url'];
 					$new_image->thumb_url = $image['thumb_url'];
+					$new_image->subcat = $image['subcat'] ? $image['subcat'] : null;
 					$new_image->save();
 				}
 				continue;
@@ -192,6 +196,7 @@ class GalleriesController extends \BaseController {
 			$found_image->thumb_url = $image['thumb_url'];
 			$found_image->name = $image['name'];
 			$found_image->title = $image['title'];
+			$found_image->subcat = $image['subcat'] ? $image['subcat'] : null;
 			$found_image->save();
 		}
 

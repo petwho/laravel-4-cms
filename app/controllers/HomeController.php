@@ -19,18 +19,20 @@ class HomeController extends BaseController {
 	{
 		$menu = Menu::find(1);
 		$q_gallery = Request::query('gallery');
+		$q_subcat = Request::query('subcat');
 		return View::make('hello', array(
 			'projects' => Project::all(),
 			'menu' => $menu,
 			'q_gallery' => $q_gallery,
+			'q_subcat' => $q_subcat,
 		));
 	}
 
-	public function iframe($id)
-	{
-		$menu = Menu::find(1);
-		return View::make('home_gallery', array('id' => $id, 'menu' => $menu));
-	}
+	// public function iframe($id)
+	// {
+	// 	$menu = Menu::find(1);
+	// 	return View::make('home_gallery', array('id' => $id, 'menu' => $menu));
+	// }
 
 	public function kien_thuc()
 	{
