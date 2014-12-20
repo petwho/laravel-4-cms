@@ -60,8 +60,9 @@ Route::resource('galleries', 'GalleriesController');
 // Photos
 Route::resource('photos', 'PhotosController');
 // Messages
-Route::get('messages/index', 'MessagesController@index');
+Route::get('messages', 'MessagesController@index');
 // Panels
+Route::post('panels', array('before' => 'auth'));
 Route::resource('panels', 'PanelsController');
 Route::resource('tabs', 'TabsController');
 

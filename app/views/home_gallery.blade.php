@@ -29,14 +29,18 @@
                             @endif
                         @endforeach
                     </ul>
-                    <ul class="sub-menu cf">
-                        <li><a href="/home?gallery={{$id}}&subcat=1">Phòng khách</a></li>
-                        <li><a href="/home?gallery={{$id}}&subcat=2">Phòng ngủ</a></li>
-                        <li><a href="/home?gallery={{$id}}&subcat=3">Phòng trẻ em</a></li>
-                        <li><a href="/home?gallery={{$id}}&subcat=4">Phòng vệ sinh</a></li>
-                        <li><a href="/home?gallery={{$id}}&subcat=5">Bếp</a></li>
-                        <li class="last"><a href="/home?gallery={{$id}}&subcat=6">Góc nhà đẹp</a></li>
-                    </ul>
+                    @foreach ($menu->galleries as $gallery)
+                        @if ($gallery->id == $id && $gallery->has_subcat)
+                            <ul class="sub-menu cf">
+                                <li><a href="/home?gallery={{$id}}&subcat=1">Phòng khách</a></li>
+                                <li><a href="/home?gallery={{$id}}&subcat=2">Phòng ngủ</a></li>
+                                <li><a href="/home?gallery={{$id}}&subcat=3">Phòng trẻ em</a></li>
+                                <li><a href="/home?gallery={{$id}}&subcat=4">Phòng vệ sinh</a></li>
+                                <li><a href="/home?gallery={{$id}}&subcat=5">Bếp</a></li>
+                                <li class="last"><a href="/home?gallery={{$id}}&subcat=6">Góc nhà đẹp</a></li>
+                            </ul>
+                        @endif
+                    @endforeach
                 </div>
                 <!-- END MAIN CONTENT --> 
                 <!-- NAVIGATOR -->

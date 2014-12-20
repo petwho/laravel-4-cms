@@ -5,7 +5,7 @@ class PanelsController extends \BaseController {
 	/* Apply filter */
 	public function __construct()
 	{
-		$this->beforeFilter('auth');
+		// $this->beforeFilter('auth');
 	}
 
 	/**

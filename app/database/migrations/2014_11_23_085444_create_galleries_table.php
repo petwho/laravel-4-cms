@@ -19,6 +19,7 @@ class CreateGalleriesTable extends Migration {
 			$table->integer('project_id')->unsigned()->unique()->nullable();
 			$table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
 			$table->boolean('is_top_panel_gallery')->default(false);
+			$table->boolean('has_subcat')->default(false);
 			$table->timestamps();
 		});
 	}

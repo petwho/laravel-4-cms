@@ -203,6 +203,7 @@ class GalleriesTableSeeder extends Seeder {
           Gallery::create([
             'id' => $i + $j + 1,
             'title' => 'Gallery '.$i,
+            'has_subcat' => ($j < 4) ? true : false,
             // 'project_id' => $i + 1 // We don't even need project id
           ]);
         }
