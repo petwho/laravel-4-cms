@@ -203,14 +203,14 @@ class GalleriesTableSeeder extends Seeder {
           Gallery::create([
             'id' => $i + $j + 1,
             'title' => 'Gallery '.$i,
-            // 'project_id' => $i + 1 // We don't need project id
+            // 'project_id' => $i + 1 // We don't even need project id
           ]);
         }
       } else {
         Gallery::create([
           'id' => $i + 5 + 1,
           'title' => 'Gallery '.$i,
-          // 'project_id' => $i + 1 // We don't need project id
+          // 'project_id' => $i + 1 // We don't even need project id
         ]);
       }
     }
@@ -225,7 +225,7 @@ class GalleryMenuTableSeeder extends Seeder {
     DB::table('gallery_menu')->delete();
 
     for($i = 0; $i < 6; $i++) {
-      if ($i == 4) { // Ignore Feng shui page
+      if ($i == 4) { // Ignore Phong Thuy page
         continue;
       }
       if ($i == 0) { // 6 galleries for Home page
@@ -268,6 +268,7 @@ class ImagesTableSeeder extends Seeder {
   {
     DB::table('images')->delete();
 
+    // Images on Intro page
     for($i = 0; $i < 14; $i++) {
       for ($j = 0; $j < 5; $j++) {
         Image::create([
@@ -280,21 +281,23 @@ class ImagesTableSeeder extends Seeder {
       }
     }
 
+    // Images on inside pages
     $menus = ['index', 'kienthuc', 'gioithieu', 'shopnoithat', 'phongthuy', 'gioithieu'];
 
     for ($i = 14; $i < 20; $i++) {
-      if ($i == 18) {
+      if ($i == 18) { // skip Phong Thuy page
         continue;
       }
-      if ($i == 14) { // Images from 6 galleries for Home page
-        for ($k = 0; $k < 6; $k++) {
-          for ($j = 0; $j < 5; $j++) {
+      if ($i == 14) { // Images for 6 galleries on Home page
+        for ($k = 0; $k < 6; $k++) { // 6 galleries
+          for ($j = 0; $j < 30; $j++) { // 30 images each gallery (can be more)
             Image::create([
               'name' => 'Name '.$j,
               'title' => 'title '.$j,
               'url' => '/images/' . $menus[$i - 14] . '/' . 'mv0' . $j . '.jpg',
               'thumb_url' => '/images/' . $menus[$i - 14] . '/thumb_0' . $j . '.jpg',
               'gallery_id' => $i + 1 + $k,
+              'subcat' => ($j % 5) + 1,
             ]);
           }
         }

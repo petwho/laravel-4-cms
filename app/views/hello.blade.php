@@ -4,7 +4,7 @@
 	@include('static_blocks.navbar')
 	
 	<div id="Content" class="pb-30">
-		@include('static_blocks.home.pill', array('menu' => $menu))
+		@include('static_blocks.home.pill', array('menu' => $menu, 'q_gallery' => isset($q_gallery) ? $q_gallery : false))
 		
 		<div class="grid-850">
 			@include('static_blocks.home.architect')

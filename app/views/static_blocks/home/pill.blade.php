@@ -6,17 +6,17 @@
         @foreach ($menu->galleries as $gallery)
             @if ($i == 0)
               <?php $first_gallery_id = $gallery->id; ?>
-              <li><a class="select" href="/home/gallery/{{$gallery->id}}" target="gallery">Ảnh thực tế sau thi công</a></li>
+              <li><a class="{{{($gallery->id == $q_gallery) ? 'select' : ($q_gallery == false) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Ảnh thực tế sau thi công</a></li>
             @elseif ($i == 1)
-              <li><a href="/home/gallery/{{$gallery->id}}" target="gallery">Biệt thự</a></li>
+              <li><a class="{{{($gallery->id == $q_gallery) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Biệt thự</a></li>
             @elseif ($i == 2)
-              <li><a href="/home/gallery/{{$gallery->id}}" target="gallery">Căn hộ - Penthonse</a></li>
+              <li><a class="{{{($gallery->id == $q_gallery) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Căn hộ - Penthonse</a></li>
             @elseif ($i == 3)
-              <li><a href="/home/gallery/{{$gallery->id}}" target="gallery">Nhà phố</a></li>
+              <li><a class="{{{($gallery->id == $q_gallery) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Nhà phố</a></li>
             @elseif ($i == 4)
-              <li><a href="/home/gallery/{{$gallery->id}}" target="gallery">Khách sạn - Resort</a></li>
+              <li><a class="{{{($gallery->id == $q_gallery) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Khách sạn - Resort</a></li>
             @elseif ($i == 5)
-              <li><a  class="last" href="/home/gallery/{{$gallery->id}}" target="gallery">Spa - Beauty Salon</a></li>
+              <li><a  class="last" class="{{{($gallery->id == $q_gallery) ? 'select' : ''}}}" href="/home?gallery={{$gallery->id}}">Spa - Beauty Salon</a></li>
             @endif
             <?php $i++; ?>
         @endforeach
@@ -27,7 +27,7 @@
         <li><a href="#"><img src="images/common/icon_social03.png" alt="" class="over4"/></a></li>
       </ul>
       <div class="gallery-box">
-        <iframe scrolling="no" src="/home/gallery/{{$first_gallery_id}}" width="1000" height="596" frameborder="0" name="gallery"></iframe>
+        <iframe scrolling="no" src="{{{ ($q_gallery) ? '/home/gallery/'.$q_gallery : '/home/gallery/'.$first_gallery_id }}}" width="1000" height="596" frameborder="0" name="gallery"></iframe>
       </div>
       <!-- / .gallery-box --> 
       

@@ -21,6 +21,7 @@ class CreateImagesTable extends Migration {
 			$table->text('thumb_url');
 			$table->integer('gallery_id')->unsigned();
 			$table->foreign('gallery_id')->on('galleries')->references('id')->onDelete('cascade');
+			$table->integer('subcat')->unsigned()->nullable(); // values from 1 to 6
 			$table->timestamps();
 		});
 	}

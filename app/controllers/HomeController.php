@@ -15,35 +15,18 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function intro()
-	{
-		$projects = Project::where('is_featured', '=', true)->get();
-		return View::make('intro', array('projects' => $projects));
-	}
-	// Iframe for intro page
-	public function iframe($id)
-	{
-		$project = Project::find($id);
-		$gallery = Gallery::where('project_id', '=', $project->id)->first();
-		$images = Image::where('gallery_id', '=', $gallery->id)->get();
-
-		return View::make('iframe', array(
-			'project' => $project,
-			'gallery' => $gallery,
-			'images' => $images
-		));
-	}
-
 	public function home()
 	{
 		$menu = Menu::find(1);
+		$q_gallery = Request::query('gallery');
 		return View::make('hello', array(
 			'projects' => Project::all(),
-			'menu' => $menu
+			'menu' => $menu,
+			'q_gallery' => $q_gallery,
 		));
 	}
 
-	public function home_gallery($id)
+	public function iframe($id)
 	{
 		$menu = Menu::find(1);
 		return View::make('home_gallery', array('id' => $id, 'menu' => $menu));
