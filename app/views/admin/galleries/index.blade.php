@@ -26,16 +26,18 @@
                 <td>{{ $i }}</td>
                 <td>{{ $gallery->title }}</td>
                 <td>
-                  <?php $temp = ''; ?>
                   @foreach ($gallery->menus as $menu)
                     <button class="btn btn-sm btn-success">{{ $menu->title }}</button>
                   @endforeach
                 </td>
 
                 <td>
-                  <?php $temp = ''; ?>
                   @foreach ($gallery->tabs as $tab)
-                    <span class="badge">{{ $tab->title }}</span>
+                    @if ($gallery->is_top_panel_gallery)
+                      <span class="badge"><i class="fa fa-thumb-tack"></i> {{ $tab->title }}</span>
+                    @else
+                      <span class="badge">{{ $tab->title }}</span>
+                    @endif
                   @endforeach
                 </td>
 
