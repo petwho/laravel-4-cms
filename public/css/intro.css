@@ -18,14 +18,17 @@ body {
 	float: right;
 	color: #868787;
 	padding: 0 0 0 5px;
-	/* font-weight: bold */ font-weight: 400;
+	/* font-weight: bold */
 }
 #Intro-nav li a {
-	color: #fff;
-	/* font-weight: bold */ font-weight: 400;
+	/*color: #fff;*/
+	/* font-weight: bold */
+	text-decoration: none;
+	color: #868787;
 }
 #Intro-nav li a:hover {
-	text-decoration: none;
+	text-decoration: underline;
+	color: #fff;
 }
 #Intro {
 	width: 100%;
