@@ -185,7 +185,7 @@ class GalleriesController extends \BaseController {
 					$new_image->title = $image['title'];
 					$new_image->url = $image['url'];
 					$new_image->thumb_url = $image['thumb_url'];
-					$new_image->subcat = $image['subcat'] ? $image['subcat'] : null;
+					$new_image->subcat = isset($image['subcat']) ? $image['subcat'] : null;
 					$new_image->save();
 				}
 				continue;
