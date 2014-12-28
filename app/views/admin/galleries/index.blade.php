@@ -28,19 +28,15 @@
                 <td>
                   <?php $temp = ''; ?>
                   @foreach ($gallery->menus as $menu)
-                    <?php $temp .= $menu->title.', '; ?>
+                    <button class="btn btn-sm btn-success">{{ $menu->title }}</button>
                   @endforeach
-                  <?php $temp = substr($temp, 0, strlen($temp) - 2); ?>
-                  {{ $temp }}
                 </td>
 
                 <td>
                   <?php $temp = ''; ?>
                   @foreach ($gallery->tabs as $tab)
-                    <?php $temp .= $tab->title.', '; ?>
+                    <span class="badge">{{ $tab->title }}</span>
                   @endforeach
-                  <?php $temp = substr($temp, 0, strlen($temp) - 2); ?>
-                  {{ $temp }}
                 </td>
 
                 @if ($gallery->project_id)

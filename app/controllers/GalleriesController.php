@@ -209,9 +209,9 @@ class GalleriesController extends \BaseController {
 		  } else {
 		  	$gallery->project_id = Input::get('project_id');
 		  }
-		  if (Input::get('is_top_panel_gallery')) {
-		  	$gallery->is_top_panel_gallery = true;
-		  }
+		  // if (Input::get('is_top_panel_gallery')) {
+		  	$gallery->is_top_panel_gallery = Input::get('is_top_panel_gallery') ? true : false;
+		  // }
 		  $gallery->update();
 		  return Redirect::back()->with('message', 'Gallery updated successfully');
 		}
