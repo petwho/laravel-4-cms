@@ -10,7 +10,7 @@
             <th>#</th>
             <th>Title</th>
             <th>Pages</th>
-            <th>Panels</th>
+            <th>Tabs</th>
             <th>Project</th>
             <!-- <th>Created At</th>
             <th>Updated At</th> -->
