@@ -6,7 +6,7 @@
     <div id="Content-wrap">
       <div id="Top-content">
         <div class="grid-850 breadcrums">
-          / <a href="/phong-thuy">phong-thuy</a> / <a href="/phong-thuy/{{$post->id}}">{{$post->title}}</a>
+          / <a href="/phong-thuy">Phong Thủy</a> / <a href="/phong-thuy/{{$post->id}}">{{$post->title}}</a>
         </div>
       </div>
     </div>

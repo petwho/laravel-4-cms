@@ -14,7 +14,7 @@ class CreatePostsTable extends Migration {
 	{
 		Schema::create('posts', function($table)
     {
-			$table->increments('id');
+		$table->increments('id');
 	    $table->integer('category_id')->unsigned();
 	    $table->string('title');
 	    $table->string('summary');

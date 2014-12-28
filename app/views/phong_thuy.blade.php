@@ -15,7 +15,7 @@
 							<?php $posts = $category->posts; ?>
 							@foreach ($posts as $post)
 								<li class="cf">
-									<div class="left fl-left"> <img src="{{$post->image}}" alt="" /> </div>
+									<div class="left fl-left"> <img src="{{$post->image}}" alt="" width=191 height=118 /> </div>
 									<!-- / .left -->
 									<div class="right fl-right cf">
 										<p class="title-post"><a href="/phong-thuy/{{$post->id}}">{{$post->title}}</a></p>
