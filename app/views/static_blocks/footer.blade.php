@@ -53,7 +53,6 @@
           <ul class="f-social cf">
             <li><a href="#"><img src="/images/common/icon_social01.png" alt="" class="over4"/></a></li>
             <li><a href="#"><img src="/images/common/icon_social02.png" alt="" class="over4"/></a></li>
-            <li><a href="#"><img src="/images/common/icon_social03.png" alt="" class="over4"/></a></li>
           </ul>
         </div>
         <!-- / .footer-icon --> 
