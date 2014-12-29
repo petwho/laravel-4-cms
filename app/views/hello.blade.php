@@ -23,8 +23,7 @@
 									<li><img src="{{ $projects[$i]->image }}" alt=""/>
 								@endif
 									<p class="project-name">{{ $projects[$i]->name }}</p>
-									<p class="detail">Thông tin chi tiết dự án.</p>
-									<a href="#" class="link-project">Trọn bộ nội thất dự án. </a>
+									<p class="detail"><a class="link-project" href="/projects/{{$projects[$i]->id}}">Thông tin chi tiết dự án.</a></p>
 								</li>
 							</div>
 						@else
@@ -35,8 +34,7 @@
 									<li><img src="{{ $projects[$i]->image }}" alt=""/>
 								@endif
 									<p class="project-name">{{ $projects[$i]->name }}</p>
-									<p class="detail">Thông tin chi tiết dự án.</p>
-									<a href="#" class="link-project">Trọn bộ nội thất dự án. </a>
+									<p class="detail"><a class="link-project" href="/projects/{{$projects[$i]->id}}">Thông tin chi tiết dự án.</a></p>
 								</li>
 							</div>
 						@endif

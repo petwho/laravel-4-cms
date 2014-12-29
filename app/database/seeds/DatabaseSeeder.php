@@ -50,8 +50,9 @@ class ProjectsTableSeeder extends Seeder {
     for($i = 0; $i < 20; $i++) {
       Project::create([
         'id' => $i + 1,
-        'name' => 'TÊN DỰ ÁN '.$i,
-        'info' => 'Diện tích đất     900 m2',
+        'name' => 'Tên dự án '.$i,
+        'summary' => 'Diện tích đất 900 m2<br>Lorem ipsum Dolor cupidatat voluptate ullamco nulla.<br>Lorem ipsum Consequat est in proident pariatur nisi reprehenderit aliqua culpa fugiat quis in Excepteur anim dolore commodo eiusmod do commodo.',
+        'info' => 'Lorem ipsum Nostrud consequat voluptate voluptate dolore labore eu anim do sint eu magna laborum labore deserunt id aliqua dolor deserunt minim aute qui sit commodo ut exercitation in qui ut sint amet ut elit qui ad in aliqua eu ut ut et velit do cupidatat et consequat mollit Duis occaecat proident minim aute magna officia est non cupidatat mollit non amet veniam nisi magna veniam ad officia pariatur magna nostrud incididunt exercitation cupidatat Ut enim pariatur elit aliqua sit ea ullamco aliquip nostrud dolore labore tempor ex eiusmod velit id dolor anim occaecat consequat et labore proident laborum exercitation esse minim eu commodo Duis dolor eiusmod nostrud Excepteur est Duis labore dolor magna reprehenderit ex anim anim reprehenderit aute officia exercitation aliqua ullamco amet voluptate dolore minim ad nostrud ex veniam sunt Duis Ut Duis qui est aute sed aliqua dolore dolore laborum magna labore amet officia sunt laboris mollit veniam eu aliquip cupidatat sunt anim sunt sed consectetur nulla eiusmod sit exercitation minim commodo aliquip id qui laborum aliquip minim esse Excepteur cupidatat minim non mollit quis in sint elit magna anim laboris magna amet qui sit occaecat ad in ad occaecat amet veniam nisi deserunt non sed ad nulla ut sed ullamco commodo exercitation qui reprehenderit incididunt id enim consequat irure Excepteur laborum proident est consequat proident eiusmod dolore in est quis amet ut sit sed occaecat labore culpa dolore adipisicing labore est cupidatat officia.',
         'is_featured' => true,
         'image' => '/images/index/img_pj0'.($i % 4 + 1).'.jpg'
       ]);

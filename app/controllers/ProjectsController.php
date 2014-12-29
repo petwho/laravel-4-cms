@@ -4,7 +4,7 @@ class ProjectsController extends \BaseController {
 	/* Apply filter */
 	public function __construct()
 	{
-		$this->beforeFilter('auth');
+		$this->beforeFilter('auth', ['except' => 'show']);
 	}
 
 	/**
@@ -64,7 +64,7 @@ class ProjectsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return View::make('project_show', ['project' => Project::find($id)]);
 	}
 
 	/**

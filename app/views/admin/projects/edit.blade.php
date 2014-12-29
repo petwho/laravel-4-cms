@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-10">
       <h3>Manage Projects</h3>
       {{ Form::open(array(
             'url' => '/projects/'.$project->id,
@@ -43,6 +43,16 @@
         </div>
 
         <div class='form-group'>
+          {{ Form::label('summary', 'Project Summary:') }}
+          {{ Form::textarea('summary', $project->summary, array(
+                'class' => 'form-control',
+                'id' => 'summary',
+                'required' => true,
+            ))
+          }}
+        </div>
+
+        <div class='form-group'>
           {{ Form::label('info', 'Project Info:') }}
           {{ Form::textarea('info', $project->info, array(
                 'class' => 'form-control',
@@ -63,31 +73,6 @@
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h4 class="modal-title" id="myModalLabel">Image Gallery</h4>
-        </div>
-        <div class="modal-body">
-          <ul>
-            @for($i = 0; $i < count($images = glob('../public/images/projects/*')); $i++)
-              <li>
-                <img class="img-thumbnail" src="/images/projects/{{ basename($images[$i]) }}" width=100 height=81 style="width: 100px; height: 81px">
-              </li>
-            @endfor
-          </ul>
-          <p class='clear'></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary save">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- End of Modal -->
   <style type="text/css">
     .change-image {
@@ -107,19 +92,9 @@
       clear: both;
     }
   </style>
-  <script type="text/javascript">
-    $(function () {
-      $('#myModal li').click(function (e) {
-        $(this).parent().find('li').removeClass('active');
-        $(this).addClass('active');
-        e.preventDefault();
-      });
-      $('#myModal .save').click(function (e) {
-        var src = $('#myModal li.active img').attr('src');
-        $('img.main-image').attr('src', src);
-        $('input[name="image"]').val(src);
-        $('#myModal').modal('hide');
-      });
-    })
+  <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+  <script>
+    tinymce.init({selector:'textarea#info'});
+    tinymce.init({selector:'textarea#summary'});
   </script>
 @stop
